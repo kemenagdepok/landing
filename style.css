@@ -96,64 +96,81 @@ ul { list-style: none; }
 .logo-mobile { display: none; }
 
 /* --- Desktop Menu --- */
-.nav-links { display: flex; gap: 25px; align-items: center; }
-.nav-links a { font-weight: 600; color: var(--dark-color); transition: 0.3s; font-size: 0.95rem; }
-.nav-links a:hover { color: var(--primary-color); }
+.nav-links {
+    display: flex;
+    gap: 0; /* Gap dinolkan, jarak diatur lewat padding agar area sentuh luas */
+    align-items: center;
+    height: 100%; /* PENTING: Menu memenuhi tinggi navbar */
+}
 
-.btn-login {
+.nav-links li {
+    height: 100%; /* PENTING: Item list memenuhi tinggi */
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    font-weight: 600;
+    color: var(--dark-color);
+    transition: 0.3s;
+    font-size: 0.95rem;
+    padding: 0 15px; /* Jarak antar menu menggunakan padding */
+    height: 100%; /* PENTING: Link memenuhi tinggi agar hover tidak putus */
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    background-color: #f9f9f9; /* Efek highlight halus saat hover */
+}
+
+/* Tombol PTSP Desktop (Pengecualian Style) */
+.nav-links li:last-child a.btn-login {
+    height: auto; /* Tombol tidak perlu full height */
     padding: 10px 25px;
+    margin-left: 10px;
     background: var(--primary-color);
     color: white !important;
     border-radius: 6px;
     font-weight: bold;
-    transition: 0.3s;
+    display: inline-block;
 }
-.btn-login:hover { background: #005230; transform: translateY(-2px); }
+
+.nav-links li:last-child a.btn-login:hover {
+    background: #005230;
+    color: white;
+}
 
 /* --- Dropdown Menu (Desktop) --- */
 .dropdown {
     position: relative;
-    display: flex; /* Pastikan tinggi elemen mengikuti navbar */
-    align-items: center;
-    height: 100%; /* Agar area hover mencakup tinggi navbar penuh */
+    /* display & align sudah diatur di .nav-links li */
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #fff;
-    min-width: 220px; /* Sedikit diperlebar agar teks panjang muat */
+    min-width: 220px;
     width: max-content;
     box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.1);
     z-index: 9999;
-    border-radius: 0 0 8px 8px; /* Radius hanya di bawah */
+    border-radius: 0 0 8px 8px;
     
-    /* PENTING: Posisi top diatur agar menempel pas di bawah navbar */
-    top: 80px; /* Sesuai tinggi navbar */
+    /* PENTING: Posisi pas di bawah navbar (100% dari tinggi li) */
+    top: 100%; 
     left: 0;
     
     padding: 10px 0;
-    border-top: 3px solid var(--primary-color); /* Aksen border atas */
-    
-    /* Mencegah gap yang membuat menu hilang saat mouse turun */
-    margin-top: 0; 
-}
-
-/* Segitiga kecil pemanis (Optional, bisa dihapus jika tidak suka) */
-.dropdown-content::before {
-    content: "";
-    position: absolute;
-    top: -8px; 
-    left: 20px;
-    border-width: 0 8px 8px 8px;
-    border-style: solid;
-    border-color: transparent transparent var(--primary-color) transparent;
+    border-top: 3px solid var(--primary-color);
+    margin-top: 0; /* Pastikan tidak ada jarak */
 }
 
 .dropdown-content a {
     color: var(--dark-color);
     padding: 12px 20px;
-    text-decoration: none;
+    height: auto; /* Reset tinggi untuk link submenu */
     display: block;
     font-size: 0.9rem;
     transition: 0.2s;
@@ -169,13 +186,13 @@ ul { list-style: none; }
 .dropdown-content a:hover {
     background-color: #f0fdf4;
     color: var(--primary-color);
-    padding-left: 25px; /* Efek geser sedikit saat hover */
+    padding-left: 25px;
 }
 
 /* Tampilkan saat li.dropdown di-hover */
 .dropdown:hover .dropdown-content {
     display: block;
-    animation: fadeIn 0.3s ease; /* Animasi halus */
+    animation: fadeIn 0.2s ease-in-out;
 }
 
 .dropbtn i {
@@ -184,16 +201,15 @@ ul { list-style: none; }
     transition: 0.3s;
 }
 
-/* Putar panah saat hover */
 .dropdown:hover .dropbtn i {
     transform: rotate(180deg);
 }
 
-/* Animasi Fade In */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
 /* =========================================
    3. MOBILE NAVIGATION
    ========================================= */
