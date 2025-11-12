@@ -7,7 +7,7 @@
     --dark-color: #333;
     --light-color: #f9f9f9; 
     --text-color: #555;
-    --site-width: 1200px; /* UPDATED: Lebar maksimal jadi 1200px */
+    --site-width: 1200px; /* Lebar Maksimal Konsisten */
 }
 
 * {
@@ -52,7 +52,7 @@ ul { list-style: none; }
     padding: 0 20px;
 }
 
-/* --- Logo Styling (UPDATED) --- */
+/* --- Logo Styling --- */
 .logo {
     display: flex;
     align-items: center;
@@ -64,10 +64,10 @@ ul { list-style: none; }
     margin-right: 12px;
 }
 
-/* Container Teks Logo: Flex Column agar Atas-Bawah */
+/* Container Teks Logo */
 .logo-text-container {
     display: flex;
-    flex-direction: column; /* Susun Vertikal */
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 }
@@ -81,7 +81,7 @@ ul { list-style: none; }
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--primary-color);
-    line-height: 1.1; /* Rapatkan jarak antar baris */
+    line-height: 1.1;
     display: block;
 }
 
@@ -90,7 +90,7 @@ ul { list-style: none; }
     font-weight: 500;
     color: #666;
     display: block;
-    margin-top: 2px; /* Sedikit jarak dari judul */
+    margin-top: 2px;
 }
 
 .logo-mobile { display: none; }
@@ -98,13 +98,13 @@ ul { list-style: none; }
 /* --- Desktop Menu --- */
 .nav-links {
     display: flex;
-    gap: 0; /* Gap dinolkan, jarak diatur lewat padding agar area sentuh luas */
+    gap: 0; 
     align-items: center;
-    height: 100%; /* PENTING: Menu memenuhi tinggi navbar */
+    height: 100%; 
 }
 
 .nav-links li {
-    height: 100%; /* PENTING: Item list memenuhi tinggi */
+    height: 100%; 
     display: flex;
     align-items: center;
 }
@@ -114,20 +114,20 @@ ul { list-style: none; }
     color: var(--dark-color);
     transition: 0.3s;
     font-size: 0.95rem;
-    padding: 0 15px; /* Jarak antar menu menggunakan padding */
-    height: 100%; /* PENTING: Link memenuhi tinggi agar hover tidak putus */
+    padding: 0 15px; 
+    height: 100%; 
     display: flex;
     align-items: center;
 }
 
 .nav-links a:hover {
     color: var(--primary-color);
-    background-color: #f9f9f9; /* Efek highlight halus saat hover */
+    background-color: #f9f9f9; 
 }
 
-/* Tombol PTSP Desktop (Pengecualian Style) */
+/* Tombol PTSP Desktop */
 .nav-links li:last-child a.btn-login {
-    height: auto; /* Tombol tidak perlu full height */
+    height: auto; 
     padding: 10px 25px;
     margin-left: 10px;
     background: var(--primary-color);
@@ -135,17 +135,19 @@ ul { list-style: none; }
     border-radius: 6px;
     font-weight: bold;
     display: inline-block;
+    transition: 0.3s;
 }
 
 .nav-links li:last-child a.btn-login:hover {
     background: #005230;
     color: white;
+    transform: translateY(-2px);
 }
 
-/* --- Dropdown Menu (Desktop) --- */
+/* --- Dropdown Menu --- */
 .dropdown {
     position: relative;
-    /* display & align sudah diatur di .nav-links li */
+    /* display & align diatur di .nav-links li */
 }
 
 .dropdown-content {
@@ -157,20 +159,17 @@ ul { list-style: none; }
     box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.1);
     z-index: 9999;
     border-radius: 0 0 8px 8px;
-    
-    /* PENTING: Posisi pas di bawah navbar (100% dari tinggi li) */
     top: 100%; 
     left: 0;
-    
     padding: 10px 0;
     border-top: 3px solid var(--primary-color);
-    margin-top: 0; /* Pastikan tidak ada jarak */
+    margin-top: 0; 
 }
 
 .dropdown-content a {
     color: var(--dark-color);
     padding: 12px 20px;
-    height: auto; /* Reset tinggi untuk link submenu */
+    height: auto; 
     display: block;
     font-size: 0.9rem;
     transition: 0.2s;
@@ -179,9 +178,7 @@ ul { list-style: none; }
     border-bottom: 1px solid #f9f9f9;
 }
 
-.dropdown-content a:last-child {
-    border-bottom: none;
-}
+.dropdown-content a:last-child { border-bottom: none; }
 
 .dropdown-content a:hover {
     background-color: #f0fdf4;
@@ -189,7 +186,6 @@ ul { list-style: none; }
     padding-left: 25px;
 }
 
-/* Tampilkan saat li.dropdown di-hover */
 .dropdown:hover .dropdown-content {
     display: block;
     animation: fadeIn 0.2s ease-in-out;
@@ -201,9 +197,7 @@ ul { list-style: none; }
     transition: 0.3s;
 }
 
-.dropdown:hover .dropbtn i {
-    transform: rotate(180deg);
-}
+.dropdown:hover .dropbtn i { transform: rotate(180deg); }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
@@ -218,7 +212,9 @@ ul { list-style: none; }
 
 @media (max-width: 968px) {
     .navbar { height: 70px; padding: 0; }
-    .nav-container { padding: 0 15px; }
+    /* PENTING: Padding Mobile Navbar 20px */
+    .nav-container { padding: 0 20px; } 
+    
     .desktop-menu { display: none; }
     .mobile-controls { display: flex; align-items: center; gap: 15px; }
 
@@ -231,17 +227,11 @@ ul { list-style: none; }
     .logo img { height: 35px; margin-right: 10px; }
     .logo-desktop { display: none; } 
     
-    /* Logo Mobile 2 Baris */
+    /* Logo Mobile 2 Baris + KOTA */
     .logo-mobile {
-        display: flex;          /* Gunakan Flexbox */
-        flex-direction: column; /* Susun Vertikal (Atas-Bawah) */
-        justify-content: center;
-        font-size: 0.85rem;     /* Ukuran font disesuaikan */
-        font-weight: 800;
-        color: #333;
-        letter-spacing: 0.5px;
-        line-height: 1.1;       /* Rapatkan jarak antar baris */
-        margin-top: 2px;
+        display: flex; flex-direction: column; justify-content: center;
+        font-size: 0.85rem; font-weight: 800; color: #333;
+        letter-spacing: 0.5px; line-height: 1.1; margin-top: 2px;
     }
 
     .hamburger {
@@ -249,6 +239,7 @@ ul { list-style: none; }
         border: none; padding: 0; background: transparent;
     }
 
+    /* Mobile Menu Full Width */
     .mobile-menu-dropdown {
         display: none; flex-direction: column; position: absolute;
         top: 70px; left: 0; width: 100%; background-color: white;
@@ -322,7 +313,7 @@ ul { list-style: none; }
     border-radius: 12px; display: block;
 }
 
-/* Label Nama (No Box) */
+/* Label Nama */
 .kakan-label {
     text-align: center; margin-top: 15px; color: white; width: 100%;
 }
@@ -336,7 +327,9 @@ ul { list-style: none; }
 
 @media (max-width: 968px) {
     .hero { padding-top: 120px; text-align: center; height: auto; min-height: 100vh; }
+    /* PENTING: Padding Mobile Hero 20px */
     .hero-container { flex-direction: column; gap: 50px; padding: 0 20px; }
+    
     .hero-text { text-align: center; }
     .hero-text p { max-width: 100%; }
     .hero-text h1 { font-size: 2.8rem; }
@@ -353,7 +346,7 @@ ul { list-style: none; }
     display: flex; flex-direction: column; align-items: center;
 }
 
-/* Kontainer Utama */
+/* Kontainer Utama Global */
 .content-container,
 .structure-container {
     width: 100%;
@@ -382,6 +375,14 @@ ul { list-style: none; }
     transform: translateX(-50%); border-radius: 2px;
 }
 .section-title p { color: #777; margin-top: 15px; font-size: 1.1rem; }
+
+/* --- Profil Page Specific --- */
+.profile-content { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+.profile-content p {
+    margin-bottom: 25px; text-align: justify; font-size: 1.1rem;
+    color: #444; line-height: 1.9;
+}
+.profile-layout { width: 100%; max-width: var(--site-width); margin: 0 auto; }
 
 /* --- Contact Wrapper --- */
 .contact-wrapper {
@@ -434,20 +435,12 @@ ul { list-style: none; }
 }
 .btn-submit:hover { background: #005230; }
 
-@media (max-width: 968px) {
-    .contact-wrapper { grid-template-columns: 1fr; gap: 40px; }
-    .contact-info-box, .contact-form-box { border: none; padding: 0; }
-}
-
-/* --- Services / Layanan Grid (UPDATED WIDTH) --- */
+/* --- Services / Layanan Grid --- */
 .services-grid {
     display: grid;
-    /* Grid yang responsif dan lebar */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-    gap: 30px;
-    width: 100%;
-    max-width: var(--site-width); /* Mengikuti lebar situs 1200px */
-    margin: 0 auto;
+    gap: 30px; width: 100%;
+    max-width: var(--site-width); margin: 0 auto;
 }
 .service-card {
     background: white; padding: 35px; border-radius: 12px;
@@ -482,6 +475,7 @@ ul { list-style: none; }
 }
 .head-office { background: #f9f9f9; border-left-color: var(--secondary-color); }
 
+/* Timeline Sejarah */
 .timeline-list li {
     position: relative; padding-left: 35px; margin-bottom: 20px; border-left: 3px solid #eee;
 }
@@ -490,6 +484,7 @@ ul { list-style: none; }
     background: var(--primary-color); border-radius: 50%;
 }
 
+/* Data Stats */
 .data-section { margin-bottom: 60px; }
 .data-title {
     font-size: 1.5rem; color: var(--primary-color); margin-bottom: 25px;
@@ -517,14 +512,16 @@ ul { list-style: none; }
 }
 
 /* =========================================
-   6. MOBILE FLAT DESIGN
+   6. MOBILE ADJUSTMENTS (PADDING FIX)
    ========================================= */
 @media (max-width: 968px) {
+    /* PENTING: Konsistensi Padding Mobile 20px */
     .content-page-padding {
         background-color: #fff; 
         padding-left: 20px; padding-right: 20px; padding-top: 100px;
     }
 
+    /* Flat Design di Mobile */
     .content-container,
     .contact-info-box,
     .contact-form-box,
@@ -543,6 +540,8 @@ ul { list-style: none; }
         border: none !important;
         background: transparent !important;
     }
+    
+    .contact-wrapper { grid-template-columns: 1fr; gap: 40px; padding: 0; }
     
     .contact-info-box, .service-card, .stat-card, .official-card {
         margin-bottom: 40px !important;
@@ -570,7 +569,9 @@ footer {
 .footer-container {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 50px; margin-bottom: 50px;
-    max-width: var(--site-width); margin-left: auto; margin-right: auto; padding: 0 20px;
+    max-width: var(--site-width); margin-left: auto; margin-right: auto; 
+    /* PENTING: Padding Footer 20px */
+    padding: 0 20px;
 }
 .footer-col h3 {
     margin-bottom: 25px; color: var(--secondary-color); font-size: 1.3rem; font-weight: 700;
@@ -589,7 +590,7 @@ footer {
 }
 .social-links a:hover { background: var(--primary-color); transform: translateY(-3px); }
 
-.copyright p {
+.copyright {
     text-align: center; padding-top: 30px; border-top: 1px solid #333;
     font-size: 0.9rem; color: #777;
 }
