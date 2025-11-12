@@ -236,7 +236,8 @@ ul {
         background: transparent;
     }
     
-    /* Mobile Dropdown Menu */
+/* --- Update CSS Mobile Menu (Scrollable & Expanded) --- */
+    
     .mobile-menu-dropdown {
         display: none;
         flex-direction: column;
@@ -245,22 +246,68 @@ ul {
         left: 0;
         width: 100%;
         background-color: white;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         border-top: 1px solid #eee;
+        
+        /* Agar bisa di-scroll jika menunya panjang */
+        max-height: calc(100vh - 80px); 
+        overflow-y: auto; 
     }
     
     .mobile-menu-dropdown.active {
         display: flex;
     }
 
-    .mobile-menu-dropdown a {
+    /* Style untuk Link Utama */
+    .mobile-main-link {
         padding: 15px 20px;
         color: var(--dark-color);
         text-decoration: none;
         border-bottom: 1px solid #f0f0f0;
-        font-weight: 600;
+        font-weight: 700; /* Lebih tebal untuk menu utama */
+        font-size: 1rem;
+        background-color: #fff;
     }
-}
+
+    .mobile-main-link i {
+        margin-right: 10px;
+        color: var(--primary-color);
+    }
+
+    /* Style untuk Grup Submenu (Profil) */
+    .mobile-submenu-group {
+        display: flex;
+        flex-direction: column;
+        background-color: #f9f9f9; /* Warna background sedikit beda */
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Label "PROFIL" kecil */
+    .mobile-menu-label {
+        padding: 15px 20px 5px 20px;
+        font-size: 0.8rem;
+        font-weight: 800;
+        color: #aaa;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Link Submenu (Indentasi ke dalam) */
+    .mobile-submenu-group a {
+        padding: 12px 20px 12px 40px; /* Padding kiri 40px agar menjorok */
+        color: #555;
+        text-decoration: none;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #eee;
+        transition: 0.2s;
+    }
+
+    .mobile-submenu-group a:hover, 
+    .mobile-main-link:hover {
+        background-color: #e8f5e9;
+        color: var(--primary-color);
+        padding-left: 45px; /* Efek geser saat hover */
+    }
 
 /* =========================================
    4. HERO SECTION (UPDATED: SPLIT LAYOUT)
