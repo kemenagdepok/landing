@@ -11,11 +11,10 @@
     <link rel="manifest" href="site.webmanifest">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Menggunakan padding standar halaman sub-menu */
         .content-page-padding {
             padding-top: 120px;
             padding-bottom: 60px;
@@ -23,6 +22,23 @@
             min-height: 80vh;
             padding-left: 5%;
             padding-right: 5%;
+        }
+
+        /* Penyesuaian Grid agar ikon dan teks lebih seimbang */
+        .service-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            min-height: 200px;
+        }
+        
+        /* Judul layanan agar tidak terlalu besar */
+        .service-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -33,30 +49,51 @@
     <section class="content-page-padding">
         <div class="section-title">
             <h2>Layanan Publik</h2>
-            <p>Akses mudah berbagai layanan keagamaan untuk masyarakat Depok.</p>
+            <p>Daftar Layanan pada Kantor Kementerian Agama Kota Depok</p>
         </div>
         
         <div class="services-grid">
+            
             <div class="service-card">
                 <i class="fas fa-kaaba"></i>
                 <h3>Haji & Umrah</h3>
-                <p>Informasi pendaftaran, pembatalan, dan jadwal keberangkatan jamaah haji.</p>
             </div>
-            <div class="service-card">
-                <i class="fas fa-rings-wedding"></i>
-                <h3>KUA & Pernikahan</h3>
-                <p>Layanan administrasi pernikahan, rujuk, dan bimbingan perkawinan.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-mosque"></i>
-                <h3>Masjid & Musholla</h3>
-                <p>Registrasi data tempat ibadah, arah kiblat, dan rekomendasi bantuan.</p>
-            </div>
+
             <div class="service-card">
                 <i class="fas fa-school"></i>
-                <h3>Pendidikan Islam</h3>
-                <p>Layanan Madrasah (RA, MI, MTs, MA), Pondok Pesantren, dan Guru PAI.</p>
+                <h3>Pendidikan Madrasah</h3>
             </div>
+
+            <div class="service-card">
+                <i class="fas fa-mosque"></i>
+                <h3>Urusan Agama Islam & Pembinaan Syariah</h3>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h3>Zakat & Wakaf</h3>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-book-quran"></i>
+                <h3>Pendidikan Agama & Keagamaan Islam</h3>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-church"></i>
+                <h3>Penyelenggara Kristen</h3>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-cross"></i>
+                <h3>Penyelenggara Katolik</h3>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-file-signature"></i>
+                <h3>Sub Bagian Tata Usaha</h3>
+            </div>
+
         </div>
     </section>
 
