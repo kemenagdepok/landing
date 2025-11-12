@@ -24,21 +24,79 @@
             padding-right: 5%;
         }
 
-        /* Penyesuaian Grid agar ikon dan teks lebih seimbang */
+        /* Custom Grid untuk Layanan Baru */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Sedikit lebih lebar agar teks muat */
+            gap: 30px;
+        }
+
         .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border-bottom: 4px solid transparent;
+            
+            /* Mengubah alignment menjadi kiri agar daftar list rapi */
+            text-align: left; 
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             height: 100%;
-            min-height: 200px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-bottom: 4px solid var(--secondary-color);
+        }
+
+        /* Ikon Layanan */
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            background: #f0fdf4;
+            padding: 15px;
+            border-radius: 10px;
+            align-self: flex-start; /* Ikon tetap di kiri atas */
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .service-desc {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        /* Styling List (a, b, c) */
+        .service-list {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .service-list li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            font-weight: 500;
+            list-style-type: lower-alpha; /* a, b, c */
         }
         
-        /* Judul layanan agar tidak terlalu besar */
-        .service-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0;
-            margin-top: 15px;
+        /* Garis pemisah tipis */
+        .divider {
+            height: 1px;
+            background: #eee;
+            width: 100%;
+            margin: 10px 0 15px 0;
         }
     </style>
 </head>
@@ -55,43 +113,74 @@
         <div class="services-grid">
             
             <div class="service-card">
-                <i class="fas fa-kaaba"></i>
-                <h3>Haji & Umrah</h3>
+                <div class="service-icon"><i class="fas fa-kaaba"></i></div>
+                <h3>1. Penyelenggaraan Haji dan Umrah</h3>
+                <p class="service-desc">Seksi PHU bertugas melaksanakan pelayanan, bimbingan, pembinaan, dan pengelolaan sistem informasi di bidang penyelenggaraan haji dan umrah.</p>
+                <div class="divider"></div>
+                <ol class="service-list">
+                    <li>Alamat Kelompok Bimbingan Ibadah Haji (KBIH)</li>
+                    <li>Alamat Penyelenggara Perjalanan Ibadah Umrah (PPIU)</li>
+                    <li>Alamat Penyelenggara Ibadah Haji Khusus (PIHK)</li>
+                </ol>
             </div>
 
             <div class="service-card">
-                <i class="fas fa-school"></i>
-                <h3>Pendidikan Madrasah</h3>
+                <div class="service-icon"><i class="fas fa-mosque"></i></div>
+                <h3>2. Bimbingan Masyarakat (Bimas) Islam</h3>
+                <p class="service-desc">Seksi Bimas Islam bertugas melaksanakan pelayanan, bimbingan, pembinaan, dan pengelolaan sistem informasi di bidang bimbingan masyarakat Islam.</p>
+                <div class="divider"></div>
+                <ol class="service-list">
+                    <li>Alamat Kantor Urusan Agama (KUA)</li>
+                    <li>Data Peristiwa Nikah</li>
+                    <li>Data Zakat dan Wakaf</li>
+                </ol>
             </div>
 
             <div class="service-card">
-                <i class="fas fa-mosque"></i>
-                <h3>Urusan Agama Islam & Pembinaan Syariah</h3>
+                <div class="service-icon"><i class="fas fa-cross"></i></div>
+                <h3>3. Bimbingan Masyarakat (Bimas) Katolik</h3>
+                <p class="service-desc">Penyelenggara Bimas Katolik mempunyai tugas melaksanakan pelayanan, pembinaan, dan pengelolaan sistem informasi di bidang bimbingan masyarakat Katolik.</p>
+                <div class="divider"></div>
+                <ol class="service-list">
+                    <li>Data Rumah Ibadah Agama Katolik</li>
+                    <li>Data Tokoh Agama Katolik</li>
+                </ol>
             </div>
 
             <div class="service-card">
-                <i class="fas fa-hand-holding-heart"></i>
-                <h3>Zakat & Wakaf</h3>
+                <div class="service-icon"><i class="fas fa-church"></i></div>
+                <h3>4. Bimbingan Masyarakat (Bimas) Kristen</h3>
+                <p class="service-desc">Penyelenggara Bimas Kristen bertugas melaksanakan pelayanan, bimbingan, pembinaan, dan pengelolaan sistem informasi di bidang bimbingan masyarakat Kristen.</p>
+                <div class="divider"></div>
+                <ol class="service-list">
+                    <li>Data Rumah Ibadah Kristen</li>
+                    <li>Data Tokoh Agama Kristen</li>
+                </ol>
             </div>
 
             <div class="service-card">
-                <i class="fas fa-book-quran"></i>
-                <h3>Pendidikan Agama & Keagamaan Islam</h3>
+                <div class="service-icon"><i class="fas fa-book-quran"></i></div>
+                <h3>5. Pendidikan Agama dan Keagamaan Islam (PAKIS)</h3>
+                <p class="service-desc">Seksi PAKIS mempunyai tugas melaksanakan pelayanan, bimbingan, pembinaan, serta pengelolaan sistem informasi di bidang pendidikan agama dan keagamaan Islam pada sekolah.</p>
+                <div class="divider"></div>
+                <ol class="service-list">
+                    <li>Data Pendidikan Diniyah</li>
+                    <li>Data Pondok Pesantren</li>
+                    <li>Data Guru Pendidikan Agama Islam</li>
+                </ol>
             </div>
 
             <div class="service-card">
-                <i class="fas fa-church"></i>
-                <h3>Penyelenggara Kristen</h3>
-            </div>
-
-            <div class="service-card">
-                <i class="fas fa-cross"></i>
-                <h3>Penyelenggara Katolik</h3>
-            </div>
-
-            <div class="service-card">
-                <i class="fas fa-file-signature"></i>
-                <h3>Sub Bagian Tata Usaha</h3>
+                <div class="service-icon"><i class="fas fa-school"></i></div>
+                <h3>6. Pendidikan Madrasah</h3>
+                <p class="service-desc">Seksi Pendidikan Madrasah mempunyai tugas melaksanakan pelayanan, bimbingan, dan pembinaan, serta pengelolaan sistem informasi di bidang pendidikan madrasah.</p>
+                <div class="divider"></div>
+                <ol class="service-list">
+                    <li>Data RA</li>
+                    <li>Data MI</li>
+                    <li>Data MTs</li>
+                    <li>Data MA</li>
+                </ol>
             </div>
 
         </div>
