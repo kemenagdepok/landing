@@ -7,6 +7,7 @@
     --dark-color: #333;
     --light-color: #f4f4f4;
     --text-color: #555;
+    --site-width: 1100px; /* VARIABEL LEBAR KONSISTEN */
 }
 
 * {
@@ -42,10 +43,11 @@ ul {
     width: 100%;
     top: 0;
     z-index: 1000;
-    padding: 0 5%;
     height: 80px;
     display: flex;
     align-items: center;
+    /* Padding dihapus di sini, dipindah ke container agar lurus */
+    padding: 0; 
 }
 
 .nav-container {
@@ -53,6 +55,9 @@ ul {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: var(--site-width); /* LEBAR KONSISTEN */
+    margin: 0 auto; /* Rata Tengah */
+    padding: 0 20px; /* Padding kiri-kanan agar tidak mentok di layar kecil */
 }
 
 /* --- Logo Styling --- */
@@ -168,7 +173,10 @@ ul {
 .mobile-menu-dropdown { display: none; }
 
 @media (max-width: 968px) {
-    .navbar { padding: 0 20px; }
+    /* Navbar Container Mobile */
+    .navbar { height: 70px; }
+    .nav-container { padding: 0 15px; width: 100%; }
+    
     .desktop-menu { display: none; }
     .mobile-controls { display: flex; align-items: center; gap: 15px; }
 
@@ -201,9 +209,9 @@ ul {
 
     .mobile-menu-dropdown {
         display: none; flex-direction: column; position: absolute;
-        top: 80px; left: 0; width: 100%; background-color: white;
+        top: 70px; left: 0; width: 100%; background-color: white;
         box-shadow: 0 15px 30px rgba(0,0,0,0.15); border-top: 1px solid #eee;
-        max-height: calc(100vh - 80px); overflow-y: auto; z-index: 999;
+        max-height: calc(100vh - 70px); overflow-y: auto; z-index: 999;
     }
     
     .mobile-menu-dropdown.active { display: flex; }
@@ -241,12 +249,18 @@ ul {
     background-position: center;
     min-height: 100vh;
     display: flex; align-items: center; justify-content: center;
-    color: white; padding: 100px 5% 50px 5%; margin-top: 0; 
+    color: white; 
+    padding: 100px 0 50px 0; /* Padding kiri kanan dihandle container */
+    margin-top: 0; 
 }
 
 .hero-container {
     display: flex; align-items: center; justify-content: space-between;
-    max-width: 1200px; width: 100%; gap: 40px;
+    max-width: var(--site-width); /* LEBAR KONSISTEN */
+    width: 100%; 
+    margin: 0 auto; 
+    padding: 0 20px; /* Safe padding */
+    gap: 40px;
 }
 
 .hero-text { flex: 1.2; text-align: left; }
@@ -300,11 +314,10 @@ ul {
 /* Responsive Hero */
 @media (max-width: 968px) {
     .hero { padding-top: 120px; text-align: center; height: auto; min-height: 100vh; }
-    .hero-container { flex-direction: column; gap: 50px; }
+    .hero-container { flex-direction: column; gap: 50px; padding: 0 20px; }
     .hero-text { text-align: center; }
     .hero-text p { max-width: 100%; }
     .hero-text h1 { font-size: 2.8rem; }
-    /* Hide photo on mobile/tablet */
     .hero-image { display: none; }
 }
 
@@ -314,15 +327,38 @@ ul {
 .content-page-padding {
     padding-top: 120px; padding-bottom: 60px;
     background-color: var(--light-color); min-height: 80vh;
-    padding-left: 5%; padding-right: 5%;
+    /* Padding container dihandle oleh max-width margin auto */
+    display: flex; justify-content: center; 
 }
 
-.content-container {
-    max-width: 1000px; margin: 0 auto; background: #fff;
-    padding: 50px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+/* KELAS UTAMA UNTUK KONTEN */
+.content-container,
+.contact-wrapper, 
+.structure-container {
+    width: 100%;
+    max-width: var(--site-width); /* LEBAR KONSISTEN 1100px */
+    margin: 0 auto;
+    padding: 50px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-.section-title { text-align: center; margin-bottom: 60px; }
+/* Reset khusus untuk Contact Wrapper yang punya grid sendiri */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; gap: 50px; 
+    background: transparent; /* Wrapper contact transparan, box ada di dalam */
+    box-shadow: none;
+    padding: 0 20px; /* Padding kiri kanan agar tidak mentok */
+}
+
+.contact-info-box, .contact-form-box {
+    background: white; padding: 40px; border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: fit-content;
+}
+
+.section-title { text-align: center; margin-bottom: 60px; width: 100%; max-width: var(--site-width); margin-left: auto; margin-right: auto;}
 .section-title h2 {
     font-size: 2.5rem; color: var(--primary-color); font-weight: 700;
     position: relative; display: inline-block; padding-bottom: 15px;
@@ -335,26 +371,10 @@ ul {
 .section-title p { color: #777; margin-top: 15px; font-size: 1.1rem; }
 
 /* --- Contact Page Styling --- */
-.contact-wrapper {
-    max-width: 1150px; margin: 0 auto; display: grid;
-    grid-template-columns: 1fr 1.5fr; gap: 50px; padding: 0 20px;
-}
-
-.contact-info-box, .contact-form-box {
-    background: white; padding: 40px; border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: fit-content;
-}
-
-/* Judul Box di Kontak (Baru) */
 .box-title {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #eee;
-    font-weight: 700;
+    font-size: 1.5rem; color: var(--primary-color); margin-bottom: 20px;
+    padding-bottom: 15px; border-bottom: 2px solid #eee; font-weight: 700;
 }
-
 .info-item { margin-bottom: 30px; display: flex; align-items: flex-start; }
 .info-item i {
     font-size: 1.4rem; color: var(--primary-color); margin-right: 20px; margin-top: 5px;
@@ -363,13 +383,11 @@ ul {
 }
 .info-item h4 { margin-bottom: 5px; font-size: 1.1rem; color: var(--dark-color); }
 .info-item p { color: #666; font-size: 1rem; line-height: 1.6; }
-
 .map-container {
     margin-top: 30px; border-radius: 12px; overflow: hidden; height: 300px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 .map-container iframe { width: 100%; height: 100%; border: 0; }
-
 .form-group { margin-bottom: 20px; }
 .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark-color); }
 .form-group input, .form-group textarea {
@@ -386,7 +404,7 @@ ul {
 }
 .btn-submit:hover { background: #005230; }
 
-/* --- Components General (Services, Structure, etc) --- */
+/* --- Components General --- */
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 .service-card {
     background: white; padding: 35px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
@@ -408,8 +426,8 @@ ul {
 .divider { height: 1px; background: #eee; width: 100%; margin: 15px 0 20px 0; }
 
 /* Stats & Structure */
-.structure-container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 .chart-image-box { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; margin-bottom: 50px; }
+.chart-image-box img { max-width: 100%; height: auto; border-radius: 5px; }
 .officials-grid { display: flex; flex-direction: column; gap: 25px; max-width: 600px; margin: 0 auto; }
 .official-card {
     background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
@@ -433,23 +451,22 @@ ul {
 .hindu { color: #e67e22; } .budha { color: #e74c3c; } .khonghucu { color: #8e44ad; }
 
 /* News Redirect */
-.news-redirect-card { background: white; padding: 60px; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); text-align: center; max-width: 700px; width: 90%; }
+.news-redirect-card { background: white; padding: 60px; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); text-align: center; max-width: 700px; width: 90%; margin: 0 auto; }
 .btn-news-open { display: inline-block; background-color: var(--primary-color); color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; }
 
 /* =========================================
    6. MOBILE FLAT DESIGN & ADJUSTMENTS
    ========================================= */
 @media (max-width: 968px) {
-    /* Atur Ulang Layout Kontak di Mobile */
+    /* Layout Mobile Flat */
     .contact-wrapper { grid-template-columns: 1fr; padding: 0; gap: 30px; }
     
-    /* MOBILE FLAT DESIGN: Hapus kotak, shadow, dan border di semua halaman */
     .content-page-padding {
-        background-color: #fff; /* Latar belakang putih */
+        background-color: #fff; 
         padding-left: 20px; padding-right: 20px; padding-top: 100px;
     }
 
-    /* Hapus style "Card" pada container utama */
+    /* Hapus style "Card" di Mobile */
     .content-container,
     .contact-info-box,
     .contact-form-box,
@@ -461,7 +478,7 @@ ul {
     .official-card {
         box-shadow: none !important;
         border-radius: 0 !important;
-        padding: 0 !important; /* Hapus padding internal kotak */
+        padding: 0 !important; 
         margin: 0 !important;
         width: 100% !important;
         max-width: 100% !important;
@@ -469,27 +486,20 @@ ul {
         background: transparent !important;
     }
     
-    /* Tambahkan margin bawah agar elemen tidak menempel */
+    /* Jarak antar elemen di mobile */
     .contact-info-box, .service-card, .stat-card, .official-card {
         margin-bottom: 40px !important;
-        border-bottom: 1px solid #eee !important; /* Garis pemisah tipis */
+        border-bottom: 1px solid #eee !important;
         padding-bottom: 30px !important;
     }
 
-    /* Khusus Form Input di Mobile */
     .form-group input, .form-group textarea {
-        background-color: #f9f9f9; /* Beri warna input agar terlihat di bg putih */
-        border: 1px solid #eee;
+        background-color: #f9f9f9; border: 1px solid #eee;
     }
 
-    /* Peta di Mobile */
     .map-container { height: 250px; margin-top: 20px; box-shadow: none; border-radius: 8px; }
-    
-    /* Judul Section di Mobile */
     .section-title h2 { font-size: 2rem; }
     .box-title { font-size: 1.3rem; border-bottom: 1px solid #eee; }
-
-    /* Khusus Layanan Card di Mobile */
     .service-icon { background: transparent; padding: 0; margin-bottom: 10px; }
     .service-card:hover { transform: none; border-bottom: 1px solid #eee; }
 }
@@ -498,11 +508,14 @@ ul {
    7. FOOTER
    ========================================= */
 footer {
-    background: #1a1a1a; color: white; padding: 70px 5% 30px; font-size: 0.95rem;
+    background: #1a1a1a; color: white; padding: 70px 0 30px 0; font-size: 0.95rem;
 }
 .footer-container {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 50px; margin-bottom: 50px;
+    max-width: var(--site-width); /* LEBAR KONSISTEN */
+    margin-left: auto; margin-right: auto;
+    padding: 0 20px;
 }
 .footer-col h3 {
     margin-bottom: 25px; color: var(--secondary-color); font-size: 1.3rem; font-weight: 700;
