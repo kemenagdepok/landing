@@ -263,36 +263,54 @@ ul {
 }
 
 /* =========================================
-   4. HERO SECTION (BERANDA)
+   4. HERO SECTION (UPDATED: SPLIT LAYOUT)
    ========================================= */
 .hero {
-    background: linear-gradient(rgba(0, 105, 62, 0.85), rgba(0, 105, 62, 0.7)), url('https://images.unsplash.com/photo-1564121211835-e88c852648ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background: linear-gradient(rgba(0, 50, 30, 0.9), rgba(0, 80, 50, 0.8)), url('https://images.unsplash.com/photo-1564121211835-e88c852648ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    min-height: 100vh; /* Menggunakan min-height agar fleksibel */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    justify-content: center;
     color: white;
-    padding: 0 20px;
-    margin-top: 60px; /* Offset navbar */
+    padding: 100px 5% 50px 5%; /* Padding atas disesuaikan untuk navbar */
+    margin-top: 0; 
 }
 
-.hero h1 {
-    font-size: 3rem;
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    gap: 50px;
+}
+
+/* --- Kolom Kiri: Teks --- */
+.hero-text {
+    flex: 1;
+    text-align: left; /* Rata Kiri */
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
     margin-bottom: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--secondary-color); /* Warna Kuning Emas */
 }
 
-.hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
+.hero-text p {
+    font-size: 1.1rem;
     margin-bottom: 30px;
+    line-height: 1.8;
+    color: #f4f4f4;
+    max-width: 90%;
 }
 
 .btn-cta {
-    padding: 12px 30px;
+    padding: 12px 35px;
     background: var(--secondary-color);
     color: var(--dark-color);
     font-weight: bold;
@@ -300,15 +318,94 @@ ul {
     transition: 0.3s;
     border: none;
     cursor: pointer;
+    display: inline-block;
 }
 
 .btn-cta:hover {
-    background: #d4ac0d;
+    background: #fff;
     transform: translateY(-3px);
 }
 
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2rem; }
+/* --- Kolom Kanan: Foto --- */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.image-frame {
+    position: relative;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.image-frame img {
+    max-width: 350px; /* Ukuran Foto */
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Label Nama di Bawah Foto */
+.kakan-label {
+    text-align: center;
+    margin-top: 15px;
+    color: white;
+}
+
+.kakan-label .jabatan {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.kakan-label .nama {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* --- Responsive Mobile (Hero) --- */
+@media (max-width: 968px) {
+    .hero {
+        padding-top: 120px;
+        text-align: center;
+    }
+
+    .hero-container {
+        flex-direction: column-reverse; /* Foto di atas, teks di bawah (opsional) atau column biasa */
+        flex-direction: column; 
+        gap: 40px;
+    }
+
+    .hero-text {
+        text-align: center; /* Kembali rata tengah di HP */
+    }
+
+    .hero-text p {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .image-frame img {
+        max-width: 250px; /* Foto lebih kecil di HP */
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
 }
 
 /* =========================================
