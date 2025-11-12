@@ -45,11 +45,13 @@
             border-radius: 5px;
         }
 
-        /* Grid Pejabat */
+        /* --- DAFTAR PEJABAT (MODIFIKASI 1 KOLOM) --- */
         .officials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 20px;
+            max-width: 700px; /* Membatasi lebar agar enak dilihat di PC */
+            margin: 0 auto;   /* Posisi Tengah */
         }
 
         .official-card {
@@ -59,14 +61,20 @@
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
             border-left: 5px solid var(--primary-color);
             transition: transform 0.3s;
+            
+            /* Agar teks rata tengah */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
         .official-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
 
         .official-card h3 {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: #777;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -75,33 +83,33 @@
         }
 
         .official-card .name {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--dark-color);
             margin-bottom: 5px;
         }
 
         .official-card .nip {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #888;
             font-style: italic;
         }
 
-        /* Highlight untuk Kepala Kantor (Full Width di layar besar) */
+        /* Khusus Kepala Kantor (Beda Warna Border) */
         .head-office {
-            grid-column: 1 / -1;
             background: linear-gradient(to right, #fff, #f0fdf4);
-            text-align: center;
             border-left: 5px solid var(--secondary-color);
+            padding: 35px; /* Lebih besar sedikit */
+            margin-bottom: 20px; /* Jarak pemisah dengan bawahan */
         }
         
         .head-office h3 {
             color: var(--primary-color);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
         
         .head-office .name {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
         }
     </style>
 </head>
@@ -119,7 +127,6 @@
             
             <div class="chart-image-box">
                 <img src="https://kemenagdepok.github.io/landing/gambar/struktur-kemenag-depok.webp" alt="Bagan Struktur Organisasi Kemenag Depok">
-                <p style="margin-top: 10px; color: #666; font-size: 0.9rem;">Bagan Struktur Organisasi</p>
             </div>
 
             <div class="officials-grid">
