@@ -216,12 +216,14 @@ ul {
         display: none; 
     }
 
-    .logo-mobile {
+.logo-mobile {
         display: block; 
-        font-size: 1rem;
+        font-size: 0.95rem; /* Sedikit disesuaikan agar muat di HP kecil */
         font-weight: 800; 
-        color: #333; /* SUDAH DIUBAH JADI HITAM */
+        color: #333;
         letter-spacing: 0.5px;
+        /* PENTING: Memaksa teks tidak turun baris */
+        white-space: nowrap; 
     }
 
     /* 2. Hamburger Menu Tanpa Border (Warna tetap hijau agar kontras) */
