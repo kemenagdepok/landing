@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil - Kementerian Agama Kota Depok</title>
+    <title>Tentang Kami - Kemenag Kota Depok</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -11,30 +11,50 @@
     <link rel="manifest" href="site.webmanifest">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        .profile-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        /* Override/Penyesuaian khusus halaman ini agar Flat (Tanpa Kotak) */
+        
+        .content-page-padding {
+            padding-top: 140px; /* Sedikit lebih turun agar lega */
+            padding-bottom: 80px;
+            background-color: #fff; /* Latar Putih Bersih */
+            min-height: 80vh;
+            display: block; /* Reset display flex dari global */
         }
+
+        /* Wrapper khusus profil agar lebar max 1200px dan rata tengah */
+        .profile-layout {
+            width: 100%;
+            max-width: 1200px; /* Sesuai permintaan */
+            margin: 0 auto;
+            padding: 0 20px; /* Padding kiri kanan agar aman di HP */
+        }
+
+        /* Styling teks profil */
+        .profile-content {
+            max-width: 900px; /* Membatasi lebar teks agar nyaman dibaca mata */
+            margin: 0 auto;   /* Teks rata tengah secara blok */
+        }
+
         .profile-content p {
-            margin-bottom: 20px;
-            text-align: justify;
+            margin-bottom: 25px;
+            text-align: justify; /* Rata kiri-kanan */
             font-size: 1.1rem;
             color: #444;
+            line-height: 1.9; /* Spasi antar baris lebih lega */
         }
-        /* Padding agar tidak tertutup navbar fixed */
-        .profile-page-padding {
-            padding-top: 120px; 
-            padding-bottom: 60px;
-            background-color: var(--light-color);
-            min-height: 80vh;
+
+        /* Drop cap (Huruf pertama besar) untuk estetika */
+        .profile-content p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            float: left;
+            margin-right: 15px;
+            line-height: 0.8;
+            font-weight: 700;
         }
     </style>
 </head>
@@ -42,23 +62,36 @@
 
     <div id="header-placeholder"></div>
 
-    <section class="profile-page-padding">
-        <div class="section-title">
-            <h2>Tentang Kami</h2>
-            <p>Mengenal lebih dekat Kantor Kementerian Agama Kota Depok</p>
+    <section class="content-page-padding">
+        
+        <div class="profile-layout">
+            
+            <div class="section-title">
+                <h2>Tentang Kami</h2>
+                <p>Mengenal lebih dekat Kantor Kementerian Agama Kota Depok</p>
+            </div>
+
+            <div class="profile-content">
+                <p>
+                    Kantor Kementerian Agama Kota Depok adalah perpanjangan tangan dari Kementerian Agama Republik Indonesia di wilayah Kota Depok. Kami hadir untuk menjalankan kebijakan dan pelayanan publik di bidang keagamaan, pendidikan keagamaan, serta kehidupan beragama yang rukun dan harmonis.
+                </p>
+                <p>
+                    Sebagai lembaga pemerintah vertikal, kami menjunjung tinggi nilai-nilai integritas, profesionalisme, dan pelayanan yang prima kepada masyarakat. Kami menyadari pentingnya peran agama dalam pembangunan karakter bangsa, oleh karena itu kami senantiasa berupaya memberikan layanan yang transparan, akuntabel, dan mudah diakses oleh seluruh lapisan masyarakat.
+                </p>
+                <p>
+                    Kami berkomitmen untuk terus meningkatkan kualitas layanan publik di bidang keagamaan, mendukung kerukunan umat beragama, dan mewujudkan masyarakat Depok yang religius, damai, dan sejahtera. Melalui berbagai program pembinaan dan pelayanan, kami berharap dapat berkontribusi positif dalam menciptakan suasana kehidupan beragama yang kondusif di Kota Depok.
+                </p>
+                <p>
+                    Untuk informasi lebih lanjut dan layanan digital, silakan kunjungi halaman lain di situs resmi kami atau hubungi kami melalui saluran komunikasi yang tersedia.
+                </p>
+            </div>
+
         </div>
 
-        <div class="profile-container">
-            <div class="profile-content">
-                <p>Kantor Kementerian Agama Kota Depok adalah perpanjangan tangan dari Kementerian Agama Republik Indonesia di wilayah Kota Depok. Kami hadir untuk menjalankan kebijakan dan pelayanan publik di bidang keagamaan, pendidikan keagamaan, serta kehidupan beragama yang rukun dan harmonis.</p>
-                <p>Sebagai lembaga pemerintah vertikal, kami menjunjung tinggi nilai-nilai integritas, profesionalisme, dan pelayanan yang prima kepada masyarakat.</p>
-                <p>Kami berkomitmen untuk terus meningkatkan kualitas layanan publik di bidang keagamaan, mendukung kerukunan umat beragama, dan mewujudkan masyarakat Depok yang religius, damai, dan sejahtera.</p>
-                <p>Untuk informasi lebih lanjut dan layanan digital, silakan kunjungi halaman lain di situs resmi kami.</p>
-            </div>
-        </div>
     </section>
 
     <div id="footer-placeholder"></div>
+
     <script src="main.js"></script>
 
 </body>
