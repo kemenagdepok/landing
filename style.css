@@ -5,9 +5,9 @@
     --primary-color: #00693e; /* Hijau Kemenag */
     --secondary-color: #f1c40f; /* Kuning Emas */
     --dark-color: #333;
-    --light-color: #f9f9f9; /* Ubah jadi lebih terang/hampir putih */
+    --light-color: #f9f9f9; 
     --text-color: #555;
-    --site-width: 1100px; /* Lebar Maksimal Konsisten */
+    --site-width: 1200px; /* UPDATED: Lebar maksimal jadi 1200px */
 }
 
 * {
@@ -52,15 +52,50 @@ ul { list-style: none; }
     padding: 0 20px;
 }
 
-/* Logo Styling */
-.logo { display: flex; align-items: center; text-decoration: none; }
-.logo img { height: 50px; margin-right: 12px; }
-.logo-text-container { display: flex; flex-direction: column; }
-.logo-title { font-size: 1.1rem; font-weight: 700; color: var(--primary-color); line-height: 1.2; }
-.logo-subtitle { font-size: 0.85rem; font-weight: 500; color: #666; }
-.logo-mobile { display: none; } /* Hide mobile text on desktop */
+/* --- Logo Styling (UPDATED) --- */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
 
-/* Desktop Menu */
+.logo img {
+    height: 50px;
+    margin-right: 12px;
+}
+
+/* Container Teks Logo: Flex Column agar Atas-Bawah */
+.logo-text-container {
+    display: flex;
+    flex-direction: column; /* Susun Vertikal */
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.logo-desktop {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1.1; /* Rapatkan jarak antar baris */
+    display: block;
+}
+
+.logo-subtitle {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #666;
+    display: block;
+    margin-top: 2px; /* Sedikit jarak dari judul */
+}
+
+.logo-mobile { display: none; }
+
+/* --- Desktop Menu --- */
 .nav-links { display: flex; gap: 25px; align-items: center; }
 .nav-links a { font-weight: 600; color: var(--dark-color); transition: 0.3s; font-size: 0.95rem; }
 .nav-links a:hover { color: var(--primary-color); }
@@ -114,6 +149,8 @@ ul { list-style: none; }
 
     .logo img { height: 35px; margin-right: 10px; }
     .logo-desktop { display: none; } 
+    
+    /* Logo Mobile 1 Baris Hitam */
     .logo-mobile {
         display: block; font-size: 0.95rem; font-weight: 800;
         color: #333; letter-spacing: 0.5px; white-space: nowrap;
@@ -223,19 +260,19 @@ ul { list-style: none; }
    ========================================= */
 .content-page-padding {
     padding-top: 120px; padding-bottom: 80px;
-    background-color: #fff; /* Latar Belakang Putih Bersih */
+    background-color: #fff; 
     min-height: 80vh;
     display: flex; flex-direction: column; align-items: center;
 }
 
-/* Kontainer Utama - Tanpa Shadow/Border agar seamless */
+/* Kontainer Utama */
 .content-container,
 .structure-container {
     width: 100%;
     max-width: var(--site-width);
     margin: 0 auto;
-    padding: 0 20px; /* Hanya padding horizontal */
-    background: transparent; /* Transparan agar menyatu dengan background putih */
+    padding: 0 20px;
+    background: transparent;
     box-shadow: none;
     border: none;
 }
@@ -258,17 +295,15 @@ ul { list-style: none; }
 }
 .section-title p { color: #777; margin-top: 15px; font-size: 1.1rem; }
 
-/* --- Contact Wrapper (Khusus Layout Kontak) --- */
+/* --- Contact Wrapper --- */
 .contact-wrapper {
     display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px;
     width: 100%; max-width: var(--site-width); margin: 0 auto; padding: 0 20px;
 }
 
-/* Kotak Info & Form Kontak - Diberi border tipis agar rapi di background putih */
 .contact-info-box, .contact-form-box {
     background: white; padding: 40px; border-radius: 12px;
-    border: 1px solid #eee; /* Border halus */
-    height: fit-content;
+    border: 1px solid #eee; height: fit-content;
 }
 
 .box-title {
@@ -277,48 +312,16 @@ ul { list-style: none; }
 }
 
 .info-item {
-    margin-bottom: 30px;
-    display: flex;
-    align-items: flex-start; /* Ikon tetap di atas (sejajar judul) */
-    gap: 20px; /* Jarak konsisten antara ikon dan teks */
+    margin-bottom: 30px; display: flex; align-items: flex-start; gap: 20px;
 }
-
 .info-item i {
-    flex-shrink: 0; /* PENTING: Agar lingkaran ikon tidak gepeng */
-    width: 45px;
-    height: 45px;
-    font-size: 1.2rem;
-    background: #e8f5e9;
-    color: var(--primary-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Menghapus margin-top/right manual agar diatur oleh flex-gap */
-    margin: 0; 
+    flex-shrink: 0; width: 45px; height: 45px; font-size: 1.2rem;
+    background: #e8f5e9; color: var(--primary-color); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; margin: 0;
 }
-
-.info-item div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 2px; /* Sedikit turun agar sejajar mata dengan ikon */
-}
-
-.info-item h4 {
-    margin: 0 0 5px 0; /* Reset margin agar rapi */
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--dark-color);
-    line-height: 1.2;
-}
-
-.info-item p {
-    margin: 0;
-    color: #666;
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
+.info-item div { display: flex; flex-direction: column; justify-content: center; padding-top: 2px; }
+.info-item h4 { margin: 0 0 5px 0; font-size: 1.1rem; color: var(--dark-color); }
+.info-item p { margin: 0; color: #666; font-size: 0.95rem; line-height: 1.6; }
 
 .map-container {
     margin-top: 30px; border-radius: 12px; overflow: hidden; height: 300px;
@@ -345,14 +348,18 @@ ul { list-style: none; }
 
 @media (max-width: 968px) {
     .contact-wrapper { grid-template-columns: 1fr; gap: 40px; }
-    /* Di mobile, hilangkan border kotak agar terlihat flat */
     .contact-info-box, .contact-form-box { border: none; padding: 0; }
 }
 
-/* --- Services / Layanan Grid --- */
+/* --- Services / Layanan Grid (UPDATED WIDTH) --- */
 .services-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
+    display: grid;
+    /* Grid yang responsif dan lebar */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 30px;
     width: 100%;
+    max-width: var(--site-width); /* Mengikuti lebar situs 1200px */
+    margin: 0 auto;
 }
 .service-card {
     background: white; padding: 35px; border-radius: 12px;
@@ -422,7 +429,52 @@ ul { list-style: none; }
 }
 
 /* =========================================
-   6. FOOTER
+   6. MOBILE FLAT DESIGN
+   ========================================= */
+@media (max-width: 968px) {
+    .content-page-padding {
+        background-color: #fff; 
+        padding-left: 20px; padding-right: 20px; padding-top: 100px;
+    }
+
+    .content-container,
+    .contact-info-box,
+    .contact-form-box,
+    .news-redirect-card,
+    .structure-container,
+    .chart-image-box, 
+    .service-card,
+    .stat-card,
+    .official-card {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important; 
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border: none !important;
+        background: transparent !important;
+    }
+    
+    .contact-info-box, .service-card, .stat-card, .official-card {
+        margin-bottom: 40px !important;
+        border-bottom: 1px solid #eee !important;
+        padding-bottom: 30px !important;
+    }
+
+    .form-group input, .form-group textarea {
+        background-color: #f9f9f9; border: 1px solid #eee;
+    }
+
+    .map-container { height: 250px; margin-top: 20px; box-shadow: none; border-radius: 8px; }
+    .section-title h2 { font-size: 2rem; }
+    .box-title { font-size: 1.3rem; border-bottom: 1px solid #eee; }
+    .service-icon { background: transparent; padding: 0; margin-bottom: 10px; }
+    .service-card:hover { transform: none; border-bottom: 1px solid #eee; }
+}
+
+/* =========================================
+   7. FOOTER
    ========================================= */
 footer {
     background: #1a1a1a; color: white; padding: 70px 0 30px 0; font-size: 0.95rem;
