@@ -40,6 +40,7 @@ ul { list-style: none; }
     height: 80px;
     display: flex;
     align-items: center;
+    padding: 0; 
 }
 
 .nav-container {
@@ -53,16 +54,8 @@ ul { list-style: none; }
 }
 
 /* --- Logo Styling --- */
-.logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.logo img {
-    height: 50px;
-    margin-right: 12px;
-}
+.logo { display: flex; align-items: center; text-decoration: none; }
+.logo img { height: 50px; margin-right: 12px; }
 
 /* Container Teks Logo */
 .logo-text-container {
@@ -72,130 +65,63 @@ ul { list-style: none; }
     align-items: flex-start;
 }
 
-.logo-desktop {
-    display: flex;
-    flex-direction: column;
-}
-
+.logo-desktop { display: flex; flex-direction: column; }
 .logo-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    line-height: 1.1;
-    display: block;
+    font-size: 1.1rem; font-weight: 700; color: var(--primary-color);
+    line-height: 1.1; display: block;
 }
-
 .logo-subtitle {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #666;
-    display: block;
-    margin-top: 2px;
+    font-size: 0.85rem; font-weight: 500; color: #666;
+    display: block; margin-top: 2px;
 }
-
 .logo-mobile { display: none; }
 
 /* --- Desktop Menu --- */
-.nav-links {
-    display: flex;
-    gap: 0; 
-    align-items: center;
-    height: 100%; 
-}
-
-.nav-links li {
-    height: 100%; 
-    display: flex;
-    align-items: center;
-}
+.nav-links { display: flex; gap: 0; align-items: center; height: 100%; }
+.nav-links li { height: 100%; display: flex; align-items: center; }
 
 .nav-links a {
-    font-weight: 600;
-    color: var(--dark-color);
-    transition: 0.3s;
-    font-size: 0.95rem;
-    padding: 0 15px; 
-    height: 100%; 
-    display: flex;
-    align-items: center;
+    font-weight: 600; color: var(--dark-color); transition: 0.3s;
+    font-size: 0.95rem; padding: 0 15px; height: 100%; 
+    display: flex; align-items: center;
 }
 
-.nav-links a:hover {
-    color: var(--primary-color);
-    background-color: #f9f9f9; 
-}
+.nav-links a:hover { color: var(--primary-color); background-color: #f9f9f9; }
 
-/* Tombol PTSP Desktop */
+/* Tombol PTSP Desktop (Pengecualian) */
 .nav-links li:last-child a.btn-login {
-    height: auto; 
-    padding: 10px 25px;
-    margin-left: 10px;
-    background: var(--primary-color);
-    color: white !important;
-    border-radius: 6px;
-    font-weight: bold;
-    display: inline-block;
+    height: auto; padding: 10px 25px; margin-left: 10px;
+    background: var(--primary-color); color: white !important;
+    border-radius: 6px; font-weight: bold; display: inline-block;
     transition: 0.3s;
 }
 
 .nav-links li:last-child a.btn-login:hover {
-    background: #005230;
-    color: white;
-    transform: translateY(-2px);
+    background: #005230; color: white; transform: translateY(-2px);
 }
 
 /* --- Dropdown Menu --- */
-.dropdown {
-    position: relative;
-}
+.dropdown { position: relative; }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width: 220px;
-    width: max-content;
-    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.1);
-    z-index: 9999;
-    border-radius: 0 0 8px 8px;
-    top: 100%; 
-    left: 0;
-    padding: 10px 0;
-    border-top: 3px solid var(--primary-color);
-    margin-top: 0; 
+    display: none; position: absolute; background-color: #fff;
+    min-width: 220px; width: max-content; box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.1);
+    z-index: 9999; border-radius: 0 0 8px 8px; top: 100%; left: 0;
+    padding: 10px 0; border-top: 3px solid var(--primary-color); margin-top: 0; 
 }
 
 .dropdown-content a {
-    color: var(--dark-color);
-    padding: 12px 20px;
-    height: auto; 
-    display: block;
-    font-size: 0.9rem;
-    transition: 0.2s;
-    text-align: left;
-    white-space: nowrap;
+    color: var(--dark-color); padding: 12px 20px; height: auto; display: block;
+    font-size: 0.9rem; transition: 0.2s; text-align: left; white-space: nowrap;
     border-bottom: 1px solid #f9f9f9;
 }
-
 .dropdown-content a:last-child { border-bottom: none; }
-
 .dropdown-content a:hover {
-    background-color: #f0fdf4;
-    color: var(--primary-color);
-    padding-left: 25px;
+    background-color: #f0fdf4; color: var(--primary-color); padding-left: 25px;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-    animation: fadeIn 0.2s ease-in-out;
-}
-
-.dropbtn i {
-    font-size: 0.8rem;
-    margin-left: 5px;
-    transition: 0.3s;
-}
-
+.dropdown:hover .dropdown-content { display: block; animation: fadeIn 0.2s ease-in-out; }
+.dropbtn i { font-size: 0.8rem; margin-left: 5px; transition: 0.3s; }
 .dropdown:hover .dropbtn i { transform: rotate(180deg); }
 
 @keyframes fadeIn {
@@ -211,7 +137,7 @@ ul { list-style: none; }
 
 @media (max-width: 968px) {
     .navbar { height: 70px; padding: 0; }
-    .nav-container { padding: 0 20px; } /* Padding Mobile Navbar */
+    .nav-container { padding: 0 20px; }
     
     .desktop-menu { display: none; }
     .mobile-controls { display: flex; align-items: center; gap: 15px; }
@@ -245,20 +171,20 @@ ul { list-style: none; }
     .mobile-menu-dropdown.active { display: flex; }
 
     .mobile-main-link {
-        padding: 15px 20px; color: var(--dark-color); text-decoration: none;
-        border-bottom: 1px solid #f5f5f5; font-weight: 700; font-size: 1rem;
+        padding: 15px 20px; color: var(--dark-color); border-bottom: 1px solid #f5f5f5;
+        font-weight: 700; font-size: 1rem;
     }
-    .mobile-submenu-group {
-        display: flex; flex-direction: column; background-color: #fafafa;
-        border-bottom: 1px solid #eee;
-    }
+    .mobile-submenu-group { background-color: #fafafa; border-bottom: 1px solid #eee; }
     .mobile-menu-label {
         padding: 15px 20px 5px; font-size: 0.75rem; font-weight: 800;
         color: #aaa; text-transform: uppercase; letter-spacing: 1px;
     }
     .mobile-submenu-group a {
-        padding: 12px 20px 12px 40px; color: #666; text-decoration: none;
-        font-size: 0.9rem; border-bottom: 1px solid #f0f0f0;
+        padding: 12px 20px 12px 40px; color: #666; font-size: 0.9rem;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .mobile-submenu-group a:hover, .mobile-main-link:hover {
+        background-color: #e8f5e9; color: var(--primary-color); padding-left: 30px;
     }
 }
 
@@ -323,7 +249,7 @@ ul { list-style: none; }
 
 @media (max-width: 968px) {
     .hero { padding-top: 120px; text-align: center; height: auto; min-height: 100vh; }
-    .hero-container { flex-direction: column; gap: 50px; padding: 0 20px; } /* Mobile Hero Padding */
+    .hero-container { flex-direction: column; gap: 50px; padding: 0 20px; }
     .hero-text { text-align: center; }
     .hero-text p { max-width: 100%; }
     .hero-text h1 { font-size: 2.8rem; }
@@ -419,7 +345,7 @@ ul { list-style: none; }
     border-radius: 5px; font-size: 1rem; transition: 0.3s; font-family: 'Poppins', sans-serif;
     background-color: #fafafa;
 }
-.form-group input:focus, .form-group textarea:focus {
+.form-group input:focus {
     border-color: var(--primary-color); outline: none; background-color: #fff;
 }
 .btn-submit {
@@ -491,9 +417,9 @@ ul { list-style: none; }
 }
 .stat-card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
 .stat-number { font-size: 2rem; font-weight: 800; color: var(--dark-color); }
-.stat-icon { font-size: 2.5rem; margin-bottom: 20px; } /* Opacity dihapus agar warna asli keluar */
+.stat-icon { font-size: 2.5rem; margin-bottom: 20px; }
 
-/* --- Warna Ikon Data (Pastikan Selector Kuat) --- */
+/* Warna Ikon Data */
 .stat-icon.islam { color: #27ae60; }
 .stat-icon.kristen { color: #2980b9; }
 .stat-icon.katolik { color: #f1c40f; }
@@ -527,7 +453,7 @@ ul { list-style: none; }
     width: 100%;
     max-width: var(--site-width);
     margin: 0 auto;
-    padding: 0 20px; Padding default
+    padding: 0 20px;
 }
 
 .data-page .stats-grid {
@@ -578,7 +504,7 @@ ul { list-style: none; }
     }
     
     /* 2. PADDING CONTAINER DATA KHUSUS */
-    .data-layout { padding: 0 20px !important; }
+    .data-layout { padding: 0 0 !important; } /* Hapus padding agar stat-card padding yg bekerja */
 
     /* 3. Flat Design di Mobile (Hapus Kotak) */
     .content-container,
@@ -588,7 +514,6 @@ ul { list-style: none; }
     .structure-container,
     .chart-image-box, 
     .service-card,
-    /* .stat-card,  <-- Hapus stat-card dari sini agar di data page tetap ada kotak */
     .official-card {
         box-shadow: none !important;
         border-radius: 0 !important;
@@ -602,8 +527,9 @@ ul { list-style: none; }
     
     /* PENGECUALIAN KHUSUS: Data Keagamaan Mobile tetap Kotak & 2 Kolom */
     .data-page .stats-grid {
-        grid-template-columns: repeat(2, 1fr) !important; /* Paksa 2 kolom */
+        grid-template-columns: repeat(2, 1fr) !important; 
         gap: 15px !important;
+        padding: 0 20px; /* Tambahkan padding 20px ke container grid */
     }
 
     .data-page .stat-card {
@@ -614,7 +540,7 @@ ul { list-style: none; }
         border-radius: 10px !important;
         padding: 20px 10px !important;
         margin: 0 !important;
-        width: auto !important; /* Reset width 100% dari flat design */
+        width: auto !important; 
     }
 
     .data-page .stat-icon { font-size: 2rem; margin-bottom: 10px; }
@@ -672,310 +598,4 @@ footer {
 .copyright {
     text-align: center; padding-top: 30px; border-top: 1px solid #333;
     font-size: 0.9rem; color: #777;
-}
-
-/* =========================================
-   9. LAMBANG PAGE STYLES
-   ========================================= */
-
-/* Override Khusus Halaman Lambang */
-.lambang-page .content-page-padding {
-    padding-top: 140px;
-    padding-bottom: 80px;
-    background-color: #fff; /* Latar Putih Bersih */
-    min-height: 80vh;
-    display: block; 
-}
-
-/* Wrapper Layout Konsisten */
-.lambang-layout {
-    width: 100%;
-    max-width: var(--site-width);
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Kontainer tengah untuk keterbacaan teks */
-.inner-content {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-/* Gambar Lambang */
-.logo-display {
-    text-align: center;
-    margin-bottom: 50px;
-}
-.logo-display img {
-    max-width: 300px;
-    height: auto;
-}
-
-/* Teks Makna */
-.meaning-list {
-    margin-left: 20px;
-    margin-bottom: 30px;
-    text-align: justify;
-    font-size: 1.05rem;
-    color: #444;
-    line-height: 1.8;
-}
-.meaning-list li {
-    margin-bottom: 15px;
-}
-
-/* Tombol Download yang Rapi */
-.download-section {
-    margin-top: 40px;
-    padding-top: 30px;
-    border-top: 1px solid #eee;
-}
-.download-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-}
-.download-btn {
-    display: flex;
-    align-items: center;
-    padding: 15px 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    text-decoration: none;
-    color: var(--dark-color);
-    font-weight: 600;
-    margin-bottom: 15px;
-    transition: 0.3s;
-}
-.download-btn:hover {
-    background-color: #f0fdf4;
-    border-color: var(--primary-color);
-    color: var(--primary-color);
-    transform: translateX(5px);
-}
-.download-btn i {
-    font-size: 1.5rem;
-    margin-right: 15px;
-    color: var(--primary-color);
-    width: 30px;
-    text-align: center;
-}
-
-/* =========================================
-   10. SEJARAH PAGE STYLES
-   ========================================= */
-
-/* Override Khusus Halaman Sejarah */
-.history-page .content-page-padding {
-    padding-top: 140px;
-    padding-bottom: 80px;
-    background-color: #fff; /* Latar Putih Bersih */
-    min-height: 80vh;
-    display: block; 
-}
-
-/* Wrapper Layout Konsisten */
-.history-layout {
-    width: 100%;
-    max-width: var(--site-width);
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Kontainer Teks */
-.history-content {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.history-section {
-    margin-bottom: 50px;
-}
-
-.history-section h3 {
-    color: var(--primary-color);
-    border-bottom: 3px solid var(--secondary-color);
-    display: inline-block;
-    margin-bottom: 20px;
-    padding-bottom: 5px;
-    font-size: 1.4rem;
-    font-weight: 700;
-}
-
-.history-section h4 {
-    color: var(--dark-color);
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-    font-weight: 700;
-}
-
-/* Style umum paragraf konten */
-.history-content p {
-    text-align: justify;
-    margin-bottom: 15px;
-    line-height: 1.8;
-    color: #444;
-}
-
-.custom-list {
-    padding-left: 20px;
-    margin-bottom: 20px;
-}
-
-.custom-list li {
-    margin-bottom: 8px;
-    list-style-type: disc;
-    color: #444;
-}
-
-/* Timeline Style */
-.timeline-list {
-    list-style: none;
-    padding-left: 10px;
-    border-left: 2px solid #eee;
-    margin-left: 10px;
-}
-.timeline-list li {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 20px;
-    border: none; /* Reset border bawaan global jika ada */
-}
-.timeline-list li::before {
-    content: '';
-    position: absolute;
-    left: -6px;
-    top: 6px;
-    width: 10px;
-    height: 10px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px #fff; 
-    border: 1px solid var(--primary-color);
-}
-.timeline-year {
-    font-weight: 700;
-    color: var(--primary-color);
-    display: block;
-    font-size: 1rem;
-    margin-bottom: 5px;
-}
-
-/* =========================================
-   11. STRUKTUR ORGANISASI PAGE STYLES
-   ========================================= */
-
-/* Override Khusus Halaman Struktur */
-.structure-page .content-page-padding {
-    padding-top: 140px;
-    padding-bottom: 80px;
-    background-color: #fff; /* Latar Putih Bersih */
-    min-height: 80vh;
-    display: block;
-}
-
-/* Wrapper Layout Konsisten */
-.structure-layout {
-    width: 100%;
-    max-width: var(--site-width);
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Area Gambar Bagan */
-.chart-image-box {
-    text-align: center;
-    margin-bottom: 60px;
-    padding: 20px;
-    border: 1px solid #eee;
-    border-radius: 10px;
-}
-
-.chart-image-box img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Grid Pejabat (1 Kolom Tengah) */
-.officials-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-/* Kartu Pejabat */
-.official-card {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border-left: 5px solid var(--primary-color);
-    transition: transform 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border-top: 1px solid #eee;
-    border-right: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-}
-
-.official-card:hover {
-    transform: translateY(-5px);
-}
-
-.official-card h3 {
-    font-size: 0.9rem;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-.official-card .name {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--dark-color);
-    margin-bottom: 5px;
-}
-
-.official-card .nip {
-    font-size: 0.9rem;
-    color: #666;
-    font-style: italic;
-}
-
-/* Highlight Kepala Kantor */
-.head-office {
-    background: linear-gradient(to right, #fff, #f0fdf4);
-    border-left: 6px solid var(--secondary-color);
-    padding: 40px;
-    margin-bottom: 30px;
-}
-
-.head-office h3 {
-    color: var(--primary-color);
-    font-size: 1.1rem;
-}
-
-.head-office .name {
-    font-size: 1.7rem;
-}
-
-/* Media Query untuk Mobile Flat Design khusus halaman struktur */
-@media (max-width: 968px) {
-    .official-card {
-        /* Hapus shadow dan border radius di mobile jika ingin konsisten flat */
-        box-shadow: none; 
-        border-radius: 0;
-        border-top: none;
-        border-right: none;
-        border-left: 5px solid var(--primary-color); /* Pertahankan aksen warna kiri */
-        border-bottom: 1px solid #eee;
-    }
 }
