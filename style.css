@@ -582,7 +582,7 @@ footer {
 }
 .social-links a:hover { background: var(--primary-color); transform: translateY(-3px); }
 
-.copyright {
+.copyright p {
     text-align: center; padding-top: 30px; border-top: 1px solid #333;
     font-size: 0.9rem; color: #777;
 }
