@@ -7,7 +7,7 @@
     --dark-color: #333;
     --light-color: #f9f9f9; 
     --text-color: #555;
-    --site-width: 1200px; /* Lebar Maksimal Konsisten */
+    --site-width: 1100px; /* DIUBAH: Lebar Maksimal Konsisten 1100px */
 }
 
 * {
@@ -57,7 +57,6 @@ ul { list-style: none; }
 .logo { display: flex; align-items: center; text-decoration: none; }
 .logo img { height: 50px; margin-right: 12px; }
 
-/* Container Teks Logo */
 .logo-text-container {
     display: flex;
     flex-direction: column;
@@ -88,7 +87,7 @@ ul { list-style: none; }
 
 .nav-links a:hover { color: var(--primary-color); background-color: #f9f9f9; }
 
-/* Tombol PTSP Desktop (Pengecualian) */
+/* Tombol PTSP Desktop */
 .nav-links li:last-child a.btn-login {
     height: auto; padding: 10px 25px; margin-left: 10px;
     background: var(--primary-color); color: white !important;
@@ -115,12 +114,18 @@ ul { list-style: none; }
     font-size: 0.9rem; transition: 0.2s; text-align: left; white-space: nowrap;
     border-bottom: 1px solid #f9f9f9;
 }
+
 .dropdown-content a:last-child { border-bottom: none; }
+
 .dropdown-content a:hover {
     background-color: #f0fdf4; color: var(--primary-color); padding-left: 25px;
 }
 
-.dropdown:hover .dropdown-content { display: block; animation: fadeIn 0.2s ease-in-out; }
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
 .dropbtn i { font-size: 0.8rem; margin-left: 5px; transition: 0.3s; }
 .dropdown:hover .dropbtn i { transform: rotate(180deg); }
 
@@ -137,7 +142,7 @@ ul { list-style: none; }
 
 @media (max-width: 968px) {
     .navbar { height: 70px; padding: 0; }
-    .nav-container { padding: 0 20px; }
+    .nav-container { padding: 0 20px; } /* Padding Mobile Navbar */
     
     .desktop-menu { display: none; }
     .mobile-controls { display: flex; align-items: center; gap: 15px; }
@@ -174,7 +179,9 @@ ul { list-style: none; }
         padding: 15px 20px; color: var(--dark-color); border-bottom: 1px solid #f5f5f5;
         font-weight: 700; font-size: 1rem;
     }
-    .mobile-submenu-group { background-color: #fafafa; border-bottom: 1px solid #eee; }
+    .mobile-submenu-group {
+        background-color: #fafafa; border-bottom: 1px solid #eee;
+    }
     .mobile-menu-label {
         padding: 15px 20px 5px; font-size: 0.75rem; font-weight: 800;
         color: #aaa; text-transform: uppercase; letter-spacing: 1px;
@@ -266,7 +273,7 @@ ul { list-style: none; }
     display: flex; flex-direction: column; align-items: center;
 }
 
-/* Kontainer Utama Global */
+/* Kontainer Utama Global (1100px) */
 .content-container,
 .structure-container {
     width: 100%;
@@ -504,7 +511,7 @@ ul { list-style: none; }
     }
     
     /* 2. PADDING CONTAINER DATA KHUSUS */
-    .data-layout { padding: 0 0 !important; } /* Hapus padding agar stat-card padding yg bekerja */
+    .data-layout { padding: 0 20px !important; }
 
     /* 3. Flat Design di Mobile (Hapus Kotak) */
     .content-container,
@@ -527,9 +534,9 @@ ul { list-style: none; }
     
     /* PENGECUALIAN KHUSUS: Data Keagamaan Mobile tetap Kotak & 2 Kolom */
     .data-page .stats-grid {
-        grid-template-columns: repeat(2, 1fr) !important; 
+        grid-template-columns: repeat(2, 1fr) !important; /* Paksa 2 kolom */
         gap: 15px !important;
-        padding: 0 20px; /* Tambahkan padding 20px ke container grid */
+        padding: 0 20px;
     }
 
     .data-page .stat-card {
@@ -540,7 +547,7 @@ ul { list-style: none; }
         border-radius: 10px !important;
         padding: 20px 10px !important;
         margin: 0 !important;
-        width: auto !important; 
+        width: auto !important; /* Reset width 100% dari flat design */
     }
 
     .data-page .stat-icon { font-size: 2rem; margin-bottom: 10px; }
@@ -598,4 +605,451 @@ footer {
 .copyright {
     text-align: center; padding-top: 30px; border-top: 1px solid #333;
     font-size: 0.9rem; color: #777;
+}
+
+/* =========================================
+   9. LAMBANG PAGE STYLES
+   ========================================= */
+
+/* Override Khusus Halaman Lambang */
+.lambang-page .content-page-padding {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    background-color: #fff;
+    min-height: 80vh;
+    display: block; 
+}
+
+/* Wrapper Layout Konsisten */
+.lambang-layout {
+    width: 100%;
+    max-width: var(--site-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Kontainer tengah untuk keterbacaan teks */
+.inner-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Gambar Lambang */
+.logo-display {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.logo-display img {
+    max-width: 300px;
+    height: auto;
+}
+
+/* Teks Makna */
+.meaning-list {
+    margin-left: 20px;
+    margin-bottom: 30px;
+    text-align: justify;
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.8;
+}
+.meaning-list li {
+    margin-bottom: 15px;
+}
+
+/* Tombol Download yang Rapi */
+.download-section {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+.download-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+.download-btn {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+.download-btn:hover {
+    background-color: #f0fdf4;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+.download-btn i {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: var(--primary-color);
+    width: 30px;
+    text-align: center;
+}
+
+/* =========================================
+   10. SEJARAH PAGE STYLES
+   ========================================= */
+
+/* Override Khusus Halaman Sejarah */
+.history-page .content-page-padding {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    background-color: #fff; 
+    min-height: 80vh;
+    display: block; 
+}
+
+/* Wrapper Layout Konsisten */
+.history-layout {
+    width: 100%;
+    max-width: var(--site-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Kontainer Teks */
+.history-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.history-section {
+    margin-bottom: 50px;
+}
+
+.history-section h3 {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    display: inline-block;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.history-section h4 {
+    color: var(--dark-color);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Style umum paragraf konten */
+.history-content p {
+    text-align: justify;
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.custom-list {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.custom-list li {
+    margin-bottom: 8px;
+    list-style-type: disc;
+    color: #444;
+}
+
+/* Timeline Style */
+.timeline-list {
+    list-style: none;
+    padding-left: 10px;
+    border-left: 2px solid #eee;
+    margin-left: 10px;
+}
+.timeline-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+    border: none;
+}
+.timeline-list li::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #fff; 
+    border: 1px solid var(--primary-color);
+}
+.timeline-year {
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+/* =========================================
+   11. STRUKTUR ORGANISASI PAGE STYLES
+   ========================================= */
+
+/* Override Khusus Halaman Struktur */
+.structure-page .content-page-padding {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    background-color: #fff;
+    min-height: 80vh;
+    display: block;
+}
+
+/* Wrapper Layout Konsisten */
+.structure-layout {
+    width: 100%;
+    max-width: var(--site-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Area Gambar Bagan */
+.chart-image-box {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+.chart-image-box img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Grid Pejabat (1 Kolom Tengah) */
+.officials-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Kartu Pejabat */
+.official-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--primary-color);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-top: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.official-card:hover { transform: translateY(-5px); }
+.official-card h3 {
+    font-size: 0.9rem; color: #888; text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: 10px; font-weight: 700;
+}
+.official-card .name {
+    font-size: 1.3rem; font-weight: 700; color: var(--dark-color);
+    margin-bottom: 5px;
+}
+.official-card .nip { font-size: 0.9rem; color: #666; font-style: italic; }
+
+/* Highlight Kepala Kantor */
+.head-office {
+    background: linear-gradient(to right, #fff, #f0fdf4);
+    border-left: 6px solid var(--secondary-color);
+    padding: 40px; margin-bottom: 30px;
+}
+
+.head-office h3 { color: var(--primary-color); font-size: 1.1rem; }
+.head-office .name { font-size: 1.7rem; }
+
+/* Media Query untuk Mobile Flat Design khusus halaman struktur */
+@media (max-width: 968px) {
+    .official-card {
+        box-shadow: none; border-radius: 0; border-top: none;
+        border-right: none; border-left: 5px solid var(--primary-color);
+        border-bottom: 1px solid #eee;
+    }
+}
+
+/* =========================================
+   12. TUPOKSI PAGE STYLES
+   ========================================= */
+
+/* Override Layout Khusus Halaman Tupoksi */
+.tupoksi-page .content-page-padding {
+    padding-top: 140px; 
+    padding-bottom: 80px;
+    background-color: #fff;
+    min-height: 80vh;
+    display: block;
+}
+
+/* Kontainer Utama & Content Container */
+.tupoksi-page .content-container {
+    max-width: var(--site-width); 
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Inner Text Wrapper for Readability */
+.tupoksi-page .inner-tupoksi-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/* Typography Overrides */
+.tupoksi-page h3 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    display: inline-block;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.tupoksi-page h4 {
+    color: var(--dark-color);
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+.tupoksi-page p {
+    text-align: justify;
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Lists */
+.tupoksi-page ul.custom-list {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+.tupoksi-page ul.custom-list li {
+    margin-bottom: 8px;
+    list-style-type: lower-alpha;
+}
+.tupoksi-page ol {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+.tupoksi-page ol li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+    color: #333;
+}
+.tupoksi-page ol li strong {
+    color: var(--primary-color);
+}
+
+/* Links and Notes */
+.tupoksi-page .official-link {
+    margin-top: 25px;
+    font-style: italic;
+    background: #f5f7fa;
+    padding: 12px 18px;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 6px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tupoksi-page .official-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+.tupoksi-page .official-link a:hover {
+    text-decoration: underline;
+}
+.tupoksi-page .closing-note {
+    margin-top: 25px;
+    text-align: justify;
+    font-weight: 500;
+    color: var(--dark-color);
+    background: #f9fafb;
+    padding: 14px 18px;
+    border-left: 4px solid var(--secondary-color);
+    border-radius: 6px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================
+   13. VISI MISI PAGE STYLES
+   ========================================= */
+
+/* Override Layout Khusus Halaman Visi Misi */
+.visi-misi-page .content-page-padding {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    background-color: #fff;
+    min-height: 80vh;
+    display: block;
+}
+
+/* Wrapper Layout 1200px */
+.visi-misi-layout {
+    width: 100%;
+    max-width: var(--site-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Konten Teks (Agar nyaman dibaca tidak terlalu lebar) */
+.visi-misi-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.visi-box, .misi-box {
+    margin-bottom: 40px;
+}
+
+.visi-box h3, .misi-box h3 {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    display: inline-block;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.visi-box p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+}
+
+.misi-list {
+    padding-left: 20px;
+}
+
+.misi-list li {
+    margin-bottom: 15px;
+    list-style-type: decimal;
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.6;
 }
