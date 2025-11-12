@@ -72,11 +72,7 @@ ul {
     flex-direction: column;
 }
 
-/* Teks Desktop */
-.logo-desktop {
-    display: flex;
-    flex-direction: column;
-}
+.logo-desktop { display: flex; flex-direction: column; }
 
 .logo-title {
     font-size: 1.1rem;
@@ -91,17 +87,10 @@ ul {
     color: #666;
 }
 
-/* Teks Mobile (Hidden by default) */
-.logo-mobile {
-    display: none;
-}
+.logo-mobile { display: none; }
 
-/* --- Desktop Menu Links --- */
-.nav-links {
-    display: flex;
-    gap: 25px;
-    align-items: center;
-}
+/* --- Desktop Menu --- */
+.nav-links { display: flex; gap: 25px; align-items: center; }
 
 .nav-links a {
     font-weight: 600;
@@ -110,11 +99,8 @@ ul {
     font-size: 0.95rem;
 }
 
-.nav-links a:hover {
-    color: var(--primary-color);
-}
+.nav-links a:hover { color: var(--primary-color); }
 
-/* Tombol PTSP Desktop */
 .btn-login {
     padding: 10px 25px;
     background: var(--primary-color);
@@ -130,11 +116,8 @@ ul {
     transform: translateY(-2px);
 }
 
-/* --- Dropdown Menu (Desktop) --- */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
+/* --- Dropdown Menu --- */
+.dropdown { position: relative; display: inline-block; }
 
 .dropdown-content {
     display: none;
@@ -145,17 +128,14 @@ ul {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
     z-index: 9999;
     border-radius: 8px;
-    top: 100%; 
-    left: 0;
-    padding: 10px 0;
-    margin-top: 10px;
+    top: 100%; left: 0;
+    padding: 10px 0; margin-top: 10px;
 }
 
 .dropdown-content::before {
     content: "";
     position: absolute;
-    top: -10px;
-    left: 20px;
+    top: -10px; left: 20px;
     border-width: 0 10px 10px 10px;
     border-style: solid;
     border-color: transparent transparent #fff transparent;
@@ -178,40 +158,19 @@ ul {
     border-left: 4px solid var(--primary-color);
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropbtn i {
-    font-size: 0.8rem;
-    margin-left: 5px;
-}
+.dropdown:hover .dropdown-content { display: block; }
+.dropbtn i { font-size: 0.8rem; margin-left: 5px; }
 
 /* =========================================
-   3. MOBILE NAVIGATION (RESPONSIVE)
+   3. MOBILE NAVIGATION
    ========================================= */
-.mobile-controls {
-    display: none;
-}
-
-.mobile-menu-dropdown {
-    display: none;
-}
+.mobile-controls { display: none; }
+.mobile-menu-dropdown { display: none; }
 
 @media (max-width: 968px) {
-    .navbar {
-        padding: 0 20px;
-    }
-
-    .desktop-menu {
-        display: none;
-    }
-
-    .mobile-controls {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
+    .navbar { padding: 0 20px; }
+    .desktop-menu { display: none; }
+    .mobile-controls { display: flex; align-items: center; gap: 15px; }
 
     .btn-login-mobile {
         background-color: var(--primary-color);
@@ -225,222 +184,117 @@ ul {
     }
 
     .logo img { height: 35px; margin-right: 10px; }
-    
     .logo-desktop { display: none; } 
-
     .logo-mobile {
         display: block; 
         font-size: 0.95rem;
         font-weight: 800;
-        color: #333;
+        color: #333; 
         letter-spacing: 0.5px;
         white-space: nowrap;
     }
 
     .hamburger {
-        font-size: 1.8rem;
-        color: var(--primary-color);
-        cursor: pointer;
-        border: none; 
-        padding: 0;
-        background: transparent;
-        display: flex;
-        align-items: center;
+        font-size: 1.8rem; color: var(--primary-color); cursor: pointer;
+        border: none; padding: 0; background: transparent; display: flex; align-items: center;
     }
 
     .mobile-menu-dropdown {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background-color: white;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        border-top: 1px solid #eee;
-        max-height: calc(100vh - 80px); 
-        overflow-y: auto; 
-        z-index: 999;
+        display: none; flex-direction: column; position: absolute;
+        top: 80px; left: 0; width: 100%; background-color: white;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15); border-top: 1px solid #eee;
+        max-height: calc(100vh - 80px); overflow-y: auto; z-index: 999;
     }
     
-    .mobile-menu-dropdown.active {
-        display: flex;
-    }
+    .mobile-menu-dropdown.active { display: flex; }
 
     .mobile-main-link {
-        padding: 18px 25px;
-        color: var(--dark-color);
-        text-decoration: none;
-        border-bottom: 1px solid #f5f5f5;
-        font-weight: 700;
-        font-size: 1rem;
+        padding: 18px 25px; color: var(--dark-color); text-decoration: none;
+        border-bottom: 1px solid #f5f5f5; font-weight: 700; font-size: 1rem;
         background-color: #fff;
     }
-
-    .mobile-main-link i {
-        width: 25px;
-        color: var(--primary-color);
-    }
+    .mobile-main-link i { width: 25px; color: var(--primary-color); }
 
     .mobile-submenu-group {
-        display: flex;
-        flex-direction: column;
-        background-color: #fafafa;
+        display: flex; flex-direction: column; background-color: #fafafa;
         border-bottom: 1px solid #eee;
     }
-
     .mobile-menu-label {
-        padding: 20px 25px 10px 25px;
-        font-size: 0.75rem;
-        font-weight: 800;
-        color: #aaa;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+        padding: 20px 25px 10px 25px; font-size: 0.75rem; font-weight: 800;
+        color: #aaa; text-transform: uppercase; letter-spacing: 1px;
     }
-
     .mobile-submenu-group a {
-        padding: 12px 25px 12px 45px;
-        color: #666;
-        text-decoration: none;
-        font-size: 0.9rem;
-        border-bottom: 1px solid #f0f0f0;
-        transition: 0.2s;
+        padding: 12px 25px 12px 45px; color: #666; text-decoration: none;
+        font-size: 0.9rem; border-bottom: 1px solid #f0f0f0; transition: 0.2s;
     }
-
-    .mobile-submenu-group a:hover, 
-    .mobile-main-link:hover {
-        background-color: #e8f5e9;
-        color: var(--primary-color);
-        padding-left: 30px;
+    .mobile-submenu-group a:hover, .mobile-main-link:hover {
+        background-color: #e8f5e9; color: var(--primary-color); padding-left: 30px;
     }
 }
 
 /* =========================================
-   4. HERO SECTION (SPLIT LAYOUT FIXED)
+   4. HERO SECTION
    ========================================= */
 .hero {
-    /* URL Gambar Background telah diperbarui */
     background: linear-gradient(to right, rgba(0, 60, 35, 0.9), rgba(0, 90, 50, 0.8)), url('https://environesia.co.id/uploads/blog/20250429094811-2025-04-29blog094800.jpg');
     background-size: cover;
     background-position: center;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    padding: 100px 5% 50px 5%;
-    margin-top: 0; 
+    display: flex; align-items: center; justify-content: center;
+    color: white; padding: 100px 5% 50px 5%; margin-top: 0; 
 }
 
 .hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    width: 100%;
-    gap: 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 1200px; width: 100%; gap: 40px;
 }
 
-/* --- Kolom Kiri: Teks --- */
-.hero-text {
-    flex: 1.2;
-    text-align: left;
-}
-
+.hero-text { flex: 1.2; text-align: left; }
 .hero-text h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    line-height: 1.1;
-    font-weight: 700;
-    color: var(--secondary-color);
-    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1;
+    font-weight: 700; color: var(--secondary-color); text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
-
 .hero-text p {
-    font-size: 1.15rem;
-    margin-bottom: 35px;
-    line-height: 1.8;
-    color: #f4f4f4;
-    max-width: 90%;
+    font-size: 1.15rem; margin-bottom: 35px; line-height: 1.8;
+    color: #f4f4f4; max-width: 90%;
 }
 
 .btn-cta {
-    padding: 14px 35px;
-    background: var(--secondary-color);
-    color: var(--dark-color);
-    font-weight: 700;
-    border-radius: 50px;
-    transition: 0.3s;
-    border: none;
-    cursor: pointer;
-    display: inline-block;
-    box-shadow: 0 5px 15px rgba(241, 196, 15, 0.3);
+    padding: 14px 35px; background: var(--secondary-color); color: var(--dark-color);
+    font-weight: 700; border-radius: 50px; transition: 0.3s; border: none; cursor: pointer;
+    display: inline-block; box-shadow: 0 5px 15px rgba(241, 196, 15, 0.3);
 }
-
 .btn-cta:hover {
-    background: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+    background: #fff; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
 }
 
-/* --- Kolom Kanan: Foto (RAPI) --- */
+/* Hero Image (Head of Office) */
 .hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 50vh;
+    flex: 1; display: flex; justify-content: center; align-items: center;
+    position: relative; height: 50vh;
 }
-
 .image-frame {
-    position: relative;
-    width: fit-content; 
-    height: 100%;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(8px);
+    position: relative; width: fit-content; height: 100%; padding: 15px;
+    background: rgba(255, 255, 255, 0.1); border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
 }
-
 .image-frame img {
-    width: auto;
-    height: 100%;
-    max-height: 80%;
-    object-fit: contain;
-    border-radius: 12px;
-    display: block;
+    width: auto; height: 100%; max-height: 85%; object-fit: contain;
+    border-radius: 12px; display: block;
 }
 
-/* Label Nama di Bawah Foto (TANPA KOTAK) */
+/* Label Nama (No Box) */
 .kakan-label {
-    text-align: center;
-    margin-top: 15px; /* Jarak dari gambar */
-    color: white;
-    width: 100%;
+    text-align: center; margin-top: 15px; color: white; width: 100%;
 }
-
 .kakan-label .jabatan {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--secondary-color);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 4px;
-    font-weight: 600;
+    display: block; font-size: 0.85rem; color: var(--secondary-color);
+    text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; font-weight: 600;
 }
-
 .kakan-label .nama {
-    display: block;
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    display: block; font-size: 1.1rem; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 /* Responsive Hero */
@@ -450,224 +304,57 @@ ul {
     .hero-text { text-align: center; }
     .hero-text p { max-width: 100%; }
     .hero-text h1 { font-size: 2.8rem; }
-    
-    /* SEMBUNYIKAN FOTO KEPALA KANTOR DI TABLET & HP */
-    .hero-image { display: none; } /* Tetap sembunyikan di mobile */
+    /* Hide photo on mobile/tablet */
+    .hero-image { display: none; }
 }
 
 /* =========================================
    5. PAGE CONTENT & COMPONENTS
    ========================================= */
 .content-page-padding {
-    padding-top: 120px;
-    padding-bottom: 60px;
-    background-color: var(--light-color);
-    min-height: 80vh;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-top: 120px; padding-bottom: 60px;
+    background-color: var(--light-color); min-height: 80vh;
+    padding-left: 5%; padding-right: 5%;
 }
 
 .content-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 50px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    max-width: 1000px; margin: 0 auto; background: #fff;
+    padding: 50px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-.section-title {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
+.section-title { text-align: center; margin-bottom: 60px; }
 .section-title h2 {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    font-weight: 700;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 15px;
+    font-size: 2.5rem; color: var(--primary-color); font-weight: 700;
+    position: relative; display: inline-block; padding-bottom: 15px;
 }
-
 .section-title h2::after {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 4px;
-    background: var(--secondary-color);
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
+    content: ''; position: absolute; width: 60px; height: 4px;
+    background: var(--secondary-color); bottom: 0; left: 50%;
+    transform: translateX(-50%); border-radius: 2px;
 }
-
 .section-title p { color: #777; margin-top: 15px; font-size: 1.1rem; }
 
-/* --- Services Card (Layanan) --- */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.service-card {
-    background: white;
-    padding: 35px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: 0.3s;
-    border-bottom: 4px solid transparent;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    height: 100%;
-    border: 1px solid #eee;
-}
-
-.service-card:hover {
-    transform: translateY(-8px);
-    border-bottom: 4px solid var(--secondary-color);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-
-.service-icon {
-    font-size: 2.2rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    background: #e8f5e9;
-    padding: 18px;
-    border-radius: 12px;
-    display: inline-flex;
-}
-
-.service-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 15px;
-    color: var(--primary-color);
-    font-weight: 700;
-    line-height: 1.4;
-}
-
-.service-desc {
-    font-size: 0.95rem;
-    color: #666;
-    margin-bottom: 20px;
-    line-height: 1.7;
-}
-
-.service-list { padding-left: 20px; margin: 0; }
-.service-list li {
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-    color: var(--dark-color);
-    font-weight: 500;
-    list-style-type: lower-alpha;
-}
-.divider { height: 1px; background: #eee; width: 100%; margin: 15px 0 20px 0; }
-
-/* --- Organization Structure (1 Column Centered) --- */
-.structure-container {
-    max-width: 1000px; margin: 0 auto; padding: 0 20px;
-}
-.chart-image-box {
-    background: white; padding: 20px; border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; margin-bottom: 50px;
-}
-.chart-image-box img { max-width: 100%; height: auto; border-radius: 5px; }
-
-.officials-grid {
-    display: flex; flex-direction: column; gap: 25px; max-width: 600px; margin: 0 auto;
-}
-.official-card {
-    background: white; padding: 30px; border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--primary-color);
-    transition: transform 0.3s; display: flex; flex-direction: column;
-    align-items: center; text-align: center;
-}
-.official-card:hover { transform: translateY(-5px); }
-.official-card h3 {
-    font-size: 0.9rem; color: #888; text-transform: uppercase;
-    letter-spacing: 1px; margin-bottom: 10px; font-weight: 700;
-}
-.official-card .name { font-size: 1.3rem; font-weight: 700; color: var(--dark-color); margin-bottom: 5px; }
-.official-card .nip { font-size: 0.9rem; color: #666; font-style: italic; }
-
-.head-office {
-    background: linear-gradient(to right, #fff, #e8f5e9);
-    border-left: 6px solid var(--secondary-color); padding: 40px; margin-bottom: 30px;
-}
-.head-office h3 { color: var(--primary-color); font-size: 1.1rem; }
-.head-office .name { font-size: 1.7rem; }
-
-/* --- Timeline (Sejarah) --- */
-.timeline-list { list-style: none; padding-left: 0; }
-.timeline-list li {
-    position: relative; padding-left: 35px; margin-bottom: 20px;
-    border-left: 3px solid #eee;
-}
-.timeline-list li::before {
-    content: ''; position: absolute; left: -6.5px; top: 6px; width: 10px; height: 10px;
-    background: var(--primary-color); border-radius: 50%; box-shadow: 0 0 0 4px rgba(0, 105, 62, 0.2);
-}
-.timeline-year { font-weight: 700; color: var(--primary-color); display: block; font-size: 1rem; margin-bottom: 5px; }
-
-/* --- Data Keagamaan --- */
-.data-section { margin-bottom: 60px; }
-.data-title {
-    font-size: 1.6rem; color: var(--primary-color); margin-bottom: 25px;
-    border-left: 6px solid var(--secondary-color); padding-left: 20px; font-weight: 700;
-}
-.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
-.stat-card {
-    background: white; padding: 30px; border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center;
-    transition: 0.3s; border-bottom: 4px solid transparent; border-top: 1px solid #eee;
-}
-.stat-card:hover {
-    transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    border-bottom: 4px solid var(--primary-color);
-}
-.stat-icon { font-size: 2.5rem; margin-bottom: 20px; opacity: 0.9; }
-.stat-label { font-size: 1rem; color: #666; margin-bottom: 8px; font-weight: 600; }
-.stat-number { font-size: 2rem; font-weight: 800; color: var(--dark-color); }
-.islam { color: #27ae60; } .kristen { color: #2980b9; } .katolik { color: #f1c40f; }
-.hindu { color: #e67e22; } .budha { color: #e74c3c; } .khonghucu { color: #8e44ad; }
-.data-source {
-    margin-top: 40px; text-align: center; font-size: 0.9rem; color: #777;
-    font-style: italic; background: #fff; padding: 10px; border-radius: 5px; display: inline-block;
-}
-
-/* --- Berita Redirect --- */
-.news-redirect-card {
-    background: white; padding: 60px; border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1); text-align: center;
-    max-width: 700px; width: 90%;
-}
-.news-icon { font-size: 4.5rem; color: var(--primary-color); margin-bottom: 25px; }
-.news-redirect-card h2 { color: var(--dark-color); margin-bottom: 15px; font-size: 1.8rem; }
-.news-redirect-card p { color: #666; margin-bottom: 30px; line-height: 1.6; }
-.btn-news-open {
-    display: inline-block; background-color: var(--primary-color);
-    color: white; padding: 15px 35px; border-radius: 50px;
-    text-decoration: none; font-weight: bold; transition: 0.3s;
-    border: 2px solid var(--primary-color);
-}
-.btn-news-open:hover {
-    background-color: white; color: var(--primary-color);
-    transform: translateY(-3px);
-}
-
-/* --- Contact Page & Form --- */
+/* --- Contact Page Styling --- */
 .contact-wrapper {
     max-width: 1150px; margin: 0 auto; display: grid;
     grid-template-columns: 1fr 1.5fr; gap: 50px; padding: 0 20px;
 }
+
 .contact-info-box, .contact-form-box {
     background: white; padding: 40px; border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: fit-content;
 }
+
+/* Judul Box di Kontak (Baru) */
+.box-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    font-weight: 700;
+}
+
 .info-item { margin-bottom: 30px; display: flex; align-items: flex-start; }
 .info-item i {
     font-size: 1.4rem; color: var(--primary-color); margin-right: 20px; margin-top: 5px;
@@ -682,6 +369,7 @@ ul {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 .map-container iframe { width: 100%; height: 100%; border: 0; }
+
 .form-group { margin-bottom: 20px; }
 .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark-color); }
 .form-group input, .form-group textarea {
@@ -698,10 +386,116 @@ ul {
 }
 .btn-submit:hover { background: #005230; }
 
-@media (max-width: 768px) { .contact-wrapper { grid-template-columns: 1fr; } }
+/* --- Components General (Services, Structure, etc) --- */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.service-card {
+    background: white; padding: 35px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s; border-bottom: 4px solid transparent; text-align: left;
+    display: flex; flex-direction: column; align-items: flex-start; height: 100%; border: 1px solid #eee;
+}
+.service-card:hover {
+    transform: translateY(-8px); border-bottom: 4px solid var(--secondary-color);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+.service-icon {
+    font-size: 2.2rem; color: var(--primary-color); margin-bottom: 20px;
+    background: #e8f5e9; padding: 18px; border-radius: 12px; display: inline-flex;
+}
+.service-card h3 { font-size: 1.25rem; margin-bottom: 15px; color: var(--primary-color); font-weight: 700; line-height: 1.4; }
+.service-desc { font-size: 0.95rem; color: #666; margin-bottom: 20px; line-height: 1.7; }
+.service-list { padding-left: 20px; margin: 0; }
+.service-list li { margin-bottom: 8px; font-size: 0.9rem; color: var(--dark-color); font-weight: 500; list-style-type: lower-alpha; }
+.divider { height: 1px; background: #eee; width: 100%; margin: 15px 0 20px 0; }
+
+/* Stats & Structure */
+.structure-container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+.chart-image-box { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; margin-bottom: 50px; }
+.officials-grid { display: flex; flex-direction: column; gap: 25px; max-width: 600px; margin: 0 auto; }
+.official-card {
+    background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--primary-color); display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.head-office { background: linear-gradient(to right, #fff, #e8f5e9); border-left: 6px solid var(--secondary-color); padding: 40px; margin-bottom: 30px; }
+.timeline-list li { position: relative; padding-left: 35px; margin-bottom: 20px; border-left: 3px solid #eee; }
+.timeline-list li::before {
+    content: ''; position: absolute; left: -6.5px; top: 6px; width: 10px; height: 10px;
+    background: var(--primary-color); border-radius: 50%;
+}
+
+/* Data Stats */
+.data-section { margin-bottom: 60px; }
+.data-title { font-size: 1.6rem; color: var(--primary-color); margin-bottom: 25px; border-left: 6px solid var(--secondary-color); padding-left: 20px; font-weight: 700; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
+.stat-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; border-top: 1px solid #eee; }
+.stat-number { font-size: 2rem; font-weight: 800; color: var(--dark-color); }
+.stat-icon { font-size: 2.5rem; margin-bottom: 20px; opacity: 0.9; }
+.islam { color: #27ae60; } .kristen { color: #2980b9; } .katolik { color: #f1c40f; }
+.hindu { color: #e67e22; } .budha { color: #e74c3c; } .khonghucu { color: #8e44ad; }
+
+/* News Redirect */
+.news-redirect-card { background: white; padding: 60px; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); text-align: center; max-width: 700px; width: 90%; }
+.btn-news-open { display: inline-block; background-color: var(--primary-color); color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; }
 
 /* =========================================
-   6. FOOTER (FLEX ALIGNED)
+   6. MOBILE FLAT DESIGN & ADJUSTMENTS
+   ========================================= */
+@media (max-width: 968px) {
+    /* Atur Ulang Layout Kontak di Mobile */
+    .contact-wrapper { grid-template-columns: 1fr; padding: 0; gap: 30px; }
+    
+    /* MOBILE FLAT DESIGN: Hapus kotak, shadow, dan border di semua halaman */
+    .content-page-padding {
+        background-color: #fff; /* Latar belakang putih */
+        padding-left: 20px; padding-right: 20px; padding-top: 100px;
+    }
+
+    /* Hapus style "Card" pada container utama */
+    .content-container,
+    .contact-info-box,
+    .contact-form-box,
+    .news-redirect-card,
+    .structure-container,
+    .chart-image-box, 
+    .service-card,
+    .stat-card,
+    .official-card {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important; /* Hapus padding internal kotak */
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border: none !important;
+        background: transparent !important;
+    }
+    
+    /* Tambahkan margin bawah agar elemen tidak menempel */
+    .contact-info-box, .service-card, .stat-card, .official-card {
+        margin-bottom: 40px !important;
+        border-bottom: 1px solid #eee !important; /* Garis pemisah tipis */
+        padding-bottom: 30px !important;
+    }
+
+    /* Khusus Form Input di Mobile */
+    .form-group input, .form-group textarea {
+        background-color: #f9f9f9; /* Beri warna input agar terlihat di bg putih */
+        border: 1px solid #eee;
+    }
+
+    /* Peta di Mobile */
+    .map-container { height: 250px; margin-top: 20px; box-shadow: none; border-radius: 8px; }
+    
+    /* Judul Section di Mobile */
+    .section-title h2 { font-size: 2rem; }
+    .box-title { font-size: 1.3rem; border-bottom: 1px solid #eee; }
+
+    /* Khusus Layanan Card di Mobile */
+    .service-icon { background: transparent; padding: 0; margin-bottom: 10px; }
+    .service-card:hover { transform: none; border-bottom: 1px solid #eee; }
+}
+
+/* =========================================
+   7. FOOTER
    ========================================= */
 footer {
     background: #1a1a1a; color: white; padding: 70px 5% 30px; font-size: 0.95rem;
@@ -716,16 +510,10 @@ footer {
 }
 .footer-col p { line-height: 1.6; color: #aaa; margin-bottom: 15px; }
 
-/* Fix Kontak Alignment Footer */
-.contact-item {
-    display: flex; align-items: flex-start; margin-bottom: 18px; color: #ccc;
-}
-.contact-item i {
-    min-width: 25px; color: var(--secondary-color); margin-top: 5px; margin-right: 12px;
-}
+.contact-item { display: flex; align-items: flex-start; margin-bottom: 18px; color: #ccc; }
+.contact-item i { min-width: 25px; color: var(--secondary-color); margin-top: 5px; margin-right: 12px; }
 .contact-item span { line-height: 1.6; }
 
-/* Social */
 .social-links a {
     display: inline-flex; width: 40px; height: 40px; background: #333;
     align-items: center; justify-content: center; border-radius: 50%; margin-right: 10px;
