@@ -231,10 +231,17 @@ ul { list-style: none; }
     .logo img { height: 35px; margin-right: 10px; }
     .logo-desktop { display: none; } 
     
-    /* Logo Mobile 1 Baris Hitam */
+    /* Logo Mobile 2 Baris */
     .logo-mobile {
-        display: block; font-size: 0.95rem; font-weight: 800;
-        color: #333; letter-spacing: 0.5px; white-space: nowrap;
+        display: flex;          /* Gunakan Flexbox */
+        flex-direction: column; /* Susun Vertikal (Atas-Bawah) */
+        justify-content: center;
+        font-size: 0.85rem;     /* Ukuran font disesuaikan */
+        font-weight: 800;
+        color: #333;
+        letter-spacing: 0.5px;
+        line-height: 1.1;       /* Rapatkan jarak antar baris */
+        margin-top: 2px;
     }
 
     .hamburger {
