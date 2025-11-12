@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struktur Organisasi - Kemenag Kota Depok</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Style Khusus Halaman Struktur */
+        .content-page-padding {
+            padding-top: 120px;
+            padding-bottom: 60px;
+            background-color: var(--light-color);
+            min-height: 80vh;
+        }
+
+        .structure-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Bagian Gambar Bagan */
+        .chart-image-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .chart-image-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* Grid Pejabat */
+        .officials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .official-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .official-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .official-card h3 {
+            font-size: 0.95rem;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .official-card .name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+
+        .official-card .nip {
+            font-size: 0.9rem;
+            color: #888;
+            font-style: italic;
+        }
+
+        /* Highlight untuk Kepala Kantor (Full Width di layar besar) */
+        .head-office {
+            grid-column: 1 / -1;
+            background: linear-gradient(to right, #fff, #f0fdf4);
+            text-align: center;
+            border-left: 5px solid var(--secondary-color);
+        }
+        
+        .head-office h3 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+        
+        .head-office .name {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <section class="content-page-padding">
+        <div class="section-title">
+            <h2>Struktur Organisasi</h2>
+            <p>Susunan Pejabat Kantor Kementerian Agama Kota Depok</p>
+        </div>
+
+        <div class="structure-container">
+            
+            <div class="chart-image-box">
+                <img src="https://kemenagdepok.github.io/landing/gambar/struktur-kemenag-depok.webp" alt="Bagan Struktur Organisasi Kemenag Depok">
+                <p style="margin-top: 10px; color: #666; font-size: 0.9rem;">Bagan Struktur Organisasi</p>
+            </div>
+
+            <div class="officials-grid">
+                
+                <div class="official-card head-office">
+                    <h3>Kepala Kantor Kementerian Agama Kota Depok</h3>
+                    <div class="name">H. ENJAT MUJIAT, S.Ag., M.H.</div>
+                    <div class="nip">NIP. 197007172002121003</div>
+                </div>
+
+                <div class="official-card">
+                    <h3>Kepala Subbag Tata Usaha</h3>
+                    <div class="name">H. HASAN BASRI, M.Pd</div>
+                    <div class="nip">NIP. 197103031991031002</div>
+                </div>
+
+                <div class="official-card">
+                    <h3>Kepala Seksi Pendidikan Madrasah</h3>
+                    <div class="name">-</div>
+                    <div class="nip">NIP. -</div>
+                </div>
+
+                <div class="official-card">
+                    <h3>Kepala Seksi Pendidikan Agama dan Keagamaan Islam</h3>
+                    <div class="name">SOLAHUDIN AL AYUBI, S.Ag, MA</div>
+                    <div class="nip">NIP. 197301261998021002</div>
+                </div>
+
+                <div class="official-card">
+                    <h3>Kepala Seksi Penyelenggaraan Haji dan Umrah</h3>
+                    <div class="name">H. FAUZAN, S.Kom., M.H.</div>
+                    <div class="nip">NIP. 198101052003121001</div>
+                </div>
+
+                <div class="official-card">
+                    <h3>Kepala Seksi Bimas Islam</h3>
+                    <div class="name">HASAN BASRI, S.Ag, M.M.Pd</div>
+                    <div class="nip">NIP. 196804191992031005</div>
+                </div>
+
+                <div class="official-card">
+                    <h3>Penyelenggara Kristen</h3>
+                    <div class="name">ANTONIUS EDIVATI HASIBUAN, S.Kom.</div>
+                    <div class="nip">NIP. 197806112008011016</div>
+                </div>
+
+                <div class="official-card">
+                    <h3>Penyelenggara Katolik</h3>
+                    <div class="name">-</div>
+                    <div class="nip">NIP. -</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
