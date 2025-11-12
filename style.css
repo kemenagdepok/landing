@@ -417,42 +417,29 @@ ul {
     display: block;
 }
 
-/* --- Kotak Nama Kepala Kantor (Updated Margin) --- */
-.kakan-box {
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(5px);
-    border-radius: 10px;
-    padding: 12px 20px;
-    margin-top: 5px; /* DEKATKAN DENGAN GAMBAR */
+/* Label Nama di Bawah Foto (TANPA KOTAK) */
+.kakan-label {
     text-align: center;
-    width: 90%;
-    max-width: 250px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-top: 15px; /* Jarak dari gambar */
+    color: white;
+    width: 100%;
 }
 
-.kakan-box .jabatan {
+.kakan-label .jabatan {
     display: block;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--secondary-color);
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     font-weight: 600;
-    line-height: 1.2;
 }
 
-.kakan-box .nama {
+.kakan-label .nama {
     display: block;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 700;
-    color: white;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
-    line-height: 1.3;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 /* Responsive Hero */
@@ -464,7 +451,7 @@ ul {
     .hero-text h1 { font-size: 2.8rem; }
     
     /* SEMBUNYIKAN FOTO KEPALA KANTOR DI TABLET & HP */
-    .hero-image { display: none; }
+    .hero-image { display: none; } /* Tetap sembunyikan di mobile */
 }
 
 /* =========================================
