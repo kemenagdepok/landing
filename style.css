@@ -1,4 +1,6 @@
-/* --- CSS Variables & Reset --- */
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
 :root {
     --primary-color: #00693e; /* Hijau Kemenag */
     --secondary-color: #f1c40f; /* Kuning Emas */
@@ -29,10 +31,12 @@ ul {
     list-style: none;
 }
 
-/* --- Navbar (Updated Green Theme) --- */
+/* =========================================
+   2. NAVBAR (WHITE THEME)
+   ========================================= */
 .navbar {
-    background-color: var(--primary-color); /* Hijau Kemenag */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: fixed;
     width: 100%;
     top: 0;
@@ -40,7 +44,7 @@ ul {
     padding: 0 5%;
     height: 80px;
     display: flex;
-    align-items: center; /* Vertikal Center */
+    align-items: center;
 }
 
 .nav-container {
@@ -50,7 +54,7 @@ ul {
     width: 100%;
 }
 
-/* Logo Styling */
+/* --- Logo --- */
 .logo {
     display: flex;
     align-items: center;
@@ -58,11 +62,8 @@ ul {
 }
 
 .logo img {
-    height: 45px;
+    height: 50px;
     margin-right: 12px;
-    background: white; /* Agar logo terlihat jelas di background hijau */
-    border-radius: 50%;
-    padding: 2px;
 }
 
 .logo div {
@@ -73,17 +74,17 @@ ul {
 .logo-title {
     font-size: 1.1rem;
     font-weight: 700;
-    color: white; /* Teks Putih */
-    line-height: 1.1;
+    color: var(--primary-color);
+    line-height: 1.2;
 }
 
 .logo-subtitle {
-    font-size: 0.8rem;
-    font-weight: 400;
-    color: #e0e0e0; /* Putih agak abu */
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #666;
 }
 
-/* Desktop Menu */
+/* --- Desktop Menu --- */
 .nav-links {
     display: flex;
     gap: 25px;
@@ -91,87 +92,130 @@ ul {
 }
 
 .nav-links a {
-    font-weight: 500;
-    color: white; /* Link Putih */
+    font-weight: 600;
+    color: var(--dark-color);
     transition: 0.3s;
     font-size: 0.95rem;
 }
 
 .nav-links a:hover {
-    color: var(--secondary-color); /* Kuning saat hover */
+    color: var(--primary-color);
 }
 
 /* Tombol PTSP Desktop */
 .btn-login {
-    padding: 8px 20px;
-    background: white;
-    color: var(--primary-color) !important;
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: white !important;
     border-radius: 5px;
     font-weight: bold;
 }
 
 .btn-login:hover {
-    background: var(--secondary-color);
-    color: var(--dark-color) !important;
+    background: #005230;
 }
 
-/* Mobile Controls (Hidden on Desktop) */
+/* --- Dropdown Menu (Desktop) --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 180px;
+    width: max-content; /* Lebar otomatis mengikuti teks */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 9999;
+    border-radius: 5px;
+    top: 100%; 
+    left: 0;
+}
+
+.dropdown-content a {
+    color: var(--dark-color);
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.95rem;
+    transition: 0.2s;
+    text-align: left;
+    white-space: nowrap; /* Teks 1 baris */
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    border-left: 4px solid var(--primary-color);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropbtn i {
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+/* =========================================
+   3. MOBILE NAVIGATION CONTROLS
+   ========================================= */
 .mobile-controls {
-    display: none; 
+    display: none; /* Sembunyi di Desktop */
 }
 
 .mobile-menu-dropdown {
-    display: none; /* Hidden by default */
+    display: none;
 }
 
-/* --- RESPONSIVE MOBILE (Max 768px) --- */
 @media (max-width: 768px) {
     .navbar {
-        padding: 0 15px; /* Padding lebih kecil di HP */
+        padding: 0 15px;
     }
 
-    /* Sembunyikan Menu Desktop */
     .desktop-menu {
         display: none;
     }
 
-    /* Tampilkan Kontrol Mobile */
     .mobile-controls {
         display: flex;
         align-items: center;
-        gap: 10px; /* Jarak antara Tombol PTSP dan Hamburger */
+        gap: 10px;
     }
 
-    /* Tombol PTSP Mobile (Kecil) */
+    /* Tombol PTSP Mobile */
     .btn-login-mobile {
-        background-color: white;
-        color: var(--primary-color);
-        font-size: 0.75rem; /* Teks lebih kecil */
+        background-color: var(--primary-color);
+        color: white;
+        font-size: 0.75rem;
         font-weight: bold;
-        padding: 5px 10px;
+        padding: 6px 12px;
         border-radius: 4px;
         text-decoration: none;
-        white-space: nowrap; /* Mencegah teks turun baris */
+        white-space: nowrap;
     }
 
     /* Hamburger Menu Icon */
     .hamburger {
-        font-size: 1.5rem;
-        color: white;
+        font-size: 1.4rem;
+        color: var(--primary-color);
         cursor: pointer;
-        border: 1px solid rgba(255,255,255,0.3);
-        padding: 2px 8px;
+        border: 1px solid var(--primary-color);
+        padding: 4px 8px;
         border-radius: 4px;
     }
 
-    /* Penyesuaian Teks Logo di HP */
+    /* Penyesuaian Logo HP */
     .logo-title { font-size: 0.9rem; }
-    .logo-subtitle { display: none; } /* Sembunyikan subtitle panjang di HP */
-    .logo img { height: 35px; }
+    .logo-subtitle { display: none; }
+    .logo img { height: 40px; }
 
-    /* Mobile Dropdown Menu (Saat dibuka) */
+    /* Menu Dropdown Mobile */
     .mobile-menu-dropdown {
-        display: none; /* Diatur via JS */
+        display: none;
         flex-direction: column;
         position: absolute;
         top: 80px;
@@ -193,16 +237,12 @@ ul {
         border-bottom: 1px solid #f0f0f0;
         font-weight: 600;
     }
-
-    .mobile-menu-dropdown a:hover {
-        background-color: #f9f9f9;
-        color: var(--primary-color);
-    }
 }
 
-/* --- Hero Section --- */
+/* =========================================
+   4. HERO SECTION (BERANDA)
+   ========================================= */
 .hero {
-    /* Menggunakan URL gambar placeholder, bisa diganti dengan foto kantor asli */
     background: linear-gradient(rgba(0, 105, 62, 0.85), rgba(0, 105, 62, 0.7)), url('https://images.unsplash.com/photo-1564121211835-e88c852648ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
     background-position: center;
@@ -214,7 +254,7 @@ ul {
     text-align: center;
     color: white;
     padding: 0 20px;
-    margin-top: 60px; /* Agar tidak tertutup navbar */
+    margin-top: 60px; /* Offset navbar */
 }
 
 .hero h1 {
@@ -244,9 +284,52 @@ ul {
     transform: translateY(-3px);
 }
 
-/* --- Section General --- */
-.section {
-    padding: 80px 5%;
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+}
+
+/* =========================================
+   5. LAYANAN & GRID SYSTEM
+   ========================================= */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: 0.3s;
+    border-bottom: 4px solid transparent;
+    
+    /* Centering Content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-bottom: 4px solid var(--secondary-color);
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    margin-top: 15px;
+    color: var(--dark-color);
 }
 
 .section-title {
@@ -262,43 +345,219 @@ ul {
 .section-title p {
     color: #777;
     margin-top: 10px;
+}
+
+/* =========================================
+   6. SUB-PAGES LAYOUT
+   ========================================= */
+.content-page-padding {
+    padding-top: 120px; /* Jarak dari atas agar tidak ketutup Navbar */
+    padding-bottom: 60px;
+    background-color: var(--light-color);
+    min-height: 80vh;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.content-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* --- Halaman Struktur Organisasi (1 Kolom) --- */
+.structure-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.chart-image-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.chart-image-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.officials-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.official-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--primary-color);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
-/* --- Layanan (Services) --- */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+.official-card:hover { transform: translateY(-3px); }
+
+.official-card h3 {
+    font-size: 1rem;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
-.service-card {
+.official-card .name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 5px;
+}
+
+.official-card .nip {
+    font-size: 0.95rem;
+    color: #888;
+    font-style: italic;
+}
+
+.head-office {
+    background: linear-gradient(to right, #fff, #f0fdf4);
+    border-left: 5px solid var(--secondary-color);
+    padding: 35px;
+    margin-bottom: 20px;
+}
+
+.head-office h3 { color: var(--primary-color); font-size: 1.2rem; }
+.head-office .name { font-size: 1.6rem; }
+
+/* --- Halaman Sejarah (Timeline) --- */
+.timeline-list {
+    list-style: none;
+    padding-left: 0;
+}
+.timeline-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    border-left: 2px solid var(--secondary-color);
+}
+.timeline-list li::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: var(--primary-color);
+    border-radius: 50%;
+}
+.timeline-year {
+    font-weight: bold;
+    color: var(--primary-color);
+    display: block;
+    font-size: 0.9rem;
+}
+
+/* --- Halaman Kontak --- */
+.contact-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.contact-info-box, .contact-form-box {
     background: white;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    text-align: center;
-    transition: 0.3s;
-    border-bottom: 4px solid transparent;
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
-    border-bottom: 4px solid var(--secondary-color);
+.info-item {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: flex-start;
 }
 
-.service-card i {
-    font-size: 3rem;
+.info-item i {
+    font-size: 1.2rem;
     color: var(--primary-color);
-    margin-bottom: 20px;
+    margin-right: 15px;
+    margin-top: 5px;
 }
 
-.service-card h3 {
-    margin-bottom: 15px;
+.map-container {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 250px;
+}
+
+.map-container iframe { width: 100%; height: 100%; border: 0; }
+
+.form-group { margin-bottom: 20px; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
     color: var(--dark-color);
 }
 
-/* --- Footer --- */
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 105, 62, 0.2);
+}
+
+.btn-submit {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .contact-wrapper { grid-template-columns: 1fr; }
+}
+
+/* =========================================
+   7. FOOTER
+   ========================================= */
 footer {
     background: #222;
     color: white;
@@ -346,84 +605,18 @@ footer {
     font-size: 0.9rem;
 }
 
-/* --- Iframe Specific Styles for berita.html --- */
+/* =========================================
+   8. IFRAME CONTAINER (Berita)
+   ========================================= */
 .iframe-container {
-    margin-top: 80px; /* Offset for fixed navbar */
+    margin-top: 80px;
     width: 100%;
-    height: calc(100vh - 80px); /* Full height minus navbar height */
-    overflow: hidden; /* Prevent double scrollbars */
+    height: calc(100vh - 80px);
+    overflow: hidden;
 }
 
 .iframe-container iframe {
     width: 100%;
     height: 100%;
     border: none;
-}
-
-/* --- Responsive Mobile --- */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2rem; }
-    .nav-links { display: none; } /* Tetap disembunyikan untuk tampilan mobile sederhana */
-    .nav-container { justify-content: center; }
-    .logo div { display: none; } /* Sembunyikan teks di HP, hanya tampilkan logo gambar */
-    /* .logo::after { content: "Kemenag Depok"; } */ /* Kalau mau ada teks lagi di HP */
-    .logo img { height: 40px; } /* Ukuran logo lebih kecil di HP */
-}
-
-
-/* --- TAMBAHAN UNTUK DROPDOWN MENU --- */
-
-/* Wadah Dropdown */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Konten Dropdown (disembunyikan secara default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    
-    /* Mengatur Lebar */
-    min-width: 180px;      /* Lebar minimal */
-    width: max-content;    /* PENTING: Lebar otomatis mengikuti teks terpanjang */
-    
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 9999;
-    border-radius: 5px;
-    top: 100%; 
-    left: 0;
-}
-
-/* Link di dalam dropdown */
-.dropdown-content a {
-    color: var(--dark-color);
-    padding: 12px 20px; /* Sedikit diperlebar padding kiri-kanan */
-    text-decoration: none;
-    display: block;
-    font-size: 0.95rem;
-    transition: 0.2s;
-    text-align: left;
-    
-    /* PENTING: Mencegah teks turun ke bawah */
-    white-space: nowrap; 
-}
-
-/* Warna saat link dropdown di-hover */
-.dropdown-content a:hover {
-    background-color: var(--light-color);
-    color: var(--primary-color);
-    border-left: 4px solid var(--primary-color);
-}
-
-/* Tampilkan dropdown saat menu utama di-hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Sedikit styling untuk panah kecil */
-.dropbtn i {
-    font-size: 0.8rem;
-    margin-left: 5px;
 }
