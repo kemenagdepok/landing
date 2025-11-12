@@ -527,7 +527,6 @@ ul { list-style: none; }
     width: 100%;
     max-width: var(--site-width);
     margin: 0 auto;
-    padding: 0 20px; /* Padding default */
 }
 
 .data-page .stats-grid {
@@ -576,9 +575,6 @@ ul { list-style: none; }
     .content-page-padding {
         padding-left: 20px; padding-right: 20px; padding-top: 100px;
     }
-    
-    /* 2. PADDING CONTAINER DATA KHUSUS */
-    .data-layout { padding: 0 20px !important; }
 
     /* 3. Flat Design di Mobile (Hapus Kotak) */
     .content-container,
