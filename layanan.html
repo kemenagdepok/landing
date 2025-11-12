@@ -13,92 +13,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        .content-page-padding {
-            padding-top: 120px;
-            padding-bottom: 60px;
-            background-color: var(--light-color);
-            min-height: 80vh;
-            padding-left: 5%;
-            padding-right: 5%;
-        }
-
-        /* Custom Grid untuk Layanan Baru */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Sedikit lebih lebar agar teks muat */
-            gap: 30px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: 0.3s;
-            border-bottom: 4px solid transparent;
-            
-            /* Mengubah alignment menjadi kiri agar daftar list rapi */
-            text-align: left; 
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            height: 100%;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-bottom: 4px solid var(--secondary-color);
-        }
-
-        /* Ikon Layanan */
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            background: #f0fdf4;
-            padding: 15px;
-            border-radius: 10px;
-            align-self: flex-start; /* Ikon tetap di kiri atas */
-        }
-
-        .service-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-
-        .service-desc {
-            font-size: 0.9rem;
-            color: #555;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        /* Styling List (a, b, c) */
-        .service-list {
-            padding-left: 20px;
-            margin: 0;
-        }
-
-        .service-list li {
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            color: var(--dark-color);
-            font-weight: 500;
-            list-style-type: lower-alpha; /* a, b, c */
-        }
-        
-        /* Garis pemisah tipis */
-        .divider {
-            height: 1px;
-            background: #eee;
-            width: 100%;
-            margin: 10px 0 15px 0;
-        }
-    </style>
 </head>
 <body>
 
@@ -114,7 +28,7 @@
             
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-kaaba"></i></div>
-                <h3>1. Penyelenggaraan Haji dan Umrah</h3>
+                <h3>Penyelenggaraan Haji dan Umrah</h3>
                 <p class="service-desc">Seksi PHU bertugas melaksanakan pelayanan, bimbingan, pembinaan, dan pengelolaan sistem informasi di bidang penyelenggaraan haji dan umrah.</p>
                 <div class="divider"></div>
                 <ol class="service-list">
@@ -126,7 +40,7 @@
 
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-mosque"></i></div>
-                <h3>2. Bimbingan Masyarakat (Bimas) Islam</h3>
+                <h3>Bimbingan Masyarakat (Bimas) Islam</h3>
                 <p class="service-desc">Seksi Bimas Islam bertugas melaksanakan pelayanan, bimbingan, pembinaan, dan pengelolaan sistem informasi di bidang bimbingan masyarakat Islam.</p>
                 <div class="divider"></div>
                 <ol class="service-list">
@@ -138,7 +52,7 @@
 
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-cross"></i></div>
-                <h3>3. Bimbingan Masyarakat (Bimas) Katolik</h3>
+                <h3>Bimbingan Masyarakat (Bimas) Katolik</h3>
                 <p class="service-desc">Penyelenggara Bimas Katolik mempunyai tugas melaksanakan pelayanan, pembinaan, dan pengelolaan sistem informasi di bidang bimbingan masyarakat Katolik.</p>
                 <div class="divider"></div>
                 <ol class="service-list">
@@ -149,7 +63,7 @@
 
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-church"></i></div>
-                <h3>4. Bimbingan Masyarakat (Bimas) Kristen</h3>
+                <h3>Bimbingan Masyarakat (Bimas) Kristen</h3>
                 <p class="service-desc">Penyelenggara Bimas Kristen bertugas melaksanakan pelayanan, bimbingan, pembinaan, dan pengelolaan sistem informasi di bidang bimbingan masyarakat Kristen.</p>
                 <div class="divider"></div>
                 <ol class="service-list">
@@ -160,7 +74,7 @@
 
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-book-quran"></i></div>
-                <h3>5. Pendidikan Agama dan Keagamaan Islam (PAKIS)</h3>
+                <h3>Pendidikan Agama dan Keagamaan Islam (PAKIS)</h3>
                 <p class="service-desc">Seksi PAKIS mempunyai tugas melaksanakan pelayanan, bimbingan, pembinaan, serta pengelolaan sistem informasi di bidang pendidikan agama dan keagamaan Islam pada sekolah.</p>
                 <div class="divider"></div>
                 <ol class="service-list">
@@ -172,7 +86,7 @@
 
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-school"></i></div>
-                <h3>6. Pendidikan Madrasah</h3>
+                <h3>Pendidikan Madrasah</h3>
                 <p class="service-desc">Seksi Pendidikan Madrasah mempunyai tugas melaksanakan pelayanan, bimbingan, dan pembinaan, serta pengelolaan sistem informasi di bidang pendidikan madrasah.</p>
                 <div class="divider"></div>
                 <ol class="service-list">
