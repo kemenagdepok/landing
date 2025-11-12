@@ -515,12 +515,6 @@ ul { list-style: none; }
    6. MOBILE ADJUSTMENTS (PADDING FIX)
    ========================================= */
 @media (max-width: 968px) {
-    /* PENTING: Konsistensi Padding Mobile 20px */
-    .content-page-padding {
-        background-color: #fff; 
-        padding-left: 20px; padding-right: 20px; padding-top: 100px;
-    }
-
     /* Flat Design di Mobile */
     .content-container,
     .contact-info-box,
