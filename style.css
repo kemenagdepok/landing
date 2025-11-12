@@ -54,7 +54,7 @@ ul {
     width: 100%;
 }
 
-/* --- Logo --- */
+/* Logo Styling */
 .logo {
     display: flex;
     align-items: center;
@@ -66,9 +66,20 @@ ul {
     margin-right: 12px;
 }
 
-.logo div {
+/* Pengaturan Teks Logo Baru */
+.logo-text-container {
     display: flex;
     flex-direction: column;
+}
+
+/* Teks Default (Desktop) */
+.logo-desktop {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-mobile {
+    display: none; /* Sembunyi di Desktop */
 }
 
 .logo-title {
@@ -198,22 +209,32 @@ ul {
         white-space: nowrap;
     }
 
-    /* Hamburger Menu Icon */
-    .hamburger {
-        font-size: 1.4rem;
-        color: var(--primary-color);
-        cursor: pointer;
-        border: 1px solid var(--primary-color);
-        padding: 4px 8px;
-        border-radius: 4px;
+    /* 1. Logo Mobile Custom */
+    .logo img { height: 35px; margin-right: 10px; }
+    
+    .logo-desktop {
+        display: none; /* Sembunyikan Teks Panjang */
     }
 
-    /* Penyesuaian Logo HP */
-    .logo-title { font-size: 0.9rem; }
-    .logo-subtitle { display: none; }
-    .logo img { height: 40px; }
+    .logo-mobile {
+        display: block; /* Tampilkan Teks Pendek */
+        font-size: 1rem;
+        font-weight: 800; /* Lebih tebal */
+        color: var(--primary-color);
+        letter-spacing: 0.5px;
+    }
 
-    /* Menu Dropdown Mobile */
+    /* 2. Hamburger Menu Tanpa Border */
+    .hamburger {
+        font-size: 1.6rem;
+        color: var(--primary-color);
+        cursor: pointer;
+        border: none; /* Border Dihapus */
+        padding: 4px 8px;
+        background: transparent; /* Pastikan background transparan */
+    }
+    
+    /* Mobile Dropdown Menu (Tetap Sama) */
     .mobile-menu-dropdown {
         display: none;
         flex-direction: column;
