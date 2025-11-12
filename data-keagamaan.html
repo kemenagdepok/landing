@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Keagamaan - Kemenag Kota Depok</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .content-page-padding {
+            padding-top: 120px;
+            padding-bottom: 60px;
+            background-color: var(--light-color);
+            min-height: 80vh;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .data-section {
+            margin-bottom: 50px;
+        }
+
+        .data-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+            font-weight: 700;
+        }
+
+        /* Grid System untuk Kartu Data */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #aaa; /* Warna default ikon */
+        }
+
+        /* Warna Ikon Khusus */
+        .islam { color: #27ae60; }
+        .kristen { color: #2980b9; }
+        .katolik { color: #f1c40f; }
+        .hindu { color: #e67e22; }
+        .budha { color: #e74c3c; }
+        .khonghucu { color: #8e44ad; }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark-color);
+        }
+
+        .data-source {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            font-style: italic;
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <section class="content-page-padding">
+        <div class="section-title">
+            <h2>Data Keagamaan</h2>
+            <p>Statistik Umat dan Rumah Ibadah Kota Depok</p>
+        </div>
+
+        <div class="content-container" style="max-width: 1100px; margin: 0 auto;">
+            
+            <div class="data-section">
+                <div class="data-title">Data Pemeluk Agama</div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon islam"><i class="fas fa-star-and-crescent"></i></div>
+                        <div class="stat-label">Islam</div>
+                        <div class="stat-number">1.875.655</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon kristen"><i class="fas fa-cross"></i></div>
+                        <div class="stat-label">Kristen</div>
+                        <div class="stat-number">94.878</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon katolik"><i class="fas fa-church"></i></div>
+                        <div class="stat-label">Katolik</div>
+                        <div class="stat-number">29.808</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon hindu"><i class="fas fa-om"></i></div>
+                        <div class="stat-label">Hindu</div>
+                        <div class="stat-number">3.326</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon budha"><i class="fas fa-dharmachakra"></i></div>
+                        <div class="stat-label">Budha</div>
+                        <div class="stat-number">5.230</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon khonghucu"><i class="fas fa-yin-yang"></i></div>
+                        <div class="stat-label">Khonghucu</div>
+                        <div class="stat-number">1.985</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="data-section">
+                <div class="data-title">Data Rumah Ibadah</div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon islam"><i class="fas fa-mosque"></i></div>
+                        <div class="stat-label">Masjid</div>
+                        <div class="stat-number">904</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon islam"><i class="fas fa-praying-hands"></i></div>
+                        <div class="stat-label">Mushola</div>
+                        <div class="stat-number">410</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon kristen"><i class="fas fa-church"></i></div>
+                        <div class="stat-label">Gereja</div>
+                        <div class="stat-number">166</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon katolik"><i class="fas fa-place-of-worship"></i></div>
+                        <div class="stat-label">Gereja Katolik</div>
+                        <div class="stat-number">7</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon hindu"><i class="fas fa-gopuram"></i></div>
+                        <div class="stat-label">Pura</div>
+                        <div class="stat-number">3</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon budha"><i class="fas fa-vihara"></i></div>
+                        <div class="stat-label">Vihara</div>
+                        <div class="stat-number">2</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <div class="data-source">
+                    <i class="fas fa-info-circle"></i> Sumber Data: Kantor Kementerian Agama Kota Depok (Tahun 2024)
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
