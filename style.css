@@ -372,6 +372,9 @@ ul {
     display: flex;
     justify-content: center;
     position: relative;
+    /* Tambahkan atau sesuaikan ini untuk mengontrol tinggi gambar */
+    height: 50vh; /* Tinggi image container 50% dari viewport height */
+    align-items: center; /* Posisikan gambar di tengah vertikal di dalam container */
 }
 
 .image-frame {
@@ -381,12 +384,18 @@ ul {
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
+    height: 100%; /* Frame mengambil tinggi penuh dari hero-image */
+    display: flex; /* Gunakan flexbox untuk menengahkan gambar di dalam frame */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .image-frame img {
-    max-width: 350px;
-    width: 100%;
-    height: auto;
+    /* max-width: 350px; Hapus atau sesuaikan jika Anda ingin ukuran lebih fleksibel */
+    width: auto; /* Lebar otomatis menyesuaikan tinggi */
+    height: 100%; /* Tinggi gambar mengambil penuh dari image-frame */
+    object-fit: contain; /* Memastikan gambar tetap proporsional tanpa terpotong */
     border-radius: 15px;
     display: block;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -420,6 +429,15 @@ ul {
     .hero-text p { max-width: 100%; }
     .image-frame img { max-width: 250px; }
     .hero-text h1 { font-size: 2.5rem; }
+    .hero-image {
+        height: 40vh; /* Sesuaikan tinggi gambar di mobile jika perlu */
+    }
+
+    .image-frame img {
+        height: 100%; /* Gambar tetap mengambil 100% tinggi yang tersedia */
+        max-width: 200px; /* Batasi lebar di mobile agar tidak terlalu besar */
+        width: auto;
+    }
 }
 
 /* =========================================
