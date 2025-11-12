@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kantor Kementerian Agama Kota Depok</title>
+    <title>Profil - Kementerian Agama Kota Depok</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -14,12 +14,36 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .profile-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .profile-content p {
+            margin-bottom: 20px;
+            text-align: justify;
+            font-size: 1.1rem;
+            color: #444;
+        }
+        /* Memberikan jarak agar tidak tertutup navbar */
+        .profile-page-padding {
+            padding-top: 120px; 
+            padding-bottom: 60px;
+            background-color: var(--light-color);
+            min-height: 80vh;
+        }
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Kementerian_Agama_new_logo.png/100px-Kementerian_Agama_new_logo.png" alt="Logo Kemenag">
                 <div>
                     <span>Kantor Kementerian Agama</span>
@@ -27,47 +51,36 @@
                 </div>
             </a>
             <ul class="nav-links">
-                <li><a href="#beranda">Beranda</a></li>
-                <li><a href="profil.html">Profil</a></li>
-                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="profil.html" class="active" style="color: var(--primary-color);">Profil</a></li>
+                <li><a href="index.html#layanan">Layanan</a></li>
                 <li><a href="berita.html">Berita</a></li>
-                <li><a href="#kontak">Kontak</a></li>
+                <li><a href="index.html#kontak">Kontak</a></li>
                 <li><a href="#" class="btn-login">PTSP Online</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="hero" id="beranda">
-        <h1>Ikhlas Beramal</h1>
-        <p>Selamat datang di Portal Resmi Kementerian Agama Kota Depok. Melayani umat dengan profesionalitas dan integritas demi mewujudkan masyarakat yang taat beragama.</p>
-        <a href="#layanan" class="btn-cta">Lihat Layanan Kami</a>
-    </section>
-
-    <section class="section" id="layanan">
+    <section class="profile-page-padding">
         <div class="section-title">
-            <h2>Layanan Publik</h2>
-            <p>Akses mudah berbagai layanan keagamaan untuk masyarakat Depok.</p>
+            <h2>Tentang Kami</h2>
+            <p>Mengenal lebih dekat Kantor Kementerian Agama Kota Depok</p>
         </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-kaaba"></i>
-                <h3>Haji & Umrah</h3>
-                <p>Informasi pendaftaran, pembatalan, dan jadwal keberangkatan jamaah haji.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-rings-wedding"></i>
-                <h3>KUA & Pernikahan</h3>
-                <p>Layanan administrasi pernikahan, rujuk, dan bimbingan perkawinan.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-mosque"></i>
-                <h3>Masjid & Musholla</h3>
-                <p>Registrasi data tempat ibadah, arah kiblat, dan rekomendasi bantuan.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-school"></i>
-                <h3>Pendidikan Islam</h3>
-                <p>Layanan Madrasah (RA, MI, MTs, MA), Pondok Pesantren, dan Guru PAI.</p>
+
+        <div class="profile-container">
+            <div class="profile-content">
+                <p>
+                    Kantor Kementerian Agama Kota Depok adalah perpanjangan tangan dari Kementerian Agama Republik Indonesia di wilayah Kota Depok. Kami hadir untuk menjalankan kebijakan dan pelayanan publik di bidang keagamaan, pendidikan keagamaan, serta kehidupan beragama yang rukun dan harmonis.
+                </p>
+                <p>
+                    Sebagai lembaga pemerintah vertikal, kami menjunjung tinggi nilai-nilai integritas, profesionalisme, dan pelayanan yang prima kepada masyarakat.
+                </p>
+                <p>
+                    Kami berkomitmen untuk terus meningkatkan kualitas layanan publik di bidang keagamaan, mendukung kerukunan umat beragama, dan mewujudkan masyarakat Depok yang religius, damai, dan sejahtera.
+                </p>
+                <p>
+                    Untuk informasi lebih lanjut dan layanan digital, silakan kunjungi halaman lain di situs resmi kami.
+                </p>
             </div>
         </div>
     </section>
@@ -95,7 +108,7 @@
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2025 Kementerian Agama Kota Depok. All Rights Reserved.</p>
+            <p>&copy; 2024 Kementerian Agama Kota Depok. All Rights Reserved.</p>
         </div>
     </footer>
 
