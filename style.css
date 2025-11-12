@@ -20,7 +20,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: #fff;
-    overflow-x: hidden; /* Mencegah scroll horizontal */
+    overflow-x: hidden;
 }
 
 a {
@@ -151,7 +151,6 @@ ul {
     margin-top: 10px;
 }
 
-/* Panah kecil di atas dropdown */
 .dropdown-content::before {
     content: "";
     position: absolute;
@@ -192,7 +191,7 @@ ul {
    3. MOBILE NAVIGATION (RESPONSIVE)
    ========================================= */
 .mobile-controls {
-    display: none; /* Sembunyi di Desktop */
+    display: none;
 }
 
 .mobile-menu-dropdown {
@@ -214,7 +213,6 @@ ul {
         gap: 15px;
     }
 
-    /* Tombol PTSP Mobile (Hijau) */
     .btn-login-mobile {
         background-color: var(--primary-color);
         color: white;
@@ -226,7 +224,6 @@ ul {
         white-space: nowrap;
     }
 
-    /* --- Logo Mobile Custom --- */
     .logo img { height: 35px; margin-right: 10px; }
     
     .logo-desktop { display: none; } 
@@ -235,12 +232,11 @@ ul {
         display: block; 
         font-size: 0.95rem;
         font-weight: 800;
-        color: #333; /* HITAM SESUAI REQUEST */
+        color: #333;
         letter-spacing: 0.5px;
-        white-space: nowrap; /* TETAP 1 BARIS */
+        white-space: nowrap;
     }
 
-    /* --- Hamburger Menu (Tanpa Border) --- */
     .hamburger {
         font-size: 1.8rem;
         color: var(--primary-color);
@@ -252,7 +248,6 @@ ul {
         align-items: center;
     }
 
-    /* --- Mobile Menu Dropdown (Scrollable & Expanded) --- */
     .mobile-menu-dropdown {
         display: none;
         flex-direction: column;
@@ -263,7 +258,7 @@ ul {
         background-color: white;
         box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         border-top: 1px solid #eee;
-        max-height: calc(100vh - 80px); /* Scrollable */
+        max-height: calc(100vh - 80px); 
         overflow-y: auto; 
         z-index: 999;
     }
@@ -272,7 +267,6 @@ ul {
         display: flex;
     }
 
-    /* Link Utama Mobile */
     .mobile-main-link {
         padding: 18px 25px;
         color: var(--dark-color);
@@ -288,7 +282,6 @@ ul {
         color: var(--primary-color);
     }
 
-    /* Grup Submenu (Profil) */
     .mobile-submenu-group {
         display: flex;
         flex-direction: column;
@@ -305,9 +298,8 @@ ul {
         letter-spacing: 1px;
     }
 
-    /* Link Submenu */
     .mobile-submenu-group a {
-        padding: 12px 25px 12px 45px; /* Indentasi */
+        padding: 12px 25px 12px 45px;
         color: #666;
         text-decoration: none;
         font-size: 0.9rem;
@@ -319,7 +311,7 @@ ul {
     .mobile-main-link:hover {
         background-color: #e8f5e9;
         color: var(--primary-color);
-        padding-left: 30px; /* Efek geser */
+        padding-left: 30px;
     }
 }
 
@@ -350,7 +342,7 @@ ul {
 
 /* --- Kolom Kiri: Teks --- */
 .hero-text {
-    flex: 1.2; /* Memberikan ruang lebih untuk teks */
+    flex: 1.2;
     text-align: left;
 }
 
@@ -394,10 +386,10 @@ ul {
 .hero-image {
     flex: 1;
     display: flex;
-    justify-content: center; /* Posisi horizontal tengah */
-    align-items: center; /* Posisi vertikal tengah */
+    justify-content: center;
+    align-items: center;
     position: relative;
-    height: 50vh; /* Tinggi container 50% layar */
+    height: 50vh;
 }
 
 .image-frame {
@@ -408,10 +400,8 @@ ul {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(8px); /* Efek kaca */
+    backdrop-filter: blur(8px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-    
-    /* Flex untuk menata gambar dan teks di dalamnya */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -419,22 +409,22 @@ ul {
 }
 
 .image-frame img {
-    width: auto;        /* Lebar otomatis */
-    height: 100%;       /* Tinggi mengisi frame */
-    max-height: 80%;    /* Sisakan ruang untuk kotak nama di bawah */
-    object-fit: contain;/* Gambar proporsional */
+    width: auto;
+    height: 100%;
+    max-height: 80%;
+    object-fit: contain;
     border-radius: 12px;
     display: block;
 }
 
-/* --- Kotak Nama Kepala Kantor (Glassmorphism) --- */
+/* --- Kotak Nama Kepala Kantor (Updated Margin) --- */
 .kakan-box {
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(5px);
     border-radius: 10px;
     padding: 12px 20px;
-    margin-top: 5px; /* UBAH NILAI INI DARI 15px MENJADI 5px */
+    margin-top: 5px; /* DEKATKAN DENGAN GAMBAR */
     text-align: center;
     width: 90%;
     max-width: 250px;
@@ -473,18 +463,8 @@ ul {
     .hero-text p { max-width: 100%; }
     .hero-text h1 { font-size: 2.8rem; }
     
-    /* Reset tinggi di mobile */
-    .hero-image { height: auto; max-height: 50vh; width: 100%; }
-    .image-frame { width: auto; max-width: 90%; height: auto; }
-    .image-frame img { max-height: 250px; width: auto; max-height: 250px; }
-    
-    .kakan-box {
-        width: 80%;
-        max-width: 200px;
-        padding: 10px 15px;
-    }
-    .kakan-box .jabatan { font-size: 0.7rem; }
-    .kakan-box .nama { font-size: 0.9rem; }
+    /* SEMBUNYIKAN FOTO KEPALA KANTOR DI TABLET & HP */
+    .hero-image { display: none; }
 }
 
 /* =========================================
