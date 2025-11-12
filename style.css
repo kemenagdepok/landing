@@ -377,7 +377,7 @@ ul { list-style: none; }
 .section-title p { color: #777; margin-top: 15px; font-size: 1.1rem; }
 
 /* --- Profil Page Specific --- */
-.profile-content { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+.profile-content { max-width: 1200px; margin: 0 auto; }
 .profile-content p {
     margin-bottom: 25px; text-align: justify; font-size: 1.1rem;
     color: #444; line-height: 1.9;
