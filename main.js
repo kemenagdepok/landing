@@ -23,3 +23,17 @@ document.addEventListener("DOMContentLoaded", function() {
     loadComponent("header-placeholder", "header.html");
     loadComponent("footer-placeholder", "footer.html");
 });
+
+// Fungsi Toggle Menu Mobile
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+}
+
+// Menutup menu jika layar di-resize ke desktop (opsional, agar rapi)
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+        const menu = document.getElementById('mobileMenu');
+        if (menu) menu.classList.remove('active');
+    }
+});

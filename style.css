@@ -29,75 +29,175 @@ ul {
     list-style: none;
 }
 
-/* --- Navbar --- */
+/* --- Navbar (Updated Green Theme) --- */
 .navbar {
-    background: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background-color: var(--primary-color); /* Hijau Kemenag */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     padding: 0 5%;
+    height: 80px;
+    display: flex;
+    align-items: center; /* Vertikal Center */
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    width: 100%;
 }
 
+/* Logo Styling */
 .logo {
     display: flex;
     align-items: center;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    line-height: 1.2; /* Untuk teks logo dua baris */
+    text-decoration: none;
 }
 
 .logo img {
-    height: 50px; /* Ukuran logo gambar */
-    margin-right: 15px;
+    height: 45px;
+    margin-right: 12px;
+    background: white; /* Agar logo terlihat jelas di background hijau */
+    border-radius: 50%;
+    padding: 2px;
 }
 
-.logo span {
-    display: block; /* Agar teks bisa ke bawah */
+.logo div {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title {
     font-size: 1.1rem;
     font-weight: 700;
+    color: white; /* Teks Putih */
+    line-height: 1.1;
 }
 
-.logo .logo-subtitle {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #666;
+.logo-subtitle {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #e0e0e0; /* Putih agak abu */
 }
 
-
+/* Desktop Menu */
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 25px;
+    align-items: center;
 }
 
 .nav-links a {
-    font-weight: 600;
-    color: var(--dark-color);
+    font-weight: 500;
+    color: white; /* Link Putih */
     transition: 0.3s;
+    font-size: 0.95rem;
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color); /* Kuning saat hover */
 }
 
+/* Tombol PTSP Desktop */
 .btn-login {
-    padding: 10px 20px;
-    background: var(--primary-color);
-    color: white !important;
+    padding: 8px 20px;
+    background: white;
+    color: var(--primary-color) !important;
     border-radius: 5px;
+    font-weight: bold;
 }
 
 .btn-login:hover {
-    background: #005230;
+    background: var(--secondary-color);
+    color: var(--dark-color) !important;
+}
+
+/* Mobile Controls (Hidden on Desktop) */
+.mobile-controls {
+    display: none; 
+}
+
+.mobile-menu-dropdown {
+    display: none; /* Hidden by default */
+}
+
+/* --- RESPONSIVE MOBILE (Max 768px) --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 15px; /* Padding lebih kecil di HP */
+    }
+
+    /* Sembunyikan Menu Desktop */
+    .desktop-menu {
+        display: none;
+    }
+
+    /* Tampilkan Kontrol Mobile */
+    .mobile-controls {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Jarak antara Tombol PTSP dan Hamburger */
+    }
+
+    /* Tombol PTSP Mobile (Kecil) */
+    .btn-login-mobile {
+        background-color: white;
+        color: var(--primary-color);
+        font-size: 0.75rem; /* Teks lebih kecil */
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 4px;
+        text-decoration: none;
+        white-space: nowrap; /* Mencegah teks turun baris */
+    }
+
+    /* Hamburger Menu Icon */
+    .hamburger {
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
+        border: 1px solid rgba(255,255,255,0.3);
+        padding: 2px 8px;
+        border-radius: 4px;
+    }
+
+    /* Penyesuaian Teks Logo di HP */
+    .logo-title { font-size: 0.9rem; }
+    .logo-subtitle { display: none; } /* Sembunyikan subtitle panjang di HP */
+    .logo img { height: 35px; }
+
+    /* Mobile Dropdown Menu (Saat dibuka) */
+    .mobile-menu-dropdown {
+        display: none; /* Diatur via JS */
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        border-top: 1px solid #eee;
+    }
+    
+    .mobile-menu-dropdown.active {
+        display: flex;
+    }
+
+    .mobile-menu-dropdown a {
+        padding: 15px 20px;
+        color: var(--dark-color);
+        text-decoration: none;
+        border-bottom: 1px solid #f0f0f0;
+        font-weight: 600;
+    }
+
+    .mobile-menu-dropdown a:hover {
+        background-color: #f9f9f9;
+        color: var(--primary-color);
+    }
 }
 
 /* --- Hero Section --- */
