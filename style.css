@@ -69,26 +69,32 @@ ul { list-style: none; }
     line-height: 1.1; /* Mengatur jarak antar baris */
 }
 
-.logo-desktop {
-    display: flex;
-    flex-direction: column; /* Memastikan title dan subtitle berada dalam kolom */
+/* =========================================
+   OVERRIDE KONSISTENSI FONT LOGO DESKTOP
+   ========================================= */
+
+.logo-title, 
+.logo-subtitle {
+    /* Mengatur Ukuran Font menjadi Sama */
+    font-size: 1.1rem !important; 
+    
+    /* Mengatur Warna Font menjadi Sama (Hitam) */
+    color: var(--dark-color) !important;
+    
+    /* Memastikan Keterbacaan dan Alignment */
+    line-height: 1.1 !important;
+    margin-top: 0 !important;
 }
 
+/* Jika Anda ingin mempertahankan tebal/kapitalisasi sebelumnya */
 .logo-title {
-    font-size: 1.05rem !important; /* Ukuran font baris pertama */
-    font-weight: 700 !important;
-    color: var(--dark-color) !important; /* Warna hitam sesuai gambar */
+    font-weight: 700 !important; /* Contoh: Baris 1 tetap tebal */
     text-transform: uppercase !important;
-    line-height: 1.1 !important;
 }
 
 .logo-subtitle {
-    font-size: 0.9rem !important; /* Ukuran font baris kedua (sedikit lebih kecil/sama, disesuaikan) */
-    font-weight: 600 !important;
-    color: var(--dark-color) !important;
+    font-weight: 700 !important; /* Baris 2 juga tebal, sesuai permintaan sebelumnya */
     text-transform: uppercase !important;
-    margin-top: 0 !important; /* Menghilangkan margin yang mengganggu alignment */
-    line-height: 1.1 !important;
 }
 
 /* Mengembalikan jarak baris pada kontainer utama */
