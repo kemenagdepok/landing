@@ -34,7 +34,7 @@ ul { list-style: none; }
     background-color: white;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     position: fixed;
-    width: 100%; /* Latar belakang penuh */
+    width: 100%;
     top: 0;
     z-index: 1000;
     height: 80px;
@@ -170,25 +170,30 @@ ul { list-style: none; }
     .logo img { height: 35px; margin-right: 10px; }
     .logo-desktop { display: none !important; } 
     
+    /* LOGO MOBILE 2 BARIS (BARU) */
     .logo-mobile { 
         display: flex !important;
-        align-items: center;
-        height: 100%;
-        margin-top: 0;
-        /* Diatur di mobile-controls */
-        position: absolute;
-        left: 20px;
-        top: 50%;
-        transform: translateY(-50%);
+        flex-direction: column; 
+        justify-content: center;
+        align-items: flex-start;
+        /* Perbaikan: Hapus positioning absolute */
+        position: static; 
     }
 
-    .logo-mobile .logo-title-mobile {
-        font-size: 0.9rem !important;
-        font-weight: 800 !important; 
-        color: var(--dark-color) !important;
-        text-transform: uppercase !important;
-        line-height: 1.1 !important;
-        white-space: nowrap;
+    .logo-title-mobile-top {
+        font-size: 0.95rem; /* KEMENAG */
+        font-weight: 800; 
+        color: var(--dark-color);
+        text-transform: uppercase;
+        line-height: 1.1;
+    }
+
+    .logo-title-mobile-bottom {
+        font-size: 0.8rem; /* KOTA DEPOK */
+        font-weight: 700;
+        color: var(--dark-color);
+        text-transform: uppercase;
+        line-height: 1.1;
     }
 
     .hamburger {
@@ -205,11 +210,20 @@ ul { list-style: none; }
     }
     .mobile-menu-dropdown.active { display: flex; }
 
+    /* PERBAIKAN SUBMENU MOBILE SPRAWL */
+    .dropdown-content { /* Memastikan desktop dropdown tersembunyi sepenuhnya di mobile */
+        display: none !important;
+    }
+
     .mobile-main-link {
         padding: 15px 20px; color: var(--dark-color); border-bottom: 1px solid #f5f5f5;
         font-weight: 700; font-size: 1rem;
     }
-    .mobile-submenu-group { background-color: #fafafa; border-bottom: 1px solid #eee; }
+    .mobile-submenu-group { 
+        background-color: #fafafa; 
+        border-bottom: 1px solid #eee;
+        padding-top: 5px; 
+    }
     .mobile-menu-label {
         padding: 15px 20px 5px; font-size: 0.75rem; font-weight: 800;
         color: #aaa; text-transform: uppercase; letter-spacing: 1px;
@@ -540,6 +554,32 @@ ul { list-style: none; }
     .box-title { font-size: 1.3rem; border-bottom: 1px solid #eee; }
     .service-icon { background: transparent; padding: 0; margin-bottom: 10px; }
     .service-card:hover { transform: none; border-bottom: 1px solid #eee; }
+    
+    /* PERBAIKAN SUBMENU MOBILE SPRAWL */
+    .dropdown-content { /* Memastikan desktop dropdown tersembunyi sepenuhnya di mobile */
+        display: none !important;
+    }
+
+    .mobile-main-link {
+        padding: 15px 20px; color: var(--dark-color); border-bottom: 1px solid #f5f5f5;
+        font-weight: 700; font-size: 1rem;
+    }
+    .mobile-submenu-group { 
+        background-color: #fafafa; 
+        border-bottom: 1px solid #eee;
+        padding-top: 5px; 
+    }
+    .mobile-menu-label {
+        padding: 15px 20px 5px; font-size: 0.75rem; font-weight: 800;
+        color: #aaa; text-transform: uppercase; letter-spacing: 1px;
+    }
+    .mobile-submenu-group a {
+        padding: 12px 20px 12px 40px; color: #666; font-size: 0.9rem;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .mobile-submenu-group a:hover, .mobile-main-link:hover {
+        background-color: #e8f5e9; color: var(--primary-color); padding-left: 30px;
+    }
 }
 
 /* =========================================
