@@ -57,24 +57,38 @@ ul { list-style: none; }
 .logo { display: flex; align-items: center; text-decoration: none; }
 .logo img { height: 50px; margin-right: 12px; }
 
-.logo-text-container {
-    display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
-}
 /* =========================================
-   OVERRIDE LOGO DESKTOP
+   OVERRIDE LOGO DESKTOP BARU (2 BARIS)
    ========================================= */
-.logo-title, 
-.logo-subtitle {
-    /* Menerapkan Huruf Kapital dan Ukuran Font yang Sama */
+
+.logo-text-container {
+    /* Memastikan kontainer menampilkan elemen dalam kolom */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1; /* Mengatur jarak antar baris */
+}
+
+.logo-desktop {
+    display: flex;
+    flex-direction: column; /* Memastikan title dan subtitle berada dalam kolom */
+}
+
+.logo-title {
+    font-size: 1.05rem !important; /* Ukuran font baris pertama */
+    font-weight: 700 !important;
+    color: var(--dark-color) !important; /* Warna hitam sesuai gambar */
     text-transform: uppercase !important;
-    font-size: 1.1rem !important;
-    font-weight: 700 !important; /* Membuat tebal (untuk Kota Depok) */
-    color: var(--dark-color) !important; /* Mengubah warna menjadi hitam */
-    line-height: 1.2 !important;
+    line-height: 1.1 !important;
 }
 
 .logo-subtitle {
-    margin-top: 0 !important; /* Menghilangkan margin vertikal */
+    font-size: 0.9rem !important; /* Ukuran font baris kedua (sedikit lebih kecil/sama, disesuaikan) */
+    font-weight: 600 !important;
+    color: var(--dark-color) !important;
+    text-transform: uppercase !important;
+    margin-top: 0 !important; /* Menghilangkan margin yang mengganggu alignment */
+    line-height: 1.1 !important;
 }
 
 /* Mengembalikan jarak baris pada kontainer utama */
