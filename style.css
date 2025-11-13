@@ -34,7 +34,7 @@ ul { list-style: none; }
     background-color: white;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     position: fixed;
-    width: 100%; /* Latar belakang penuh */
+    width: 100%; 
     top: 0;
     z-index: 1000;
     height: 80px;
@@ -48,7 +48,7 @@ ul { list-style: none; }
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: var(--site-width); /* Konten dibatasi 1100px */
+    max-width: var(--site-width); 
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -81,7 +81,6 @@ ul { list-style: none; }
 
 .logo-title, 
 .logo-subtitle {
-    /* Mengatur Gaya Font Agar Sama dan Konsisten (Desktop) */
     font-size: 1.1rem !important; 
     color: var(--dark-color) !important;
     font-weight: 700 !important; 
@@ -93,7 +92,7 @@ ul { list-style: none; }
 
 /* KODE LOGO MOBILE */
 .logo-mobile { 
-    display: none; /* Default hidden untuk desktop */
+    display: none; 
 }
 
 /* --- Desktop Menu --- */
@@ -170,7 +169,7 @@ ul { list-style: none; }
     .logo img { height: 35px; margin-right: 10px; }
     .logo-desktop { display: none !important; } 
     
-    /* LOGO MOBILE 2 BARIS (Diperbaiki) */
+    /* LOGO MOBILE 2 BARIS */
     .logo-mobile { 
         display: flex !important;
         flex-direction: column; 
@@ -180,7 +179,7 @@ ul { list-style: none; }
     }
 
     .logo-title-mobile-top {
-        font-size: 0.95rem; /* KEMENAG */
+        font-size: 0.95rem; 
         font-weight: 800; 
         color: var(--dark-color);
         text-transform: uppercase;
@@ -188,7 +187,7 @@ ul { list-style: none; }
     }
 
     .logo-title-mobile-bottom {
-        font-size: 0.8rem; /* KOTA DEPOK */
+        font-size: 0.8rem; 
         font-weight: 700;
         color: var(--dark-color);
         text-transform: uppercase;
@@ -209,7 +208,7 @@ ul { list-style: none; }
     }
     .mobile-menu-dropdown.active { display: flex; }
 
-    /* PERBAIKAN SUBMENU MOBILE SPRAWL DAN KONSISTENSI STYLING */
+    /* SUBMENU MOBILE STYLING (Universal Vertical List) */
     .dropdown-content { 
         display: none !important; 
     }
@@ -257,7 +256,7 @@ ul { list-style: none; }
         padding-left: 30px; 
     }
 
-    /* === PERBAIKAN KHUSUS KONTAK MOBILE === */
+    /* === KONTAK MOBILE ADJUSTMENTS === */
     .contact-wrapper { 
         grid-template-columns: 1fr; 
         gap: 40px; 
@@ -268,7 +267,7 @@ ul { list-style: none; }
 
     /* Urutan: Info Box (1) di atas Form Box (2) */
     .contact-info-box {
-        order: 1; /* INFO BOX DI ATAS */
+        order: 1; 
         background: transparent !important;
         padding: 0 20px 30px 20px !important; 
         border: none !important;
@@ -278,7 +277,7 @@ ul { list-style: none; }
     }
     
     .contact-form-box {
-        order: 2; /* FORM BOX DI BAWAH */
+        order: 2; 
         padding: 0 20px !important;
         border: none !important;
         box-shadow: none !important;
@@ -645,4 +644,3082 @@ footer {
     border-top: 1px solid #333;
     font-size: 0.9rem; 
     color: #777;
+}
+
+
+/* =========================================
+   7. MOBILE FLAT DESIGN & ADJUSTMENTS
+   ========================================= */
+@media (max-width: 968px) {
+    /* 1. PADDING HALAMAN MOBILE (KONSISTEN 20px) */
+    .content-page-padding {
+        padding-left: 20px; padding-right: 20px; padding-top: 100px;
+    }
+    
+    /* 2. PADDING CONTAINER DATA KHUSUS */
+    .data-layout { padding: 0 20px !important; }
+
+    /* 3. Flat Design di Mobile (Hapus Kotak) */
+    .content-container,
+    .contact-info-box,
+    .contact-form-box,
+    .news-redirect-card,
+    .structure-container,
+    .service-card,
+    .official-card {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important; 
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border: none !important;
+        background: transparent !important;
+    }
+    
+    /* PENGECUALIAN KHUSUS: Data Keagamaan Mobile tetap Kotak & 2 Kolom */
+    .data-page .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+        padding: 0 20px;
+    }
+
+    .data-page .stat-card {
+        background: white !important;
+        border: 1px solid #eee !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05) !important;
+        border-radius: 10px !important;
+        padding: 20px 10px !important;
+        margin: 0 !important;
+        width: auto !important;
+    }
+
+    .data-page .stat-icon { font-size: 2rem; margin-bottom: 10px; }
+    .data-page .stat-label { font-size: 0.9rem; }
+    .data-page .stat-number { font-size: 1.4rem; }
+
+    /* Layout Contact Mobile */
+    .contact-wrapper { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+        padding: 0; 
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-info-box, .service-card, .official-card {
+        margin-bottom: 40px !important;
+        border-bottom: 1px solid #eee !important;
+        padding-bottom: 30px !important;
+    }
+
+    .form-group input, .form-group textarea {
+        background-color: #f9f9f9; border: 1px solid #eee;
+    }
+
+    .map-container { height: 250px; margin-top: 20px; box-shadow: none; border-radius: 8px; }
+    .section-title h2 { font-size: 2rem; }
+    .box-title { font-size: 1.3rem; border-bottom: 1px solid #eee; }
+    .service-icon { background: transparent; padding: 0; margin-bottom: 10px; }
+    .service-card:hover { transform: none; border-bottom: 1px solid #eee; }
+    
+    /* LOGO MOBILE 2 BARIS (Diperbaiki) */
+    .logo img { height: 35px; margin-right: 10px; }
+    .logo-desktop { display: none !important; } 
+    
+    .logo-mobile { 
+        display: flex !important;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: flex-start;
+        position: static; 
+    }
+
+    .logo-title-mobile-top {
+        font-size: 0.95rem; 
+        font-weight: 800; 
+        color: var(--dark-color);
+        text-transform: uppercase;
+        line-height: 1.1;
+    }
+
+    .logo-title-mobile-bottom {
+        font-size: 0.8rem; 
+        font-weight: 700;
+        color: var(--dark-color);
+        text-transform: uppercase;
+        line-height: 1.1;
+    }
+
+    /* PERBAIKAN SUBMENU MOBILE SPRAWL DAN KONSISTENSI STYLING */
+    .dropdown-content { 
+        display: none !important; 
+    }
+
+    .mobile-main-link {
+        padding: 15px 20px; color: var(--dark-color); border-bottom: 1px solid #f5f5f5;
+        font-weight: 700; font-size: 1rem;
+        display: block; 
+    }
+    
+    .mobile-menu-label {
+        padding: 15px 20px 15px 20px; 
+        font-size: 1rem; 
+        font-weight: 700; 
+        color: var(--primary-color); 
+        text-transform: none; 
+        letter-spacing: 0;
+        display: block;
+        border-bottom: 1px solid #f5f5f5; 
+        background-color: #fafafa; 
+    }
+
+    .mobile-submenu-group { 
+        background-color: #fafafa; 
+        border-bottom: 1px solid #eee;
+        padding: 0; 
+    }
+    
+    .mobile-submenu-group a {
+        padding: 12px 20px 12px 40px; 
+        color: #666; 
+        font-size: 0.9rem;
+        border-bottom: 1px solid #f0f0f0;
+        display: block; 
+        width: 100%; 
+    }
+    
+    .mobile-submenu-group a:last-child {
+        border-bottom: none;
+    }
+    
+    .mobile-submenu-group a:hover, .mobile-main-link:hover {
+        background-color: #e8f5e9; 
+        color: var(--primary-color); 
+        padding-left: 30px; 
+    }
+
+    /* === PERBAIKAN KHUSUS KONTAK MOBILE === */
+    .contact-wrapper { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+        padding: 0; 
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Urutan: Info Box (1) di atas Form Box (2) */
+    .contact-info-box {
+        order: 1; 
+        background: transparent !important;
+        padding: 0 20px 30px 20px !important; 
+        border: none !important;
+        border-bottom: 1px solid #eee !important;
+        box-shadow: none !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .contact-form-box {
+        order: 2; 
+        padding: 0 20px !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .info-item {
+        margin-bottom: 15px; 
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .info-item i {
+        flex-shrink: 0;
+        width: 25px; 
+        height: auto; 
+        background: transparent !important;
+        color: var(--primary-color) !important; 
+        font-size: 1.1rem !important;
+        margin-top: 5px; 
+    }
+
+    .info-item h4 { 
+        display: none; 
+    } 
+    
+    .info-item p {
+        font-size: 1rem !important;
+        color: var(--dark-color) !important;
+        line-height: 1.4;
+    }
+    
+    .map-container {
+        margin-top: 30px; 
+        height: 200px;
+        border: 1px solid #eee;
+        border-radius: 8px; 
+    }
+    
+    .contact-form-box {
+        padding: 0 20px !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* =========================================
+   4. HERO SECTION
+   ========================================= */
+.hero {
+    background: linear-gradient(to right, rgba(0, 60, 35, 0.9), rgba(0, 90, 50, 0.8)), url('https://environesia.co.id/uploads/blog/20250429094811-2025-04-29blog094800.jpg');
+    background-size: cover; background-position: center;
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    color: white; padding: 100px 0 50px 0; margin-top: 0; 
+}
+
+.hero-container {
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: var(--site-width); width: 100%; margin: 0 auto; 
+    padding: 0 20px; gap: 40px;
+}
+
+.hero-text { flex: 1.2; text-align: left; }
+.hero-text h1 {
+    font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1;
+    font-weight: 700; color: var(--secondary-color); text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.hero-text p { font-size: 1.15rem; margin-bottom: 35px; line-height: 1.8; color: #f4f4f4; max-width: 90%; }
+
+.btn-cta {
+    padding: 14px 35px; background: var(--secondary-color); color: var(--dark-color);
+    font-weight: 700; border-radius: 50px; transition: 0.3s; border: none; cursor: pointer;
+    display: inline-block; box-shadow: 0 5px 15px rgba(241, 196, 15, 0.3);
+}
+.btn-cta:hover { background: #fff; transform: translateY(-3px); }
+
+/* Hero Image */
+.hero-image {
+    flex: 1; display: flex; justify-content: center; align-items: center;
+    position: relative; height: 50vh;
+}
+.image-frame {
+    position: relative; width: fit-content; height: 100%; padding: 15px;
+    background: rgba(255, 255, 255, 0.1); border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+.image-frame img {
+    width: auto; height: 100%; max-height: 85%; object-fit: contain;
+    border-radius: 12px; display: block;
+}
+
+/* Label Nama */
+.kakan-label {
+    text-align: center; margin-top: 15px; color: white; width: 100%;
+}
+.kakan-label .jabatan {
+    display: block; font-size: 0.85rem; color: var(--secondary-color);
+    text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; font-weight: 600;
+}
+.kakan-label .nama {
+    display: block; font-size: 1.1rem; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 968px) {
+    .hero { padding-top: 120px; text-align: center; height: auto; min-height: 100vh; }
+    .hero-container { flex-direction: column; gap: 50px; padding: 0 20px; }
+    .hero-text { text-align: center; }
+    .hero-text p { max-width: 100%; }
+    .hero-text h1 { font-size: 2.8rem; }
+    .hero-image { display: none; }
+}
+
+/* =========================================
+   5. MAIN CONTENT LAYOUT (CLEAN WHITE)
+   ========================================= */
+.content-page-padding {
+    padding-top: 120px; padding-bottom: 80px;
+    background-color: #fff; 
+    min-height: 80vh;
+    display: flex; flex-direction: column; align-items: center;
+}
+
+/* Kontainer Utama Global (1100px) */
+.content-container {
+    width: 100%;
+    max-width: var(--site-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+/* Judul Halaman */
+.section-title {
+    text-align: center; margin-bottom: 60px;
+    width: 100%; max-width: var(--site-width);
+    margin-left: auto; margin-right: auto;
+    padding: 0 20px;
+}
+.section-title h2 {
+    font-size: 2.5rem; color: var(--primary-color); font-weight: 700;
+    position: relative; display: inline-block; padding-bottom: 15px;
+}
+.section-title h2::after {
+    content: ''; position: absolute; width: 60px; height: 4px;
+    background: var(--secondary-color); bottom: 0; left: 50%;
+    transform: translateX(-50%); border-radius: 2px;
+}
+.section-title p { color: #777; margin-top: 15px; font-size: 1.1rem; }
+
+/* --- Profil Page Specific --- */
+.profile-content { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+.profile-content p {
+    margin-bottom: 25px; text-align: justify; font-size: 1.1rem;
+    color: #444; line-height: 1.9;
+}
+.profile-layout { width: 100%; max-width: var(--site-width); margin: 0 auto; padding: 0 20px; }
+
+/* --- Contact Wrapper --- */
+.contact-wrapper {
+    display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px;
+    width: 100%; max-width: var(--site-width); margin: 0 auto; padding: 0 20px;
+}
+
+.contact-info-box, .contact-form-box {
+    background: white; padding: 40px; border-radius: 12px;
+    border: 1px solid #eee; height: fit-content;
+}
+
+.box-title {
+    font-size: 1.5rem; color: var(--primary-color); margin-bottom: 20px;
+    padding-bottom: 15px; border-bottom: 2px solid #f0f0f0; font-weight: 700;
+}
+
+.info-item {
+    margin-bottom: 30px; display: flex; align-items: flex-start; gap: 20px;
+}
+.info-item i {
+    flex-shrink: 0; width: 45px; height: 45px; font-size: 1.2rem;
+    background: #e8f5e9; color: var(--primary-color); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; margin: 0;
+}
+.info-item div { display: flex; flex-direction: column; justify-content: center; padding-top: 2px; }
+.info-item h4 { margin: 0 0 5px 0; font-size: 1.1rem; color: var(--dark-color); }
+.info-item p { margin: 0; color: #666; font-size: 0.95rem; line-height: 1.6; }
+
+.map-container {
+    margin-top: 30px; border-radius: 12px; overflow: hidden; height: 300px;
+    border: 1px solid #eee;
+}
+.map-container iframe { width: 100%; height: 100%; border: 0; }
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark-color); }
+.form-group input, .form-group textarea {
+    width: 100%; padding: 12px 15px; border: 1px solid #ddd;
+    border-radius: 5px; font-size: 1rem; transition: 0.3s; font-family: 'Poppins', sans-serif;
+    background-color: #fafafa;
+}
+.form-group input:focus {
+    border-color: var(--primary-color); outline: none; background-color: #fff;
+}
+.btn-submit {
+    display: inline-block; background: var(--primary-color); color: white;
+    padding: 12px 30px; border: none; border-radius: 5px; font-size: 1rem;
+    font-weight: 600; cursor: pointer; transition: 0.3s; width: 100%;
+}
+.btn-submit:hover { background: #005230; }
+
+/* --- Services / Layanan Grid --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 30px; width: 100%;
+    max-width: var(--site-width); margin: 0 auto;
+}
+.service-card {
+    background: white; padding: 35px; border-radius: 12px;
+    border: 1px solid #eee; transition: 0.3s;
+    display: flex; flex-direction: column; align-items: flex-start; height: 100%;
+}
+.service-card:hover {
+    transform: translateY(-5px); border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+.service-icon {
+    font-size: 2rem; color: var(--primary-color); margin-bottom: 20px;
+    background: #f0fdf4; padding: 15px; border-radius: 10px;
+}
+.service-card h3 { font-size: 1.2rem; margin-bottom: 15px; color: var(--primary-color); font-weight: 700; }
+.service-desc { font-size: 0.95rem; color: #666; margin-bottom: 20px; line-height: 1.6; }
+.service-list { padding-left: 20px; margin: 0; }
+.service-list li { margin-bottom: 8px; font-size: 0.9rem; color: #444; list-style-type: lower-alpha; }
+.divider { height: 1px; background: #eee; width: 100%; margin: 15px 0 20px 0; }
+
+/* --- Struktur Organisasi & Data --- */
+.chart-image-box {
+    background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;
+    text-align: center; margin-bottom: 50px;
+}
+.chart-image-box img { max-width: 100%; height: auto; }
+
+.officials-grid { display: flex; flex-direction: column; gap: 25px; max-width: 600px; margin: 0 auto; }
+.official-card {
+    background: white; padding: 30px; border-radius: 10px; border: 1px solid #eee;
+    border-left: 5px solid var(--primary-color); text-align: center;
+}
+.head-office { background: #f9f9f9; border-left-color: var(--secondary-color); }
+
+/* Timeline Sejarah */
+.timeline-list li {
+    position: relative; padding-left: 35px; margin-bottom: 20px; border-left: 3px solid #eee;
+}
+.timeline-list li::before {
+    content: ''; position: absolute; left: -6.5px; top: 6px; width: 10px; height: 10px;
+    background: var(--primary-color); border-radius: 50%;
+}
+
+/* Data Stats */
+.data-section { margin-bottom: 60px; }
+.data-title {
+    font-size: 1.5rem; color: var(--primary-color); margin-bottom: 25px;
+    border-left: 5px solid var(--secondary-color); padding-left: 20px; font-weight: 700;
+}
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
+.stat-card {
+    background: white; padding: 30px; border-radius: 12px; border: 1px solid #eee;
+    text-align: center; transition: 0.3s;
+}
+.stat-card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+.stat-number { font-size: 2rem; font-weight: 800; color: var(--dark-color); }
+.stat-icon { font-size: 2.5rem; margin-bottom: 20px; }
+
+/* Warna Ikon Data */
+.stat-icon.islam { color: #27ae60; }
+.stat-icon.kristen { color: #2980b9; }
+.stat-icon.katolik { color: #f1c40f; }
+.stat-icon.hindu { color: #e67e22; }
+.stat-icon.budha { color: #e74c3c; }
+.stat-icon.khonghucu { color: #8e44ad; }
+
+/* --- Berita Redirect --- */
+.news-redirect-card {
+    background: white; padding: 60px; border-radius: 20px; border: 1px solid #eee;
+    text-align: center; max-width: 700px; width: 90%; margin: 0 auto;
+}
+.btn-news-open {
+    display: inline-block; background-color: var(--primary-color); color: white;
+    padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold;
+}
+
+/* =========================================
+   7. MOBILE FLAT DESIGN & ADJUSTMENTS
+   ========================================= */
+@media (max-width: 968px) {
+    /* 1. PADDING HALAMAN MOBILE (KONSISTEN 20px) */
+    .content-page-padding {
+        padding-left: 20px; padding-right: 20px; padding-top: 100px;
+    }
+    
+    /* 2. PADDING CONTAINER DATA KHUSUS */
+    .data-layout { padding: 0 20px !important; }
+
+    /* 3. Flat Design di Mobile (Hapus Kotak) */
+    .content-container,
+    .contact-info-box,
+    .contact-form-box,
+    .news-redirect-card,
+    .structure-container,
+    .service-card,
+    .official-card {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important; 
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border: none !important;
+        background: transparent !important;
+    }
+    
+    /* PENGECUALIAN KHUSUS: Data Keagamaan Mobile tetap Kotak & 2 Kolom */
+    .data-page .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+        padding: 0 20px;
+    }
+
+    .data-page .stat-card {
+        background: white !important;
+        border: 1px solid #eee !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05) !important;
+        border-radius: 10px !important;
+        padding: 20px 10px !important;
+        margin: 0 !important;
+        width: auto !important;
+    }
+
+    .data-page .stat-icon { font-size: 2rem; margin-bottom: 10px; }
+    .data-page .stat-label { font-size: 0.9rem; }
+    .data-page .stat-number { font-size: 1.4rem; }
+
+    /* Layout Contact Mobile */
+    .contact-wrapper { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+        padding: 0; 
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-info-box, .service-card, .official-card {
+        margin-bottom: 40px !important;
+        border-bottom: 1px solid #eee !important;
+        padding-bottom: 30px !important;
+    }
+
+    .form-group input, .form-group textarea {
+        background-color: #f9f9f9; border: 1px solid #eee;
+    }
+
+    .map-container { height: 250px; margin-top: 20px; box-shadow: none; border-radius: 8px; }
+    .section-title h2 { font-size: 2rem; }
+    .box-title { font-size: 1.3rem; border-bottom: 1px solid #eee; }
+    .service-icon { background: transparent; padding: 0; margin-bottom: 10px; }
+    .service-card:hover { transform: none; border-bottom: 1px solid #eee; }
+    
+    /* LOGO MOBILE 2 BARIS (Diperbaiki) */
+    .logo img { height: 35px; margin-right: 10px; }
+    .logo-desktop { display: none !important; } 
+    
+    .logo-mobile { 
+        display: flex !important;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: flex-start;
+        position: static; 
+    }
+
+    .logo-title-mobile-top {
+        font-size: 0.95rem; /* KEMENAG */
+        font-weight: 800; 
+        color: var(--dark-color);
+        text-transform: uppercase;
+        line-height: 1.1;
+    }
+
+    .logo-title-mobile-bottom {
+        font-size: 0.8rem; /* KOTA DEPOK */
+        font-weight: 700;
+        color: var(--dark-color);
+        text-transform: uppercase;
+        line-height: 1.1;
+    }
+
+    /* PERBAIKAN SUBMENU MOBILE SPRAWL DAN KONSISTENSI STYLING */
+    .dropdown-content { 
+        display: none !important; 
+    }
+
+    .mobile-main-link {
+        padding: 15px 20px; color: var(--dark-color); border-bottom: 1px solid #f5f5f5;
+        font-weight: 700; font-size: 1rem;
+        display: block; 
+    }
+    
+    .mobile-menu-label {
+        padding: 15px 20px 15px 20px; 
+        font-size: 1rem; 
+        font-weight: 700; 
+        color: var(--primary-color); 
+        text-transform: none; 
+        letter-spacing: 0;
+        display: block;
+        border-bottom: 1px solid #f5f5f5; 
+        background-color: #fafafa; 
+    }
+
+    .mobile-submenu-group { 
+        background-color: #fafafa; 
+        border-bottom: 1px solid #eee;
+        padding: 0; 
+    }
+    
+    .mobile-submenu-group a {
+        padding: 12px 20px 12px 40px; 
+        color: #666; 
+        font-size: 0.9rem;
+        border-bottom: 1px solid #f0f0f0;
+        display: block; 
+        width: 100%; 
+    }
+    
+    .mobile-submenu-group a:last-child {
+        border-bottom: none;
+    }
+    
+    .mobile-submenu-group a:hover, .mobile-main-link:hover {
+        background-color: #e8f5e9; 
+        color: var(--primary-color); 
+        padding-left: 30px; 
+    }
+
+    /* === PERBAIKAN KHUSUS KONTAK MOBILE === */
+    .contact-wrapper { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+        padding: 0; 
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Urutan: Info Box (1) di atas Form Box (2) */
+    .contact-info-box {
+        order: 1; 
+        background: transparent !important;
+        padding: 0 20px 30px 20px !important; 
+        border: none !important;
+        border-bottom: 1px solid #eee !important;
+        box-shadow: none !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .contact-form-box {
+        order: 2; 
+        padding: 0 20px !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .info-item {
+        margin-bottom: 15px; 
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .info-item i {
+        flex-shrink: 0;
+        width: 25px; 
+        height: auto; 
+        background: transparent !important;
+        color: var(--primary-color) !important; 
+        font-size: 1.1rem !important;
+        margin-top: 5px; 
+    }
+
+    .info-item h4 { 
+        display: none; 
+    } 
+    
+    .info-item p {
+        font-size: 1rem !important;
+        color: var(--dark-color) !important;
+        line-height: 1.4;
+    }
+    
+    .map-container {
+        margin-top: 30px; 
+        height: 200px;
+        border: 1px solid #eee;
+        border-radius: 8px; 
+    }
+    
+    .contact-form-box {
+        padding: 0 2gt {
+    padding: 15px 35px; background: var(--secondary-color); color: var(--dark-color);
+    font-weight: 700; border-radius: 50px; transition: 0.3s; border: none; cursor: pointer;
+    display: inline-block; box-shadow: 0 5px 15px rgba(241, 196, 15, 0.3);
+}
+.btn-cta:hover { background: #fff; transform: translateY(-3px); }
+
+/* Hero Image */
+.hero-image {
+    flex: 1; display: flex; justify-content: center; align-items: center;
+    position: relative; height: 50vh;
+}
+.image-frame {
+    position: relative; width: fit-content; height: 100%; padding: 15px;
+    background: rgba(255, 255, 255, 0.1); border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+.image-frame img {
+    width: auto; height: 100%; max-height: 85%; object-fit: contain;
+    border-radius: 12px; display: block;
+}
+
+/* Label Nama */
+.kakan-label {
+    text-align: center; margin-top: 15px; color: white; width: 100%;
+}
+.kakan-label .jabatan {
+    display: block; font-size: 0.85rem; color: var(--secondary-color);
+    text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; font-weight: 600;
+}
+.kakan-label .nama {
+    display: block; font-size: 1.1rem; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 968px) {
+    .hero { padding-top: 120px; text-align: center; height: auto; min-height: 100vh; }
+    .hero-container { flex-direction: column; gap: 50px; padding: 0 20px; }
+    .hero-text { text-align: center; }
+    .hero-text p { max-width: 100%; }
+    .hero-text h1 { font-size: 2.8rem; }
+    .hero-image { display: none; }
+}
+
+/* =========================================
+   5. MAIN CONTENT LAYOUT (CLEAN WHITE)
+   ========================================= */
+.content-page-padding {
+    padding-top: 120px; padding-bottom: 80px;
+    background-color: #fff; 
+    min-height: 80vh;
+    display: flex; flex-direction: column; align-items: center;
+}
+
+/* Kontainer Utama Global (1100px) */
+.content-container {
+    width: 100%;
+    max-width: var(--site-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+/* Judul Halaman */
+.section-title {
+    text-align: center; margin-bottom: 60px;
+    width: 100%; max-width: var(--site-width);
+    margin-left: auto; margin-right: auto;
+    padding: 0 20px;
+}
+.section-title h2 {
+    font-size: 2.5rem; color: var(--primary-color); font-weight: 700;
+    position: relative; display: inline-block; padding-bottom: 15px;
+}
+.section-title h2::after {
+    content: ''; position: absolute; width: 60px; height: 4px;
+    background: var(--secondary-color); bottom: 0; left: 50%;
+    transform: translateX(-50%); border-radius: 2px;
+}
+.section-title p { color: #777; margin-top: 15px; font-size: 1.1rem; }
+
+/* --- Profil Page Specific --- */
+.profile-content { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+.profile-content p {
+    margin-bottom: 25px; text-align: justify; font-size: 1.1rem;
+    color: #444; line-height: 1.9;
+}
+.profile-layout { width: 100%; max-width: var(--site-width); margin: 0 auto; padding: 0 20px; }
+
+/* --- Contact Wrapper --- */
+.contact-wrapper {
+    display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px;
+    width: 100%; max-width: var(--site-width); margin: 0 auto; padding: 0 20px;
+}
+
+.contact-info-box, .contact-form-box {
+    background: white; padding: 40px; border-radius: 12px;
+    border: 1px solid #eee; height: fit-content;
+}
+
+.box-title {
+    font-size: 1.5rem; color: var(--primary-color); margin-bottom: 20px;
+    padding-bottom: 15px; border-bottom: 2px solid #f0f0f0; font-weight: 700;
+}
+
+.info-item {
+    margin-bottom: 30px; display: flex; align-items: flex-start; gap: 20px;
+}
+.info-item i {
+    flex-shrink: 0; width: 45px; height: 45px; font-size: 1.2rem;
+    background: #e8f5e9; color: var(--primary-color); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; margin: 0;
+}
+.info-item div { display: flex; flex-direction: column; justify-content: center; padding-top: 2px; }
+.info-item h4 { margin: 0 0 5px 0; font-size: 1.1rem; color: var(--dark-color); }
+.info-item p { margin: 0; color: #666; font-size: 0.95rem; line-height: 1.6; }
+
+.map-container {
+    margin-top: 30px; border-radius: 12px; overflow: hidden; height: 300px;
+    border: 1px solid #eee;
+}
+.map-container iframe { width: 100%; height: 100%; border: 0; }
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark-color); }
+.form-group input, .form-group textarea {
+    width: 100%; padding: 12px 15px; border: 1px solid #ddd;
+    border-radius: 5px; font-size: 1rem; transition: 0.3s; font-family: 'Poppins', sans-serif;
+    background-color: #fafafa;
+}
+.form-group input:focus {
+    border-color: var(--primary-color); outline: none; background-color: #fff;
+}
+.btn-submit {
+    display: inline-block; background: var(--primary-color); color: white;
+    padding: 12px 30px; border: none; border-radius: 5px; font-size: 1rem;
+    font-weight: 600; cursor: pointer; transition: 0.3s; width: 100%;
+}
+.btn-submit:hover { background: #005230; }
+
+/* --- Services / Layanan Grid --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 30px; width: 100%;
+    max-width: var(--site-width); margin: 0 auto;
+}
+.service-card {
+    background: white; padding: 35px; border-radius: 12px;
+    border: 1px solid #eee; transition: 0.3s;
+    display: flex; flex-direction: column; align-items: flex-start; height: 100%;
+}
+.service-card:hover {
+    transform: translateY(-5px); border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+.service-icon {
+    font-size: 2rem; color: var(--primary-color); margin-bottom: 20px;
+    background: #f0fdf4; padding: 15px; border-radius: 10px;
+}
+.service-card h3 { font-size: 1.2rem; margin-bottom: 15px; color: var(--primary-color); font-weight: 700; }
+.service-desc { font-size: 0.95rem; color: #666; margin-bottom: 20px; line-height: 1.6; }
+.service-list { padding-left: 20px; margin: 0; }
+.service-list li { margin-bottom: 8px; font-size: 0.9rem; color: #444; list-style-type: lower-alpha; }
+.divider { height: 1px; background: #eee; width: 100%; margin: 15px 0 20px 0; }
+
+/* --- Struktur Organisasi & Data --- */
+.chart-image-box {
+    background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;
+    text-align: center; margin-bottom: 50px;
+}
+.chart-image-box img { max-width: 100%; height: auto; }
+
+.officials-grid { display: flex; flex-direction: column; gap: 25px; max-width: 600px; margin: 0 auto; }
+.official-card {
+    background: white; padding: 30px; border-radius: 10px; border: 1px solid #eee;
+    border-left: 5px solid var(--primary-color); text-align: center;
+}
+.head-office { background: #f9f9f9; border-left-color: var(--secondary-color); }
+
+/* Timeline Sejarah */
+.timeline-list li {
+    position: relative; padding-left: 35px; margin-bottom: 20px; border-left: 3px solid #eee;
+}
+.timeline-list li::before {
+    content: ''; position: absolute; left: -6.5px; top: 6px; width: 10px; height: 10px;
+    background: var(--primary-color); border-radius: 50%;
+}
+
+/* Data Stats */
+.data-section { margin-bottom: 60px; }
+.data-title {
+    font-size: 1.5rem; color: var(--primary-color); margin-bottom: 25px;
+    border-left: 5px solid var(--secondary-color); padding-left: 20px; font-weight: 700;
+}
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
+.stat-card {
+    background: white; padding: 30px; border-radius: 12px; border: 1px solid #eee;
+    text-align: center; transition: 0.3s;
+}
+.stat-card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+.stat-number { font-size: 2rem; font-weight: 800; color: var(--dark-color); }
+.stat-icon { font-size: 2.5rem; margin-bottom: 20px; }
+
+/* Warna Ikon Data */
+.stat-icon.islam { color: #27ae60; }
+.stat-icon.kristen { color: #2980b9; }
+.stat-icon.katolik { color: #f1c40f; }
+.stat-icon.hindu { color: #e67e22; }
+.stat-icon.budha { color: #e74c3c; }
+.stat-icon.khonghucu { color: #8e44ad; }
+
+/* --- Berita Redirect --- */
+.news-redirect-card {
+    background: white; padding: 60px; border-radius: 20px; border: 1px solid #eee;
+    text-align: center; max-width: 700px; width: 90%; margin: 0 auto;
+}
+.btn-news-open {
+    display: inline-block; background-color: var(--primary-color); color: white;
+    padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold;
+}
+
+/* =========================================
+   8. FOOTER
+   ========================================= */
+footer {
+    background: #1a1a1a; 
+    color: white; 
+    padding: 70px 0 30px 0; 
+    font-size: 0.95rem;
+    width: 100%; 
+}
+.footer-container {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px; 
+    margin-bottom: 50px;
+    max-width: var(--site-width); 
+    margin-left: auto; 
+    margin-right: auto; 
+    padding: 0 20px;
+}
+.footer-col h3 {
+    margin-bottom: 25px; 
+    color: var(--secondary-color); 
+    font-size: 1.3rem; 
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.footer-col p { 
+    line-height: 1.6; 
+    color: #aaa; 
+    margin-bottom: 15px; 
+}
+
+.contact-item { 
+    display: flex; 
+    align-items: flex-start; 
+    margin-bottom: 18px; 
+    color: #ccc; 
+}
+.contact-item i { 
+    min-width: 25px; 
+    color: var(--secondary-color); 
+    margin-top: 5px; 
+    margin-right: 12px; 
+}
+.contact-item span { 
+    line-height: 1.6; 
+}
+
+.social-links a {
+    display: inline-flex; 
+    width: 40px; 
+    height: 40px; 
+    background: #333;
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 50%; 
+    margin-right: 10px;
+    transition: 0.3s; 
+    color: white; 
+    font-size: 1rem;
+}
+.social-links a:hover { 
+    background: var(--primary-color); 
+    transform: translateY(-3px); 
+}
+
+.copyright {
+    text-align: center; 
+    padding-top: 30px; 
+    border-top: 1px solid #333;
+    font-size: 0.9rem; 
+    color: #777;
+}
+
+
+/* =========================================
+   7. MOBILE FLAT DESIGN & ADJUSTMENTS
+   ========================================= */
+@media (max-width: 968px) {
+    /* 1. PADDING HALAMAN MOBILE (KONSISTEN 20px) */
+    .content-page-padding {
+        padding-left: 20px; padding-right: 20px; padding-top: 100px;
+    }
+    
+    /* 2. PADDING CONTAINER DATA KHUSUS */
+    .data-layout { padding: 0 20px !important; }
+
+    /* 3. Flat Design di Mobile (Hapus Kotak) */
+    .content-container,
+    .contact-info-box,
+    .contact-form-box,
+    .news-redirect-card,
+    .structure-container,
+    .service-card,
+    .official-card {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important; 
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border: none !important;
+        background: transparent !important;
+    }
+    
+    /* PENGECUALIAN KHUSUS: Data Keagamaan Mobile tetap Kotak & 2 Kolom */
+    .data-page .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+        padding: 0 20px;
+    }
+
+    .data-page .stat-card {
+        background: white !important;
+        border: 1px solid #eee !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05) !important;
+        border-radius: 10px !important;
+        padding: 20px 10px !important;
+        margin: 0 !important;
+        width: auto !important;
+    }
+
+    .data-page .stat-icon { font-size: 2rem; margin-bottom: 10px; }
+    .data-page .stat-label { font-size: 0.9rem; }
+    .data-page .stat-number { font-size: 1.4rem; }
+
+    /* Layout Contact Mobile */
+    .contact-wrapper { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+        padding: 0; 
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-info-box, .service-card, .official-card {
+        margin-bottom: 40px !important;
+        border-bottom: 1px solid #eee !important;
+        padding-bottom: 30px !important;
+    }
+
+    .form-group input, .form-group textarea {
+        background-color: #f9f9f9; border: 1px solid #eee;
+    }
+
+    .map-container { height: 250px; margin-top: 20px; box-shadow: none; border-radius: 8px; }
+    .section-title h2 { font-size: 2rem; }
+    .box-title { font-size: 1.3rem; border-bottom: 1px solid #eee; }
+    .service-icon { background: transparent; padding: 0; margin-bottom: 10px; }
+    .service-card:hover { transform: none; border-bottom: 1px solid #eee; }
+    
+    /* LOGO MOBILE 2 BARIS (Diperbaiki) */
+    .logo img { height: 35px; margin-right: 10px; }
+    .logo-desktop { display: none !important; } 
+    
+    .logo-mobile { 
+        display: flex !important;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: flex-start;
+        position: static; 
+    }
+
+    .logo-title-mobile-top {
+        font-size: 0.95rem; /* KEMENAG */
+        font-weight: 800; 
+        color: var(--dark-color);
+        text-transform: uppercase;
+        line-height: 1.1;
+    }
+
+    .logo-title-mobile-bottom {
+        font-size: 0.8rem; /* KOTA DEPOK */
+        font-weight: 700;
+        color: var(--dark-color);
+        text-transform: uppercase;
+        line-height: 1.1;
+    }
+
+    /* PERBAIKAN SUBMENU MOBILE SPRAWL DAN KONSISTENSI STYLING */
+    .dropdown-content { 
+        display: none !important; 
+    }
+
+    .mobile-main-link {
+        padding: 15px 20px; color: var(--dark-color); border-bottom: 1px solid #f5f5f5;
+        font-weight: 700; font-size: 1rem;
+        display: block; 
+    }
+    
+    .mobile-menu-label {
+        padding: 15px 20px 15px 20px; 
+        font-size: 1rem; 
+        font-weight: 700; 
+        color: var(--primary-color); 
+        text-transform: none; 
+        letter-spacing: 0;
+        display: block;
+        border-bottom: 1px solid #f5f5f5; 
+        background-color: #fafafa; 
+    }
+
+    .mobile-submenu-group { 
+        background-color: #fafafa; 
+        border-bottom: 1px solid #eee;
+        padding: 0; 
+    }
+    
+    .mobile-submenu-group a {
+        padding: 12px 20px 12px 40px; 
+        color: #666; 
+        font-size: 0.9rem;
+        border-bottom: 1px solid #f0f0f0;
+        display: block; 
+        width: 100%; 
+    }
+    
+    .mobile-submenu-group a:last-child {
+        border-bottom: none;
+    }
+    
+    .mobile-submenu-group a:hover, .mobile-main-link:hover {
+        background-color: #e8f5e9; 
+        color: var(--primary-color); 
+        padding-left: 30px; 
+    }
+
+    /* === PERBAIKAN KHUSUS KONTAK MOBILE === */
+    .contact-wrapper { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+        padding: 0; 
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Urutan: Info Box (1) di atas Form Box (2) */
+    .contact-info-box {
+        order: 1; 
+        background: transparent !important;
+        padding: 0 20px 30px 20px !important; 
+        border: none !important;
+        border-bottom: 1px solid #eee !important;
+        box-shadow: none !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .contact-form-box {
+        order: 2; 
+        padding: 0 20px !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .info-item {
+        margin-bottom: 15px; 
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .info-item i {
+        flex-shrink: 0;
+        width: 25px; 
+        height: auto; 
+        background: transparent !important;
+        color: var(--primary-color) !important; 
+        font-size: 1.1rem !important;
+        margin-top: 5px; 
+    }
+
+    .info-item h4 { 
+        display: none; 
+    } 
+    
+    .info-item p {
+        font-size: 1rem !important;
+        color: var(--dark-color) !important;
+        line-height: 1.4;
+    }
+    
+    .map-container {
+        margin-top: 30px; 
+        height: 200px;
+        border: 1px solid #eee;
+        border-radius: 8px; 
+    }
+    
+    .contact-form-box {
+        padding: 0 20px !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* =========================================
+   4. HERO SECTION
+   ========================================= */
+.hero {
+    background: linear-gradient(to right, rgba(0, 60, 35, 0.9), rgba(0, 90, 50, 0.8)), url('https://environesia.co.id/uploads/blog/20250429094811-2025-04-29blog094800.jpg');
+    background-size: cover; background-position: center;
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    color: white; padding: 100px 0 50px 0; margin-top: 0; 
+}
+
+.hero-container {
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: var(--site-width); width: 100%; margin: 0 auto; 
+    padding: 0 20px; gap: 40px;
+}
+
+.hero-text { flex: 1.2; text-align: left; }
+.hero-text h1 {
+    font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1;
+    font-weight: 700; color: var(--secondary-color); text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.hero-text p { font-size: 1.15rem; margin-bottom: 35px; line-height: 1.8; color: #f4f4f4; max-width: 90%; }
+
+.btn-cta {
+    padding: 14px 35px; background: var(--secondary-color); color: var(--dark-color);
+    font-weight: 7-00; border-radius: 50px; transition: 0.3s; border: none; cursor: pointer;
+    display: inline-block; box-shadow: 0 5px 15px rgba(241, 196, 15, 0.3);
+}
+.btn-cta:hover { background: #fff; transform: translateY(-3px); }
+
+/* Hero Image */
+.hero-image {
+    flex: 1; display: flex; justify-content: center; align-items: center;
+    position: relative; height: 50vh;
+}
+.image-frame {
+    position: relative; width: fit-content; height: 100%; padding: 15px;
+    background: rgba(255, 255, 255, 0.1); border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+.image-frame img {
+    width: auto; height: 100%; max-height: 85%; object-fit: contain;
+    border-radius: 12px; display: block;
+}
+
+/* Label Nama */
+.kakan-label {
+    text-align: center; margin-top: 15px; color: white; width: 100%;
+}
+.kakan-label .jabatan {
+    display: block; font-size: 0.85rem; color: var(--secondary-color);
+    text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; font-weight: 600;
+}
+.kakan-label .nama {
+    display: block; font-size: 1.1rem; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 968px) {
+    .hero { padding-top: 120px; text-align: center; height: auto; min-height: 100vh; }
+    .hero-container { flex-direction: column; gap: 50px; padding: 0 20px; }
+    .hero-text { text-align: center; }
+    .hero-text p { max-width: 100%; }
+    .hero-text h1 { font-size: 2.8rem; }
+    .hero-image { display: none; }
+}
+
+/* =========================================
+   5. MAIN CONTENT LAYOUT (CLEAN WHITE)
+   ========================================= */
+.content-page-padding {
+    padding-top: 120px; padding-bottom: 80px;
+    background-color: #fff; 
+    min-height: 80vh;
+    display: flex; flex-direction: column; align-items: center;
+}
+
+/* Kontainer Utama Global (1100px) */
+.content-container {
+    width: 100%;
+    max-width: var(--site-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+/* Judul Halaman */
+.section-title {
+    text-align: center; margin-bottom: 60px;
+    width: 100%; max-width: var(--site-width);
+    margin-left: auto; margin-right: auto;
+    padding: 0 20px;
+}
+.section-title h2 {
+    font-size: 2.5rem; color: var(--primary-color); font-weight: 700;
+    position: relative; display: inline-block; padding-bottom: 15px;
+}
+.section-title h2::after {
+    content: ''; position: absolute; width: 60px; height: 4px;
+    background: var(--secondary-color); bottom: 0; left: 50%;
+    transform: translateX(-50%); border-radius: 2px;
+}
+.section-title p { color: #777; margin-top: 15px; font-size: 1.1rem; }
+
+/* --- Profil Page Specific --- */
+.profile-content { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+.profile-content p {
+    margin-bottom: 25px; text-align: justify; font-size: 1.1rem;
+    color: #444; line-height: 1.9;
+}
+.profile-layout { width: 100%; max-width: var(--site-width); margin: 0 auto; padding: 0 20px; }
+
+/* --- Contact Wrapper --- */
+.contact-wrapper {
+    display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px;
+    width: 100%; max-width: var(--site-width); margin: 0 auto; padding: 0 20px;
+}
+
+.contact-info-box, .contact-form-box {
+    background: white; padding: 40px; border-radius: 12px;
+    border: 1px solid #eee; height: fit-content;
+}
+
+.box-title {
+    font-size: 1.5rem; color: var(--primary-color); margin-bottom: 20px;
+    padding-bottom: 15px; border-bottom: 2px solid #f0f0f0; font-weight: 700;
+}
+
+.info-item {
+    margin-bottom: 30px; display: flex; align-items: flex-start; gap: 20px;
+}
+.info-item i {
+    flex-shrink: 0; width: 45px; height: 45px; font-size: 1.2rem;
+    background: #e8f5e9; color: var(--primary-color); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; margin: 0;
+}
+.info-item div { display: flex; flex-direction: column; justify-content: center; padding-top: 2px; }
+.info-item h4 { margin: 0 0 5px 0; font-size: 1.1rem; color: var(--dark-color); }
+.info-item p { margin: 0; color: #666; font-size: 0.95rem; line-height: 1.6; }
+
+.map-container {
+    margin-top: 30px; border-radius: 12px; overflow: hidden; height: 300px;
+    border: 1px solid #eee;
+}
+.map-container iframe { width: 100%; height: 100%; border: 0; }
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark-color); }
+.form-group input, .form-group textarea {
+    width: 100%; padding: 12px 15px; border: 1px solid #ddd;
+    border-radius: 5px; font-size: 1rem; transition: 0.3s; font-family: 'Poppins', sans-serif;
+    background-color: #fafafa;
+}
+.form-group input:focus {
+    border-color: var(--primary-color); outline: none; background-color: #fff;
+}
+.btn-submit {
+    display: inline-block; background: var(--primary-color); color: white;
+    padding: 12px 30px; border: none; border-radius: 5px; font-size: 1rem;
+    font-weight: 600; cursor: pointer; transition: 0.3s; width: 100%;
+}
+.btn-submit:hover { background: #005230; }
+
+/* --- Services / Layanan Grid --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 30px; width: 100%;
+    max-width: var(--site-width); margin: 0 auto;
+}
+.service-card {
+    background: white; padding: 35px; border-radius: 12px;
+    border: 1px solid #eee; transition: 0.3s;
+    display: flex; flex-direction: column; align-items: flex-start; height: 100%;
+}
+.service-card:hover {
+    transform: translateY(-5px); border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+.service-icon {
+    font-size: 2rem; color: var(--primary-color); margin-bottom: 20px;
+    background: #f0fdf4; padding: 15px; border-radius: 10px;
+}
+.service-card h3 { font-size: 1.2rem; margin-bottom: 15px; color: var(--primary-color); font-weight: 700; }
+.service-desc { font-size: 0.95rem; color: #666; margin-bottom: 20px; line-height: 1.6; }
+.service-list { padding-left: 20px; margin: 0; }
+.service-list li { margin-bottom: 8px; font-size: 0.9rem; color: #444; list-style-type: lower-alpha; }
+.divider { height: 1px; background: #eee; width: 100%; margin: 15px 0 20px 0; }
+
+/* --- Struktur Organisasi & Data --- */
+.chart-image-box {
+    background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;
+    text-align: center; margin-bottom: 50px;
+}
+.chart-image-box img { max-width: 100%; height: auto; }
+
+.officials-grid { display: flex; flex-direction: column; gap: 25px; max-width: 600px; margin: 0 auto; }
+.official-card {
+    background: white; padding: 30px; border-radius: 10px; border: 1px solid #eee;
+    border-left: 5px solid var(--primary-color); text-align: center;
+}
+.head-office { background: #f9f9f9; border-left-color: var(--secondary-color); }
+
+/* Timeline Sejarah */
+.timeline-list li {
+    position: relative; padding-left: 35px; margin-bottom: 20px; border-left: 3px solid #eee;
+}
+.timeline-list li::before {
+    content: ''; position: absolute; left: -6.5px; top: 6px; width: 10px; height: 10px;
+    background: var(--primary-color); border-radius: 50%;
+}
+
+/* Data Stats */
+.data-section { margin-bottom: 60px; }
+.data-title {
+    font-size: 1.5rem; color: var(--primary-color); margin-bottom: 25px;
+    border-left: 5px solid var(--secondary-color); padding-left: 20px; font-weight: 700;
+}
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
+.stat-card {
+    background: white; padding: 30px; border-radius: 12px; border: 1px solid #eee;
+    text-align: center; transition: 0.3s;
+}
+.stat-card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+.stat-number { font-size: 2rem; font-weight: 800; color: var(--dark-color); }
+.stat-icon { font-size: 2.5rem; margin-bottom: 20px; }
+
+/* Warna Ikon Data */
+.stat-icon.islam { color: #27ae60; }
+.stat-icon.kristen { color: #2980b9; }
+.stat-icon.katolik { color: #f1c40f; }
+.stat-icon.hindu { color: #e67e22; }
+.stat-icon.budha { color: #e74c3c; }
+.stat-icon.khonghucu { color: #8e44ad; }
+
+/* --- Berita Redirect --- */
+.news-redirect-card {
+    background: white; padding: 60px; border-radius: 20px; border: 1px solid #eee;
+    text-align: center; max-width: 700px; width: 90%; margin: 0 auto;
+}
+.btn-news-open {
+    display: inline-block; background-color: var(--primary-color); color: white;
+    padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold;
+}
+
+/* =========================================
+   8. FOOTER
+   ========================================= */
+footer {
+    background: #1a1a1a; 
+    color: white; 
+    padding: 70px 0 30px 0; 
+    font-size: 0.95rem;
+    width: 100%; 
+}
+.footer-container {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px; 
+    margin-bottom: 50px;
+    max-width: var(--site-width); 
+    margin-left: auto; 
+    margin-right: auto; 
+    padding: 0 20px;
+}
+.footer-col h3 {
+    margin-bottom: 25px; 
+    color: var(--secondary-color); 
+    font-size: 1.3rem; 
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.footer-col p { 
+    line-height: 1.6; 
+    color: #aaa; 
+    margin-bottom: 15px; 
+}
+
+.contact-item { 
+    display: flex; 
+    align-items: flex-start; 
+    margin-bottom: 18px; 
+    color: #ccc; 
+}
+.contact-item i { 
+    min-width: 25px; 
+    color: var(--secondary-color); 
+    margin-top: 5px; 
+    margin-right: 12px; 
+}
+.contact-item span { 
+    line-height: 1.6; 
+}
+
+.social-links a {
+    display: inline-flex; 
+    width: 40px; 
+    height: 40px; 
+    background: #333;
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 50%; 
+    margin-right: 10px;
+    transition: 0.3s; 
+    color: white; 
+    font-size: 1rem;
+}
+.social-links a:hover { 
+    background: var(--primary-color); 
+    transform: translateY(-3px); 
+}
+
+.copyright {
+    text-align: center; 
+    padding-top: 30px; 
+    border-top: 1px solid #333;
+    font-size: 0.9rem; 
+    color: #777;
+}
+
+
+/* =========================================
+   7. MOBILE FLAT DESIGN & ADJUSTMENTS
+   ========================================= */
+@media (max-width: 968px) {
+    /* 1. PADDING HALAMAN MOBILE (KONSISTEN 20px) */
+    .content-page-padding {
+        padding-left: 20px; padding-right: 20px; padding-top: 100px;
+    }
+    
+    /* 2. PADDING CONTAINER DATA KHUSUS */
+    .data-layout { padding: 0 20px !important; }
+
+    /* 3. Flat Design di Mobile (Hapus Kotak) */
+    .content-container,
+    .contact-info-box,
+    .contact-form-box,
+    .news-redirect-card,
+    .structure-container,
+    .service-card,
+    .official-card {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important; 
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border: none !important;
+        background: transparent !important;
+    }
+    
+    /* PENGECUALIAN KHUSUS: Data Keagamaan Mobile tetap Kotak & 2 Kolom */
+    .data-page .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+        padding: 0 20px;
+    }
+
+    .data-page .stat-card {
+        background: white !important;
+        border: 1px solid #eee !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05) !important;
+        border-radius: 10px !important;
+        padding: 20px 10px !important;
+        margin: 0 !important;
+        width: auto !important;
+    }
+
+    .data-page .stat-icon { font-size: 2rem; margin-bottom: 10px; }
+    .data-page .stat-label { font-size: 0.9rem; }
+    .data-page .stat-number { font-size: 1.4rem; }
+
+    /* Layout Contact Mobile */
+    .contact-wrapper { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+        padding: 0; 
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-info-box, .service-card, .official-card {
+        margin-bottom: 40px !important;
+        border-bottom: 1px solid #eee !important;
+        padding-bottom: 30px !important;
+    }
+
+    .form-group input, .form-group textarea {
+        background-color: #f9f9f9; border: 1px solid #eee;
+    }
+
+    .map-container { height: 250px; margin-top: 20px; box-shadow: none; border-radius: 8px; }
+    .section-title h2 { font-size: 2rem; }
+    .box-title { font-size: 1.3rem; border-bottom: 1px solid #eee; }
+    .service-icon { background: transparent; padding: 0; margin-bottom: 10px; }
+    .service-card:hover { transform: none; border-bottom: 1px solid #eee; }
+    
+    /* LOGO MOBILE 2 BARIS (Diperbaiki) */
+    .logo img { height: 35px; margin-right: 10px; }
+    .logo-desktop { display: none !important; } 
+    
+    .logo-mobile { 
+        display: flex !important;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: flex-start;
+        position: static; 
+    }
+
+    .logo-title-mobile-top {
+        font-size: 0.95rem; /* KEMENAG */
+        font-weight: 800; 
+        color: var(--dark-color);
+        text-transform: uppercase;
+        line-height: 1.1;
+    }
+
+    .logo-title-mobile-bottom {
+        font-size: 0.8rem; /* KOTA DEPOK */
+        font-weight: 700;
+        color: var(--dark-color);
+        text-transform: uppercase;
+        line-height: 1.1;
+    }
+
+    /* PERBAIKAN SUBMENU MOBILE SPRAWL DAN KONSISTENSI STYLING */
+    .dropdown-content { 
+        display: none !important; 
+    }
+
+    .mobile-main-link {
+        padding: 15px 20px; color: var(--dark-color); border-bottom: 1px solid #f5f5f5;
+        font-weight: 700; font-size: 1rem;
+        display: block; 
+    }
+    
+    .mobile-menu-label {
+        padding: 15px 20px 15px 20px; 
+        font-size: 1rem; 
+        font-weight: 700; 
+        color: var(--primary-color); 
+        text-transform: none; 
+        letter-spacing: 0;
+        display: block;
+        border-bottom: 1px solid #f5f5f5; 
+        background-color: #fafafa; 
+    }
+
+    .mobile-submenu-group { 
+        background-color: #fafafa; 
+        border-bottom: 1px solid #eee;
+        padding: 0; 
+    }
+    
+    .mobile-submenu-group a {
+        padding: 12px 20px 12px 40px; 
+        color: #666; 
+        font-size: 0.9rem;
+        border-bottom: 1px solid #f0f0f0;
+        display: block; 
+        width: 100%; 
+    }
+    
+    .mobile-submenu-group a:last-child {
+        border-bottom: none;
+    }
+    
+    .mobile-submenu-group a:hover, .mobile-main-link:hover {
+        background-color: #e8f5e9; 
+        color: var(--primary-color); 
+        padding-left: 30px; 
+    }
+
+    /* === PERBAIKAN KHUSUS KONTAK MOBILE === */
+    .contact-wrapper { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+        padding: 0; 
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Urutan: Info Box (1) di atas Form Box (2) */
+    .contact-info-box {
+        order: 1; 
+        background: transparent !important;
+        padding: 0 20px 30px 20px !important; 
+        border: none !important;
+        border-bottom: 1px solid #eee !important;
+        box-shadow: none !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .contact-form-box {
+        order: 2; 
+        padding: 0 20px !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .info-item {
+        margin-bottom: 15px; 
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .info-item i {
+        flex-shrink: 0;
+        width: 25px; 
+        height: auto; 
+        background: transparent !important;
+        color: var(--primary-color) !important; 
+        font-size: 1.1rem !important;
+        margin-top: 5px; 
+    }
+
+    .info-item h4 { 
+        display: none; 
+    } 
+    
+    .info-item p {
+        font-size: 1rem !important;
+        color: var(--dark-color) !important;
+        line-height: 1.4;
+    }
+    
+    .map-container {
+        margin-top: 30px; 
+        height: 200px;
+        border: 1px solid #eee;
+        border-radius: 8px; 
+    }
+    
+    .contact-form-box {
+        padding: 0 20px !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* =========================================
+   4. HERO SECTION
+   ========================================= */
+.hero {
+    background: linear-gradient(to right, rgba(0, 60, 35, 0.9), rgba(0, 90, 50, 0.8)), url('https://environesia.co.id/uploads/blog/20250429094811-2025-04-29blog094800.jpg');
+    background-size: cover; background-position: center;
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    color: white; padding: 100px 0 50px 0; margin-top: 0; 
+}
+
+.hero-container {
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: var(--site-width); width: 100%; margin: 0 auto; 
+    padding: 0 20px; gap: 40px;
+}
+
+.hero-text { flex: 1.2; text-align: left; }
+.hero-text h1 {
+    font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1;
+    font-weight: 700; color: var(--secondary-color); text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.hero-text p { font-size: 1.15rem; margin-bottom: 35px; line-height: 1.8; color: #f4f4f4; max-width: 90%; }
+
+.btn-cta {
+    padding: 14px 35px; background: var(--secondary-color); color: var(--dark-color);
+    font-weight: 700; border-radius: 50px; transition: 0.3s; border: none; cursor: pointer;
+    display: inline-block; box-shadow: 0 5px 15px rgba(241, 196, 15, 0.3);
+}
+.btn-cta:hover { background: #fff; transform: translateY(-3px); }
+
+/* Hero Image */
+.hero-image {
+    flex: 1; display: flex; justify-content: center; align-items: center;
+    position: relative; height: 50vh;
+}
+.image-frame {
+    position: relative; width: fit-content; height: 100%; padding: 15px;
+    background: rgba(255, 255, 255, 0.1); border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+.image-frame img {
+    width: auto; height: 100%; max-height: 85%; object-fit: contain;
+    border-radius: 12px; display: block;
+}
+
+/* Label Nama */
+.kakan-label {
+    text-align: center; margin-top: 15px; color: white; width: 100%;
+}
+.kakan-label .jabatan {
+    display: block; font-size: 0.85rem; color: var(--secondary-color);
+    text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; font-weight: 600;
+}
+.kakan-label .nama {
+    display: block; font-size: 1.1rem; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 968px) {
+    .hero { padding-top: 120px; text-align: center; height: auto; min-height: 100vh; }
+    .hero-container { flex-direction: column; gap: 50px; padding: 0 20px; }
+    .hero-text { text-align: center; }
+    .hero-text p { max-width: 100%; }
+    .hero-text h1 { font-size: 2.8rem; }
+    .hero-image { display: none; }
+}
+
+/* =========================================
+   5. MAIN CONTENT LAYOUT (CLEAN WHITE)
+   ========================================= */
+.content-page-padding {
+    padding-top: 120px; padding-bottom: 80px;
+    background-color: #fff; 
+    min-height: 80vh;
+    display: flex; flex-direction: column; align-items: center;
+}
+
+/* Kontainer Utama Global (1100px) */
+.content-container {
+    width: 100%;
+    max-width: var(--site-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+/* Judul Halaman */
+.section-title {
+    text-align: center; margin-bottom: 60px;
+    width: 100%; max-width: var(--site-width);
+    margin-left: auto; margin-right: auto;
+    padding: 0 20px;
+}
+.section-title h2 {
+    font-size: 2.5rem; color: var(--primary-color); font-weight: 700;
+    position: relative; display: inline-block; padding-bottom: 15px;
+}
+.section-title h2::after {
+    content: ''; position: absolute; width: 60px; height: 4px;
+    background: var(--secondary-color); bottom: 0; left: 50%;
+    transform: translateX(-50%); border-radius: 2px;
+}
+.section-title p { color: #777; margin-top: 15px; font-size: 1.1rem; }
+
+/* --- Profil Page Specific --- */
+.profile-content { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+.profile-content p {
+    margin-bottom: 25px; text-align: justify; font-size: 1.1rem;
+    color: #444; line-height: 1.9;
+}
+.profile-layout { width: 100%; max-width: var(--site-width); margin: 0 auto; padding: 0 20px; }
+
+/* --- Contact Wrapper --- */
+.contact-wrapper {
+    display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px;
+    width: 100%; max-width: var(--site-width); margin: 0 auto; padding: 0 20px;
+}
+
+.contact-info-box, .contact-form-box {
+    background: white; padding: 40px; border-radius: 12px;
+    border: 1px solid #eee; height: fit-content;
+}
+
+.box-title {
+    font-size: 1.5rem; color: var(--primary-color); margin-bottom: 20px;
+    padding-bottom: 15px; border-bottom: 2px solid #f0f0f0; font-weight: 700;
+}
+
+.info-item {
+    margin-bottom: 30px; display: flex; align-items: flex-start; gap: 20px;
+}
+.info-item i {
+    flex-shrink: 0; width: 45px; height: 45px; font-size: 1.2rem;
+    background: #e8f5e9; color: var(--primary-color); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; margin: 0;
+}
+.info-item div { display: flex; flex-direction: column; justify-content: center; padding-top: 2px; }
+.info-item h4 { margin: 0 0 5px 0; font-size: 1.1rem; color: var(--dark-color); }
+.info-item p { margin: 0; color: #666; font-size: 0.95rem; line-height: 1.6; }
+
+.map-container {
+    margin-top: 30px; border-radius: 12px; overflow: hidden; height: 300px;
+    border: 1px solid #eee;
+}
+.map-container iframe { width: 100%; height: 100%; border: 0; }
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark-color); }
+.form-group input, .form-group textarea {
+    width: 100%; padding: 12px 15px; border: 1px solid #ddd;
+    border-radius: 5px; font-size: 1rem; transition: 0.3s; font-family: 'Poppins', sans-serif;
+    background-color: #fafafa;
+}
+.form-group input:focus {
+    border-color: var(--primary-color); outline: none; background-color: #fff;
+}
+.btn-submit {
+    display: inline-block; background: var(--primary-color); color: white;
+    padding: 12px 30px; border: none; border-radius: 5px; font-size: 1rem;
+    font-weight: 600; cursor: pointer; transition: 0.3s; width: 100%;
+}
+.btn-submit:hover { background: #005230; }
+
+/* --- Services / Layanan Grid --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 30px; width: 100%;
+    max-width: var(--site-width); margin: 0 auto;
+}
+.service-card {
+    background: white; padding: 35px; border-radius: 12px;
+    border: 1px solid #eee; transition: 0.3s;
+    display: flex; flex-direction: column; align-items: flex-start; height: 100%;
+}
+.service-card:hover {
+    transform: translateY(-5px); border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+.service-icon {
+    font-size: 2rem; color: var(--primary-color); margin-bottom: 20px;
+    background: #f0fdf4; padding: 15px; border-radius: 10px;
+}
+.service-card h3 { font-size: 1.2rem; margin-bottom: 15px; color: var(--primary-color); font-weight: 700; }
+.service-desc { font-size: 0.95rem; color: #666; margin-bottom: 20px; line-height: 1.6; }
+.service-list { padding-left: 20px; margin: 0; }
+.service-list li { margin-bottom: 8px; font-size: 0.9rem; color: #444; list-style-type: lower-alpha; }
+.divider { height: 1px; background: #eee; width: 100%; margin: 15px 0 20px 0; }
+
+/* --- Struktur Organisasi & Data --- */
+.chart-image-box {
+    background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;
+    text-align: center; margin-bottom: 50px;
+}
+.chart-image-box img { max-width: 100%; height: auto; }
+
+.officials-grid { display: flex; flex-direction: column; gap: 25px; max-width: 600px; margin: 0 auto; }
+.official-card {
+    background: white; padding: 30px; border-radius: 10px; border: 1px solid #eee;
+    border-left: 5px solid var(--primary-color); text-align: center;
+}
+.head-office { background: #f9f9f9; border-left-color: var(--secondary-color); }
+
+/* Timeline Sejarah */
+.timeline-list li {
+    position: relative; padding-left: 35px; margin-bottom: 20px; border-left: 3px solid #eee;
+}
+.timeline-list li::before {
+    content: ''; position: absolute; left: -6.5px; top: 6px; width: 10px; height: 10px;
+    background: var(--primary-color); border-radius: 50%;
+}
+
+/* Data Stats */
+.data-section { margin-bottom: 60px; }
+.data-title {
+    font-size: 1.5rem; color: var(--primary-color); margin-bottom: 25px;
+    border-left: 5px solid var(--secondary-color); padding-left: 20px; font-weight: 700;
+}
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
+.stat-card {
+    background: white; padding: 30px; border-radius: 12px; border: 1px solid #eee;
+    text-align: center; transition: 0.3s;
+}
+.stat-card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+.stat-number { font-size: 2rem; font-weight: 800; color: var(--dark-color); }
+.stat-icon { font-size: 2.5rem; margin-bottom: 20px; }
+
+/* Warna Ikon Data */
+.stat-icon.islam { color: #27ae60; }
+.stat-icon.kristen { color: #2980b9; }
+.stat-icon.katolik { color: #f1c40f; }
+.stat-icon.hindu { color: #e67e22; }
+.stat-icon.budha { color: #e74c3c; }
+.stat-icon.khonghucu { color: #8e44ad; }
+
+/* --- Berita Redirect --- */
+.news-redirect-card {
+    background: white; padding: 60px; border-radius: 20px; border: 1px solid #eee;
+    text-align: center; max-width: 700px; width: 90%; margin: 0 auto;
+}
+.btn-news-open {
+    display: inline-block; background-color: var(--primary-color); color: white;
+    padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold;
+}
+
+/* =========================================
+   8. FOOTER
+   ========================================= */
+footer {
+    background: #1a1a1a; 
+    color: white; 
+    padding: 70px 0 30px 0; 
+    font-size: 0.95rem;
+    width: 100%; 
+}
+.footer-container {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px; 
+    margin-bottom: 50px;
+    max-width: var(--site-width); 
+    margin-left: auto; 
+    margin-right: auto; 
+    padding: 0 20px;
+}
+.footer-col h3 {
+    margin-bottom: 25px; 
+    color: var(--secondary-color); 
+    font-size: 1.3rem; 
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.footer-col p { 
+    line-height: 1.6; 
+    color: #aaa; 
+    margin-bottom: 15px; 
+}
+
+.contact-item { 
+    display: flex; 
+    align-items: flex-start; 
+    margin-bottom: 18px; 
+    color: #ccc; 
+}
+.contact-item i { 
+    min-width: 25px; 
+    color: var(--secondary-color); 
+    margin-top: 5px; 
+    margin-right: 12px; 
+}
+.contact-item span { 
+    line-height: 1.6; 
+}
+
+.social-links a {
+    display: inline-flex; 
+    width: 40px; 
+    height: 40px; 
+    background: #333;
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 50%; 
+    margin-right: 10px;
+    transition: 0.3s; 
+    color: white; 
+    font-size: 1rem;
+}
+.social-links a:hover { 
+    background: var(--primary-color); 
+    transform: translateY(-3px); 
+}
+
+.copyright {
+    text-align: center; 
+    padding-top: 30px; 
+    border-top: 1px solid #333;
+    font-size: 0.9rem; 
+    color: #777;
+}
+
+
+/* =========================================
+   7. MOBILE FLAT DESIGN & ADJUSTMENTS
+   ========================================= */
+@media (max-width: 968px) {
+    /* 1. PADDING HALAMAN MOBILE (KONSISTEN 20px) */
+    .content-page-padding {
+        padding-left: 20px; padding-right: 20px; padding-top: 100px;
+    }
+    
+    /* 2. PADDING CONTAINER DATA KHUSUS */
+    .data-layout { padding: 0 20px !important; }
+
+    /* 3. Flat Design di Mobile (Hapus Kotak) */
+    .content-container,
+    .contact-info-box,
+    .contact-form-box,
+    .news-redirect-card,
+    .structure-container,
+    .service-card,
+    .official-card {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important; 
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border: none !important;
+        background: transparent !important;
+    }
+    
+    /* PENGECUALIAN KHUSUS: Data Keagamaan Mobile tetap Kotak & 2 Kolom */
+    .data-page .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+        padding: 0 20px;
+    }
+
+    .data-page .stat-card {
+        background: white !important;
+        border: 1px solid #eee !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05) !important;
+        border-radius: 10px !important;
+        padding: 20px 10px !important;
+        margin: 0 !important;
+        width: auto !important;
+    }
+
+    .data-page .stat-icon { font-size: 2rem; margin-bottom: 10px; }
+    .data-page .stat-label { font-size: 0.9rem; }
+    .data-page .stat-number { font-size: 1.4rem; }
+
+    /* Layout Contact Mobile */
+    .contact-wrapper { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+        padding: 0; 
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-info-box, .service-card, .official-card {
+        margin-bottom: 40px !important;
+        border-bottom: 1px solid #eee !important;
+        padding-bottom: 30px !important;
+    }
+
+    .form-group input, .form-group textarea {
+        background-color: #f9f9f9; border: 1px solid #eee;
+    }
+
+    .map-container { height: 250px; margin-top: 20px; box-shadow: none; border-radius: 8px; }
+    .section-title h2 { font-size: 2rem; }
+    .box-title { font-size: 1.3rem; border-bottom: 1px solid #eee; }
+    .service-icon { background: transparent; padding: 0; margin-bottom: 10px; }
+    .service-card:hover { transform: none; border-bottom: 1px solid #eee; }
+    
+    /* LOGO MOBILE 2 BARIS (Diperbaiki) */
+    .logo img { height: 35px; margin-right: 10px; }
+    .logo-desktop { display: none !important; } 
+    
+    .logo-mobile { 
+        display: flex !important;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: flex-start;
+        position: static; 
+    }
+
+    .logo-title-mobile-top {
+        font-size: 0.95rem; /* KEMENAG */
+        font-weight: 800; 
+        color: var(--dark-color);
+        text-transform: uppercase;
+        line-height: 1.1;
+    }
+
+    .logo-title-mobile-bottom {
+        font-size: 0.8rem; /* KOTA DEPOK */
+        font-weight: 700;
+        color: var(--dark-color);
+        text-transform: uppercase;
+        line-height: 1.1;
+    }
+
+    /* PERBAIKAN SUBMENU MOBILE SPRAWL DAN KONSISTENSI STYLING */
+    .dropdown-content { 
+        display: none !important; 
+    }
+
+    .mobile-main-link {
+        padding: 15px 20px; color: var(--dark-color); border-bottom: 1px solid #f5f5f5;
+        font-weight: 700; font-size: 1rem;
+        display: block; 
+    }
+    
+    .mobile-menu-label {
+        padding: 15px 20px 15px 20px; 
+        font-size: 1rem; 
+        font-weight: 700; 
+        color: var(--primary-color); 
+        text-transform: none; 
+        letter-spacing: 0;
+        display: block;
+        border-bottom: 1px solid #f5f5f5; 
+        background-color: #fafafa; 
+    }
+
+    .mobile-submenu-group { 
+        background-color: #fafafa; 
+        border-bottom: 1px solid #eee;
+        padding: 0; 
+    }
+    
+    .mobile-submenu-group a {
+        padding: 12px 20px 12px 40px; 
+        color: #666; 
+        font-size: 0.9rem;
+        border-bottom: 1px solid #f0f0f0;
+        display: block; 
+        width: 100%; 
+    }
+    
+    .mobile-submenu-group a:last-child {
+        border-bottom: none;
+    }
+    
+    .mobile-submenu-group a:hover, .mobile-main-link:hover {
+        background-color: #e8f5e9; 
+        color: var(--primary-color); 
+        padding-left: 30px; 
+    }
+
+    /* === PERBAIKAN KHUSUS KONTAK MOBILE === */
+    .contact-wrapper { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+        padding: 0; 
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Urutan: Info Box (1) di atas Form Box (2) */
+    .contact-info-box {
+        order: 1; 
+        background: transparent !important;
+        padding: 0 20px 30px 20px !important; 
+        border: none !important;
+        border-bottom: 1px solid #eee !important;
+        box-shadow: none !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .contact-form-box {
+        order: 2; 
+        padding: 0 20px !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .info-item {
+        margin-bottom: 15px; 
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .info-item i {
+        flex-shrink: 0;
+        width: 25px; 
+        height: auto; 
+        background: transparent !important;
+        color: var(--primary-color) !important; 
+        font-size: 1.1rem !important;
+        margin-top: 5px; 
+    }
+
+    .info-item h4 { 
+        display: none; 
+    } 
+    
+    .info-item p {
+        font-size: 1rem !important;
+        color: var(--dark-color) !important;
+        line-height: 1.4;
+    }
+    
+    .map-container {
+        margin-top: 30px; 
+        height: 200px;
+        border: 1px solid #eee;
+        border-radius: 8px; 
+    }
+    
+    .contact-form-box {
+        padding: 0 20px !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* =========================================
+   4. HERO SECTION
+   ========================================= */
+.hero {
+    background: linear-gradient(to right, rgba(0, 60, 35, 0.9), rgba(0, 90, 50, 0.8)), url('https://environesia.co.id/uploads/blog/20250429094811-2025-04-29blog094800.jpg');
+    background-size: cover; background-position: center;
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    color: white; padding: 100px 0 50px 0; margin-top: 0; 
+}
+
+.hero-container {
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: var(--site-width); width: 100%; margin: 0 auto; 
+    padding: 0 20px; gap: 40px;
+}
+
+.hero-text { flex: 1.2; text-align: left; }
+.hero-text h1 {
+    font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1;
+    font-weight: 700; color: var(--secondary-color); text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.hero-text p { font-size: 1.15rem; margin-bottom: 35px; line-height: 1.8; color: #f4f4f4; max-width: 90%; }
+
+.btn-cta {
+    padding: 14px 35px; background: var(--secondary-color); color: var(--dark-color);
+    font-weight: 700; border-radius: 50px; transition: 0.3s; border: none; cursor: pointer;
+    display: inline-block; box-shadow: 0 5px 15px rgba(241, 196, 15, 0.3);
+}
+.btn-cta:hover { background: #fff; transform: translateY(-3px); }
+
+/* Hero Image */
+.hero-image {
+    flex: 1; display: flex; justify-content: center; align-items: center;
+    position: relative; height: 50vh;
+}
+.image-frame {
+    position: relative; width: fit-content; height: 100%; padding: 15px;
+    background: rgba(255, 255, 255, 0.1); border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+.image-frame img {
+    width: auto; height: 100%; max-height: 85%; object-fit: contain;
+    border-radius: 12px; display: block;
+}
+
+/* Label Nama */
+.kakan-label {
+    text-align: center; margin-top: 15px; color: white; width: 100%;
+}
+.kakan-label .jabatan {
+    display: block; font-size: 0.85rem; color: var(--secondary-color);
+    text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; font-weight: 600;
+}
+.kakan-label .nama {
+    display: block; font-size: 1.1rem; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 968px) {
+    .hero { padding-top: 120px; text-align: center; height: auto; min-height: 100vh; }
+    .hero-container { flex-direction: column; gap: 50px; padding: 0 20px; }
+    .hero-text { text-align: center; }
+    .hero-text p { max-width: 100%; }
+    .hero-text h1 { font-size: 2.8rem; }
+    .hero-image { display: none; }
+}
+
+/* =========================================
+   5. MAIN CONTENT LAYOUT (CLEAN WHITE)
+   ========================================= */
+.content-page-padding {
+    padding-top: 120px; padding-bottom: 80px;
+    background-color: #fff; 
+    min-height: 80vh;
+    display: flex; flex-direction: column; align-items: center;
+}
+
+/* Kontainer Utama Global (1100px) */
+.content-container {
+    width: 100%;
+    max-width: var(--site-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+/* Judul Halaman */
+.section-title {
+    text-align: center; margin-bottom: 60px;
+    width: 100%; max-width: var(--site-width);
+    margin-left: auto; margin-right: auto;
+    padding: 0 20px;
+}
+.section-title h2 {
+    font-size: 2.5rem; color: var(--primary-color); font-weight: 700;
+    position: relative; display: inline-block; padding-bottom: 15px;
+}
+.section-title h2::after {
+    content: ''; position: absolute; width: 60px; height: 4px;
+    background: var(--secondary-color); bottom: 0; left: 50%;
+    transform: translateX(-50%); border-radius: 2px;
+}
+.section-title p { color: #777; margin-top: 15px; font-size: 1.1rem; }
+
+/* --- Profil Page Specific --- */
+.profile-content { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+.profile-content p {
+    margin-bottom: 25px; text-align: justify; font-size: 1.1rem;
+    color: #444; line-height: 1.9;
+}
+.profile-layout { width: 100%; max-width: var(--site-width); margin: 0 auto; padding: 0 20px; }
+
+/* --- Contact Wrapper --- */
+.contact-wrapper {
+    display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px;
+    width: 100%; max-width: var(--site-width); margin: 0 auto; padding: 0 20px;
+}
+
+.contact-info-box, .contact-form-box {
+    background: white; padding: 40px; border-radius: 12px;
+    border: 1px solid #eee; height: fit-content;
+}
+
+.box-title {
+    font-size: 1.5rem; color: var(--primary-color); margin-bottom: 20px;
+    padding-bottom: 15px; border-bottom: 2px solid #f0f0f0; font-weight: 700;
+}
+
+.info-item {
+    margin-bottom: 30px; display: flex; align-items: flex-start; gap: 20px;
+}
+.info-item i {
+    flex-shrink: 0; width: 45px; height: 45px; font-size: 1.2rem;
+    background: #e8f5e9; color: var(--primary-color); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; margin: 0;
+}
+.info-item div { display: flex; flex-direction: column; justify-content: center; padding-top: 2px; }
+.info-item h4 { margin: 0 0 5px 0; font-size: 1.1rem; color: var(--dark-color); }
+.info-item p { margin: 0; color: #666; font-size: 0.95rem; line-height: 1.6; }
+
+.map-container {
+    margin-top: 30px; border-radius: 12px; overflow: hidden; height: 300px;
+    border: 1px solid #eee;
+}
+.map-container iframe { width: 100%; height: 100%; border: 0; }
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark-color); }
+.form-group input, .form-group textarea {
+    width: 100%; padding: 12px 15px; border: 1px solid #ddd;
+    border-radius: 5px; font-size: 1rem; transition: 0.3s; font-family: 'Poppins', sans-serif;
+    background-color: #fafafa;
+}
+.form-group input:focus {
+    border-color: var(--primary-color); outline: none; background-color: #fff;
+}
+.btn-submit {
+    display: inline-block; background: var(--primary-color); color: white;
+    padding: 12px 30px; border: none; border-radius: 5px; font-size: 1rem;
+    font-weight: 600; cursor: pointer; transition: 0.3s; width: 100%;
+}
+.btn-submit:hover { background: #005230; }
+
+/* --- Services / Layanan Grid --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 30px; width: 100%;
+    max-width: var(--site-width); margin: 0 auto;
+}
+.service-card {
+    background: white; padding: 35px; border-radius: 12px;
+    border: 1px solid #eee; transition: 0.3s;
+    display: flex; flex-direction: column; align-items: flex-start; height: 100%;
+}
+.service-card:hover {
+    transform: translateY(-5px); border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+.service-icon {
+    font-size: 2rem; color: var(--primary-color); margin-bottom: 20px;
+    background: #f0fdf4; padding: 15px; border-radius: 10px;
+}
+.service-card h3 { font-size: 1.2rem; margin-bottom: 15px; color: var(--primary-color); font-weight: 700; }
+.service-desc { font-size: 0.95rem; color: #666; margin-bottom: 20px; line-height: 1.6; }
+.service-list { padding-left: 20px; margin: 0; }
+.service-list li { margin-bottom: 8px; font-size: 0.9rem; color: #444; list-style-type: lower-alpha; }
+.divider { height: 1px; background: #eee; width: 100%; margin: 15px 0 20px 0; }
+
+/* --- Struktur Organisasi & Data --- */
+.chart-image-box {
+    background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;
+    text-align: center; margin-bottom: 50px;
+}
+.chart-image-box img { max-width: 100%; height: auto; }
+
+.officials-grid { display: flex; flex-direction: column; gap: 25px; max-width: 600px; margin: 0 auto; }
+.official-card {
+    background: white; padding: 30px; border-radius: 10px; border: 1px solid #eee;
+    border-left: 5px solid var(--primary-color); text-align: center;
+}
+.head-office { background: #f9f9f9; border-left-color: var(--secondary-color); }
+
+/* Timeline Sejarah */
+.timeline-list li {
+    position: relative; padding-left: 35px; margin-bottom: 20px; border-left: 3px solid #eee;
+}
+.timeline-list li::before {
+    content: ''; position: absolute; left: -6.5px; top: 6px; width: 10px; height: 10px;
+    background: var(--primary-color); border-radius: 50%;
+}
+
+/* Data Stats */
+.data-section { margin-bottom: 60px; }
+.data-title {
+    font-size: 1.5rem; color: var(--primary-color); margin-bottom: 25px;
+    border-left: 5px solid var(--secondary-color); padding-left: 20px; font-weight: 700;
+}
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
+.stat-card {
+    background: white; padding: 30px; border-radius: 12px; border: 1px solid #eee;
+    text-align: center; transition: 0.3s;
+}
+.stat-card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+.stat-number { font-size: 2rem; font-weight: 800; color: var(--dark-color); }
+.stat-icon { font-size: 2.5rem; margin-bottom: 20px; }
+
+/* Warna Ikon Data */
+.stat-icon.islam { color: #27ae60; }
+.stat-icon.kristen { color: #2980b9; }
+.stat-icon.katolik { color: #f1c40f; }
+.stat-icon.hindu { color: #e67e22; }
+.stat-icon.budha { color: #e74c3c; }
+.stat-icon.khonghucu { color: #8e44ad; }
+
+/* --- Berita Redirect --- */
+.news-redirect-card {
+    background: white; padding: 60px; border-radius: 20px; border: 1px solid #eee;
+    text-align: center; max-width: 700px; width: 90%; margin: 0 auto;
+}
+.btn-news-open {
+    display: inline-block; background-color: var(--primary-color); color: white;
+    padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold;
+}
+
+/* =========================================
+   8. FOOTER
+   ========================================= */
+footer {
+    background: #1a1a1a; 
+    color: white; 
+    padding: 70px 0 30px 0; 
+    font-size: 0.95rem;
+    width: 100%; 
+}
+.footer-container {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px; 
+    margin-bottom: 50px;
+    max-width: var(--site-width); 
+    margin-left: auto; 
+    margin-right: auto; 
+    padding: 0 20px;
+}
+.footer-col h3 {
+    margin-bottom: 25px; 
+    color: var(--secondary-color); 
+    font-size: 1.3rem; 
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.footer-col p { 
+    line-height: 1.6; 
+    color: #aaa; 
+    margin-bottom: 15px; 
+}
+
+.contact-item { 
+    display: flex; 
+    align-items: flex-start; 
+    margin-bottom: 18px; 
+    color: #ccc; 
+}
+.contact-item i { 
+    min-width: 25px; 
+    color: var(--secondary-color); 
+    margin-top: 5px; 
+    margin-right: 12px; 
+}
+.contact-item span { 
+    line-height: 1.6; 
+}
+
+.social-links a {
+    display: inline-flex; 
+    width: 40px; 
+    height: 40px; 
+    background: #333;
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 50%; 
+    margin-right: 10px;
+    transition: 0.3s; 
+    color: white; 
+    font-size: 1rem;
+}
+.social-links a:hover { 
+    background: var(--primary-color); 
+    transform: translateY(-3px); 
+}
+
+.copyright {
+    text-align: center; 
+    padding-top: 30px; 
+    border-top: 1px solid #333;
+    font-size: 0.9rem; 
+    color: #777;
+}
+
+
+/* =========================================
+   7. MOBILE FLAT DESIGN & ADJUSTMENTS
+   ========================================= */
+@media (max-width: 968px) {
+    /* 1. PADDING HALAMAN MOBILE (KONSISTEN 20px) */
+    .content-page-padding {
+        padding-left: 20px; padding-right: 20px; padding-top: 100px;
+    }
+    
+    /* 2. PADDING CONTAINER DATA KHUSUS */
+    .data-layout { padding: 0 20px !important; }
+
+    /* 3. Flat Design di Mobile (Hapus Kotak) */
+    .content-container,
+    .contact-info-box,
+    .contact-form-box,
+    .news-redirect-card,
+    .structure-container,
+    .service-card,
+    .official-card {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important; 
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border: none !important;
+        background: transparent !important;
+    }
+    
+    /* PENGECUALIAN KHUSUS: Data Keagamaan Mobile tetap Kotak & 2 Kolom */
+    .data-page .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+        padding: 0 20px;
+    }
+
+    .data-page .stat-card {
+        background: white !important;
+        border: 1px solid #eee !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05) !important;
+        border-radius: 10px !important;
+        padding: 20px 10px !important;
+        margin: 0 !important;
+        width: auto !important;
+    }
+
+    .data-page .stat-icon { font-size: 2rem; margin-bottom: 10px; }
+    .data-page .stat-label { font-size: 0.9rem; }
+    .data-page .stat-number { font-size: 1.4rem; }
+
+    /* Layout Contact Mobile */
+    .contact-wrapper { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+        padding: 0; 
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-info-box, .service-card, .official-card {
+        margin-bottom: 40px !important;
+        border-bottom: 1px solid #eee !important;
+        padding-bottom: 30px !important;
+    }
+
+    .form-group input, .form-group textarea {
+        background-color: #f9f9f9; border: 1px solid #eee;
+    }
+
+    .map-container { height: 250px; margin-top: 20px; box-shadow: none; border-radius: 8px; }
+    .section-title h2 { font-size: 2rem; }
+    .box-title { font-size: 1.3rem; border-bottom: 1px solid #eee; }
+    .service-icon { background: transparent; padding: 0; margin-bottom: 10px; }
+    .service-card:hover { transform: none; border-bottom: 1px solid #eee; }
+    
+    /* LOGO MOBILE 2 BARIS (Diperbaiki) */
+    .logo img { height: 35px; margin-right: 10px; }
+    .logo-desktop { display: none !important; } 
+    
+    .logo-mobile { 
+        display: flex !important;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: flex-start;
+        position: static; 
+    }
+
+    .logo-title-mobile-top {
+        font-size: 0.95rem; /* KEMENAG */
+        font-weight: 800; 
+        color: var(--dark-color);
+        text-transform: uppercase;
+        line-height: 1.1;
+    }
+
+    .logo-title-mobile-bottom {
+        font-size: 0.8rem; /* KOTA DEPOK */
+        font-weight: 700;
+        color: var(--dark-color);
+        text-transform: uppercase;
+        line-height: 1.1;
+    }
+
+    /* PERBAIKAN SUBMENU MOBILE SPRAWL DAN KONSISTENSI STYLING */
+    .dropdown-content { 
+        display: none !important; 
+    }
+
+    .mobile-main-link {
+        padding: 15px 20px; color: var(--dark-color); border-bottom: 1px solid #f5f5f5;
+        font-weight: 700; font-size: 1rem;
+        display: block; 
+    }
+    
+    .mobile-menu-label {
+        padding: 15px 20px 15px 20px; 
+        font-size: 1rem; 
+        font-weight: 700; 
+        color: var(--primary-color); 
+        text-transform: none; 
+        letter-spacing: 0;
+        display: block;
+        border-bottom: 1px solid #f5f5f5; 
+        background-color: #fafafa; 
+    }
+
+    .mobile-submenu-group { 
+        background-color: #fafafa; 
+        border-bottom: 1px solid #eee;
+        padding: 0; 
+    }
+    
+    .mobile-submenu-group a {
+        padding: 12px 20px 12px 40px; 
+        color: #666; 
+        font-size: 0.9rem;
+        border-bottom: 1px solid #f0f0f0;
+        display: block; 
+        width: 100%; 
+    }
+    
+    .mobile-submenu-group a:last-child {
+        border-bottom: none;
+    }
+    
+    .mobile-submenu-group a:hover, .mobile-main-link:hover {
+        background-color: #e8f5e9; 
+        color: var(--primary-color); 
+        padding-left: 30px; 
+    }
+
+    /* === PERBAIKAN KHUSUS KONTAK MOBILE === */
+    .contact-wrapper { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+        padding: 0; 
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Urutan: Info Box (1) di atas Form Box (2) */
+    .contact-info-box {
+        order: 1; 
+        background: transparent !important;
+        padding: 0 20px 30px 20px !important; 
+        border: none !important;
+        border-bottom: 1px solid #eee !important;
+        box-shadow: none !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .contact-form-box {
+        order: 2; 
+        padding: 0 20px !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .info-item {
+        margin-bottom: 15px; 
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .info-item i {
+        flex-shrink: 0;
+        width: 25px; 
+        height: auto; 
+        background: transparent !important;
+        color: var(--primary-color) !important; 
+        font-size: 1.1rem !important;
+        margin-top: 5px; 
+    }
+
+    .info-item h4 { 
+        display: none; 
+    } 
+    
+    .info-item p {
+        font-size: 1rem !important;
+        color: var(--dark-color) !important;
+        line-height: 1.4;
+    }
+    
+    .map-container {
+        margin-top: 30px; 
+        height: 200px;
+        border: 1px solid #eee;
+        border-radius: 8px; 
+    }
+    
+    .contact-form-box {
+        padding: 0 20px !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* =========================================
+   4. HERO SECTION
+   ========================================= */
+.hero {
+    background: linear-gradient(to right, rgba(0, 60, 35, 0.9), rgba(0, 90, 50, 0.8)), url('https://environesia.co.id/uploads/blog/20250429094811-2025-04-29blog094800.jpg');
+    background-size: cover; background-position: center;
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    color: white; padding: 100px 0 50px 0; margin-top: 0; 
+}
+
+.hero-container {
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: var(--site-width); width: 100%; margin: 0 auto; 
+    padding: 0 20px; gap: 40px;
+}
+
+.hero-text { flex: 1.2; text-align: left; }
+.hero-text h1 {
+    font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1;
+    font-weight: 700; color: var(--secondary-color); text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.hero-text p { font-size: 1.15rem; margin-bottom: 35px; line-height: 1.8; color: #f4f4f4; max-width: 90%; }
+
+.btn-cta {
+    padding: 14px 35px; background: var(--secondary-color); color: var(--dark-color);
+    font-weight: 700; border-radius: 50px; transition: 0.3s; border: none; cursor: pointer;
+    display: inline-block; box-shadow: 0 5px 15px rgba(241, 196, 15, 0.3);
+}
+.btn-cta:hover { background: #fff; transform: translateY(-3px); }
+
+/* Hero Image */
+.hero-image {
+    flex: 1; display: flex; justify-content: center; align-items: center;
+    position: relative; height: 50vh;
+}
+.image-frame {
+    position: relative; width: fit-content; height: 100%; padding: 15px;
+    background: rgba(255, 255, 255, 0.1); border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+.image-frame img {
+    width: auto; height: 100%; max-height: 85%; object-fit: contain;
+    border-radius: 12px; display: block;
+}
+
+/* Label Nama */
+.kakan-label {
+    text-align: center; margin-top: 15px; color: white; width: 100%;
+}
+.kakan-label .jabatan {
+    display: block; font-size: 0.85rem; color: var(--secondary-color);
+    text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; font-weight: 600;
+}
+.kakan-label .nama {
+    display: block; font-size: 1.1rem; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 968px) {
+    .hero { padding-top: 120px; text-align: center; height: auto; min-height: 100vh; }
+    .hero-container { flex-direction: column; gap: 50px; padding: 0 20px; }
+    .hero-text { text-align: center; }
+    .hero-text p { max-width: 100%; }
+    .hero-text h1 { font-size: 2.8rem; }
+    .hero-image { display: none; }
+}
+
+/* =========================================
+   5. MAIN CONTENT LAYOUT (CLEAN WHITE)
+   ========================================= */
+.content-page-padding {
+    padding-top: 120px; padding-bottom: 80px;
+    background-color: #fff; 
+    min-height: 80vh;
+    display: flex; flex-direction: column; align-items: center;
+}
+
+/* Kontainer Utama Global (1100px) */
+.content-container {
+    width: 100%;
+    max-width: var(--site-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+/* Judul Halaman */
+.section-title {
+    text-align: center; margin-bottom: 60px;
+    width: 100%; max-width: var(--site-width);
+    margin-left: auto; margin-right: auto;
+    padding: 0 20px;
+}
+.section-title h2 {
+    font-size: 2.5rem; color: var(--primary-color); font-weight: 700;
+    position: relative; display: inline-block; padding-bottom: 15px;
+}
+.section-title h2::after {
+    content: ''; position: absolute; width: 60px; height: 4px;
+    background: var(--secondary-color); bottom: 0; left: 50%;
+    transform: translateX(-50%); border-radius: 2px;
+}
+.section-title p { color: #777; margin-top: 15px; font-size: 1.1rem; }
+
+/* --- Profil Page Specific --- */
+.profile-content { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+.profile-content p {
+    margin-bottom: 25px; text-align: justify; font-size: 1.1rem;
+    color: #444; line-height: 1.9;
+}
+.profile-layout { width: 100%; max-width: var(--site-width); margin: 0 auto; padding: 0 20px; }
+
+/* --- Contact Wrapper --- */
+.contact-wrapper {
+    display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px;
+    width: 100%; max-width: var(--site-width); margin: 0 auto; padding: 0 20px;
+}
+
+.contact-info-box, .contact-form-box {
+    background: white; padding: 40px; border-radius: 12px;
+    border: 1px solid #eee; height: fit-content;
+}
+
+.box-title {
+    font-size: 1.5rem; color: var(--primary-color); margin-bottom: 20px;
+    padding-bottom: 15px; border-bottom: 2px solid #f0f0f0; font-weight: 700;
+}
+
+.info-item {
+    margin-bottom: 30px; display: flex; align-items: flex-start; gap: 20px;
+}
+.info-item i {
+    flex-shrink: 0; width: 45px; height: 45px; font-size: 1.2rem;
+    background: #e8f5e9; color: var(--primary-color); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; margin: 0;
+}
+.info-item div { display: flex; flex-direction: column; justify-content: center; padding-top: 2px; }
+.info-item h4 { margin: 0 0 5px 0; font-size: 1.1rem; color: var(--dark-color); }
+.info-item p { margin: 0; color: #666; font-size: 0.95rem; line-height: 1.6; }
+
+.map-container {
+    margin-top: 30px; border-radius: 12px; overflow: hidden; height: 300px;
+    border: 1px solid #eee;
+}
+.map-container iframe { width: 100%; height: 100%; border: 0; }
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark-color); }
+.form-group input, .form-group textarea {
+    width: 100%; padding: 12px 15px; border: 1px solid #ddd;
+    border-radius: 5px; font-size: 1rem; transition: 0.3s; font-family: 'Poppins', sans-serif;
+    background-color: #fafafa;
+}
+.form-group input:focus {
+    border-color: var(--primary-color); outline: none; background-color: #fff;
+}
+.btn-submit {
+    display: inline-block; background: var(--primary-color); color: white;
+    padding: 12px 30px; border: none; border-radius: 5px; font-size: 1rem;
+    font-weight: 600; cursor: pointer; transition: 0.3s; width: 100%;
+}
+.btn-submit:hover { background: #005230; }
+
+/* --- Services / Layanan Grid --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 30px; width: 100%;
+    max-width: var(--site-width); margin: 0 auto;
+}
+.service-card {
+    background: white; padding: 35px; border-radius: 12px;
+    border: 1px solid #eee; transition: 0.3s;
+    display: flex; flex-direction: column; align-items: flex-start; height: 100%;
+}
+.service-card:hover {
+    transform: translateY(-5px); border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+.service-icon {
+    font-size: 2rem; color: var(--primary-color); margin-bottom: 20px;
+    background: #f0fdf4; padding: 15px; border-radius: 10px;
+}
+.service-card h3 { font-size: 1.2rem; margin-bottom: 15px; color: var(--primary-color); font-weight: 700; }
+.service-desc { font-size: 0.95rem; color: #666; margin-bottom: 20px; line-height: 1.6; }
+.service-list { padding-left: 20px; margin: 0; }
+.service-list li { margin-bottom: 8px; font-size: 0.9rem; color: #444; list-style-type: lower-alpha; }
+.divider { height: 1px; background: #eee; width: 100%; margin: 15px 0 20px 0; }
+
+/* --- Struktur Organisasi & Data --- */
+.chart-image-box {
+    background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;
+    text-align: center; margin-bottom: 50px;
+}
+.chart-image-box img { max-width: 100%; height: auto; }
+
+.officials-grid { display: flex; flex-direction: column; gap: 25px; max-width: 600px; margin: 0 auto; }
+.official-card {
+    background: white; padding: 30px; border-radius: 10px; border: 1px solid #eee;
+    border-left: 5px solid var(--primary-color); text-align: center;
+}
+.head-office { background: #f9f9f9; border-left-color: var(--secondary-color); }
+
+/* Timeline Sejarah */
+.timeline-list li {
+    position: relative; padding-left: 35px; margin-bottom: 20px; border-left: 3px solid #eee;
+}
+.timeline-list li::before {
+    content: ''; position: absolute; left: -6.5px; top: 6px; width: 10px; height: 10px;
+    background: var(--primary-color); border-radius: 50%;
+}
+
+/* Data Stats */
+.data-section { margin-bottom: 60px; }
+.data-title {
+    font-size: 1.5rem; color: var(--primary-color); margin-bottom: 25px;
+    border-left: 5px solid var(--secondary-color); padding-left: 20px; font-weight: 700;
+}
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
+.stat-card {
+    background: white; padding: 30px; border-radius: 12px; border: 1px solid #eee;
+    text-align: center; transition: 0.3s;
+}
+.stat-card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+.stat-number { font-size: 2rem; font-weight: 800; color: var(--dark-color); }
+.stat-icon { font-size: 2.5rem; margin-bottom: 20px; }
+
+/* Warna Ikon Data */
+.stat-icon.islam { color: #27ae60; }
+.stat-icon.kristen { color: #2980b9; }
+.stat-icon.katolik { color: #f1c40f; }
+.stat-icon.hindu { color: #e67e22; }
+.stat-icon.budha { color: #e74c3c; }
+.stat-icon.khonghucu { color: #8e44ad; }
+
+/* --- Berita Redirect --- */
+.news-redirect-card {
+    background: white; padding: 60px; border-radius: 20px; border: 1px solid #eee;
+    text-align: center; max-width: 700px; width: 90%; margin: 0 auto;
+}
+.btn-news-open {
+    display: inline-block; background-color: var(--primary-color); color: white;
+    padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold;
 }
