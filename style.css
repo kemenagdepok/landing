@@ -7,7 +7,7 @@
     --dark-color: #333;
     --light-color: #f9f9f9; 
     --text-color: #555;
-    --site-width: 1100px; /* DIUBAH: Lebar Maksimal Konsisten 1100px */
+    --site-width: 1100px; /* Lebar Maksimal Konsisten 1100px */
 }
 
 * {
@@ -60,7 +60,6 @@ ul { list-style: none; }
 .logo-text-container {
     display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
 }
-
 .logo-desktop { display: flex; flex-direction: column; }
 .logo-title {
     font-size: 1.1rem; font-weight: 700; color: var(--primary-color);
@@ -81,7 +80,6 @@ ul { list-style: none; }
     font-size: 0.95rem; padding: 0 15px; height: 100%; 
     display: flex; align-items: center;
 }
-
 .nav-links a:hover { color: var(--primary-color); background-color: #f9f9f9; }
 
 /* Tombol PTSP Desktop */
@@ -91,7 +89,6 @@ ul { list-style: none; }
     border-radius: 6px; font-weight: bold; display: inline-block;
     transition: 0.3s;
 }
-
 .nav-links li:last-child a.btn-login:hover {
     background: #005230; color: white; transform: translateY(-2px);
 }
@@ -105,19 +102,15 @@ ul { list-style: none; }
     z-index: 9999; border-radius: 0 0 8px 8px; top: 100%; left: 0;
     padding: 10px 0; border-top: 3px solid var(--primary-color); margin-top: 0; 
 }
-
 .dropdown-content a {
     color: var(--dark-color); padding: 12px 20px; height: auto; display: block;
     font-size: 0.9rem; transition: 0.2s; text-align: left; white-space: nowrap;
     border-bottom: 1px solid #f9f9f9;
 }
-
 .dropdown-content a:last-child { border-bottom: none; }
-
 .dropdown-content a:hover {
     background-color: #f0fdf4; color: var(--primary-color); padding-left: 25px;
 }
-
 .dropdown:hover .dropdown-content { display: block; animation: fadeIn 0.2s ease-in-out; }
 .dropbtn i { font-size: 0.8rem; margin-left: 5px; transition: 0.3s; }
 .dropdown:hover .dropbtn i { transform: rotate(180deg); }
@@ -432,63 +425,6 @@ ul { list-style: none; }
 .btn-news-open {
     display: inline-block; background-color: var(--primary-color); color: white;
     padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold;
-}
-
-/* =========================================
-   6. DATA KEAGAMAAN PAGE STYLES (SPECIFIC)
-   ========================================= */
-/* Override Khusus Halaman Data agar Padding Mobile 20px */
-.data-page .content-page-padding {
-    padding-top: 140px;
-    padding-bottom: 80px;
-    background-color: #fff;
-    min-height: 80vh;
-    display: block;
-}
-
-.data-layout {
-    width: 100%;
-    max-width: var(--site-width);
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.data-page .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-}
-
-.data-page .stat-card {
-    background: white;
-    padding: 30px 20px;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.data-page .stat-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.data-page .stat-icon { font-size: 2.5rem; margin-bottom: 15px; }
-.data-page .stat-label { font-size: 1rem; color: #666; margin-bottom: 5px; font-weight: 600; }
-.data-page .stat-number { font-size: 1.8rem; font-weight: 800; color: var(--dark-color); }
-
-.data-source {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #777;
-    font-style: italic;
-    background: #f9f9f9;
-    padding: 10px 20px;
-    border-radius: 50px;
-    display: inline-block;
 }
 
 /* =========================================
@@ -948,6 +884,7 @@ footer {
 .tupoksi-page ol li strong {
     color: var(--primary-color);
 }
+
 
 /* Links and Notes */
 .tupoksi-page .official-link {
