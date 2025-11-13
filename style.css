@@ -54,59 +54,61 @@ ul { list-style: none; }
 }
 
 /* --- Logo Styling --- */
-.logo { display: flex; align-items: center; text-decoration: none; }
-.logo img { height: 50px; margin-right: 12px; }
-
-/* =========================================
-   OVERRIDE LOGO DESKTOP BARU (2 BARIS)
-   ========================================= */
-
-.logo-text-container {
-    /* Memastikan kontainer menampilkan elemen dalam kolom */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    line-height: 1.1; /* Mengatur jarak antar baris */
+.logo { 
+    display: flex; 
+    align-items: center; 
+    text-decoration: none; 
+}
+.logo img { 
+    height: 50px; 
+    margin-right: 12px; 
 }
 
-/* =========================================
-   LOGO DESKTOP OVERRIDE (Dua Baris & Konsisten)
-   ========================================= */
+/* KODE KONSISTENSI LOGO DESKTOP BARU (Dua Baris) */
+.logo-text-container {
+    /* Mengatur jarak antar baris */
+    line-height: 1.1;
+}
 
-/* Memastikan tulisan terbagi dalam kolom/vertikal (dua baris) */
 .logo-desktop {
     display: flex !important;
     flex-direction: column !important; 
     justify-content: center;
-    line-height: 1.1; /* Mengatur jarak antar baris */
 }
 
-/* Mengatur Gaya Font Agar Sama dan Konsisten */
 .logo-title, 
 .logo-subtitle {
-    /* Mengatur Ukuran Font menjadi Sama */
+    /* Mengatur Ukuran Font, Warna, Tebal, dan Kapital agar Sama */
     font-size: 1.1rem !important; 
-    
-    /* Mengatur Font Menjadi Hitam */
     color: var(--dark-color) !important;
-    
-    /* Mengatur Font Menjadi Tebal */
     font-weight: 700 !important; 
-    
-    /* Mengatur Font Menjadi Kapital Semua */
     text-transform: uppercase !important;
     
-    /* Menghilangkan margin vertikal yang tidak perlu */
+    /* Memastikan dua baris rapi */
     margin: 0 !important;
     line-height: 1.1 !important;
 }
 
-/* Mengembalikan jarak baris pada kontainer utama */
-.logo-text-container {
-    line-height: 1.2;
+/* KODE PERBAIKAN LOGO MOBILE */
+@media (max-width: 968px) {
+    .logo-desktop { 
+        display: none !important; /* Pastikan desktop hidden di mobile */
+    } 
+    
+    .logo-mobile { 
+        display: block !important; /* Pastikan mobile terlihat di mobile */
+    }
+
+    .logo-mobile .logo-title {
+        /* Gaya Teks Logo Mobile (untuk KEMENAG KOTA DEPOK) */
+        font-size: 0.9rem !important;
+        font-weight: 800 !important; 
+        color: var(--dark-color) !important;
+        text-transform: uppercase !important;
+        line-height: 1.1 !important;
+    }
 }
 
-.logo-mobile { display: none; }
 
 /* --- Desktop Menu --- */
 .nav-links { display: flex; gap: 0; align-items: center; height: 100%; }
@@ -177,14 +179,17 @@ ul { list-style: none; }
     }
 
     .logo img { height: 35px; margin-right: 10px; }
-    .logo-desktop { display: none; } 
+    /* .logo-desktop sudah disembunyikan di atas */
     
     .logo-mobile {
-        display: flex; flex-direction: column; justify-content: center;
-        font-size: 0.85rem; font-weight: 800; color: #333;
-        letter-spacing: 0.5px; line-height: 1.1; margin-top: 2px;
+        display: flex !important; /* Diaktifkan untuk mobile */
+        flex-direction: column; 
+        justify-content: center;
+        /* Gaya font diatur di blok OVERRIDE LOGO MOBILE di atas */
+        letter-spacing: 0.5px; 
+        margin-top: 0; 
     }
-
+    
     .hamburger {
         font-size: 1.8rem; color: var(--primary-color); cursor: pointer;
         border: none; padding: 0; background: transparent;
