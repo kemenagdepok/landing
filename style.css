@@ -70,31 +70,35 @@ ul { list-style: none; }
 }
 
 /* =========================================
-   OVERRIDE KONSISTENSI FONT LOGO DESKTOP
+   LOGO DESKTOP OVERRIDE (Dua Baris & Konsisten)
    ========================================= */
 
+/* Memastikan tulisan terbagi dalam kolom/vertikal (dua baris) */
+.logo-desktop {
+    display: flex !important;
+    flex-direction: column !important; 
+    justify-content: center;
+    line-height: 1.1; /* Mengatur jarak antar baris */
+}
+
+/* Mengatur Gaya Font Agar Sama dan Konsisten */
 .logo-title, 
 .logo-subtitle {
     /* Mengatur Ukuran Font menjadi Sama */
     font-size: 1.1rem !important; 
     
-    /* Mengatur Warna Font menjadi Sama (Hitam) */
+    /* Mengatur Font Menjadi Hitam */
     color: var(--dark-color) !important;
     
-    /* Memastikan Keterbacaan dan Alignment */
+    /* Mengatur Font Menjadi Tebal */
+    font-weight: 700 !important; 
+    
+    /* Mengatur Font Menjadi Kapital Semua */
+    text-transform: uppercase !important;
+    
+    /* Menghilangkan margin vertikal yang tidak perlu */
+    margin: 0 !important;
     line-height: 1.1 !important;
-    margin-top: 0 !important;
-}
-
-/* Jika Anda ingin mempertahankan tebal/kapitalisasi sebelumnya */
-.logo-title {
-    font-weight: 700 !important; /* Contoh: Baris 1 tetap tebal */
-    text-transform: uppercase !important;
-}
-
-.logo-subtitle {
-    font-weight: 700 !important; /* Baris 2 juga tebal, sesuai permintaan sebelumnya */
-    text-transform: uppercase !important;
 }
 
 /* Mengembalikan jarak baris pada kontainer utama */
