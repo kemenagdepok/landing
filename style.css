@@ -7,7 +7,7 @@
     --dark-color: #333;
     --light-color: #f9f9f9; 
     --text-color: #555;
-    --site-width: 1100px; /* Lebar Maksimal Konsisten 1100px */
+    --site-width: 1100px; /* DIUBAH: Lebar Maksimal Konsisten 1100px */
 }
 
 * {
@@ -60,6 +60,7 @@ ul { list-style: none; }
 .logo-text-container {
     display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
 }
+
 .logo-desktop { display: flex; flex-direction: column; }
 .logo-title {
     font-size: 1.1rem; font-weight: 700; color: var(--primary-color);
@@ -80,6 +81,7 @@ ul { list-style: none; }
     font-size: 0.95rem; padding: 0 15px; height: 100%; 
     display: flex; align-items: center;
 }
+
 .nav-links a:hover { color: var(--primary-color); background-color: #f9f9f9; }
 
 /* Tombol PTSP Desktop */
@@ -89,27 +91,33 @@ ul { list-style: none; }
     border-radius: 6px; font-weight: bold; display: inline-block;
     transition: 0.3s;
 }
+
 .nav-links li:last-child a.btn-login:hover {
     background: #005230; color: white; transform: translateY(-2px);
 }
 
 /* --- Dropdown Menu --- */
 .dropdown { position: relative; }
+
 .dropdown-content {
     display: none; position: absolute; background-color: #fff;
     min-width: 220px; width: max-content; box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.1);
     z-index: 9999; border-radius: 0 0 8px 8px; top: 100%; left: 0;
     padding: 10px 0; border-top: 3px solid var(--primary-color); margin-top: 0; 
 }
+
 .dropdown-content a {
     color: var(--dark-color); padding: 12px 20px; height: auto; display: block;
     font-size: 0.9rem; transition: 0.2s; text-align: left; white-space: nowrap;
     border-bottom: 1px solid #f9f9f9;
 }
+
 .dropdown-content a:last-child { border-bottom: none; }
+
 .dropdown-content a:hover {
     background-color: #f0fdf4; color: var(--primary-color); padding-left: 25px;
 }
+
 .dropdown:hover .dropdown-content { display: block; animation: fadeIn 0.2s ease-in-out; }
 .dropbtn i { font-size: 0.8rem; margin-left: 5px; transition: 0.3s; }
 .dropdown:hover .dropbtn i { transform: rotate(180deg); }
@@ -370,6 +378,62 @@ ul { list-style: none; }
 .service-list li { margin-bottom: 8px; font-size: 0.9rem; color: #444; list-style-type: lower-alpha; }
 .divider { height: 1px; background: #eee; width: 100%; margin: 15px 0 20px 0; }
 
+/* --- Struktur Organisasi & Data --- */
+.chart-image-box {
+    background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;
+    text-align: center; margin-bottom: 50px;
+}
+.chart-image-box img { max-width: 100%; height: auto; }
+
+.officials-grid { display: flex; flex-direction: column; gap: 25px; max-width: 600px; margin: 0 auto; }
+.official-card {
+    background: white; padding: 30px; border-radius: 10px; border: 1px solid #eee;
+    border-left: 5px solid var(--primary-color); text-align: center;
+}
+.head-office { background: #f9f9f9; border-left-color: var(--secondary-color); }
+
+/* Timeline Sejarah */
+.timeline-list li {
+    position: relative; padding-left: 35px; margin-bottom: 20px; border-left: 3px solid #eee;
+}
+.timeline-list li::before {
+    content: ''; position: absolute; left: -6.5px; top: 6px; width: 10px; height: 10px;
+    background: var(--primary-color); border-radius: 50%;
+}
+
+/* Data Stats */
+.data-section { margin-bottom: 60px; }
+.data-title {
+    font-size: 1.5rem; color: var(--primary-color); margin-bottom: 25px;
+    border-left: 5px solid var(--secondary-color); padding-left: 20px; font-weight: 700;
+}
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
+.stat-card {
+    background: white; padding: 30px; border-radius: 12px; border: 1px solid #eee;
+    text-align: center; transition: 0.3s;
+}
+.stat-card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+.stat-number { font-size: 2rem; font-weight: 800; color: var(--dark-color); }
+.stat-icon { font-size: 2.5rem; margin-bottom: 20px; }
+
+/* Warna Ikon Data */
+.stat-icon.islam { color: #27ae60; }
+.stat-icon.kristen { color: #2980b9; }
+.stat-icon.katolik { color: #f1c40f; }
+.stat-icon.hindu { color: #e67e22; }
+.stat-icon.budha { color: #e74c3c; }
+.stat-icon.khonghucu { color: #8e44ad; }
+
+/* --- Berita Redirect --- */
+.news-redirect-card {
+    background: white; padding: 60px; border-radius: 20px; border: 1px solid #eee;
+    text-align: center; max-width: 700px; width: 90%; margin: 0 auto;
+}
+.btn-news-open {
+    display: inline-block; background-color: var(--primary-color); color: white;
+    padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold;
+}
+
 /* =========================================
    6. DATA KEAGAMAAN PAGE STYLES (SPECIFIC)
    ========================================= */
@@ -414,14 +478,6 @@ ul { list-style: none; }
 .data-page .stat-icon { font-size: 2.5rem; margin-bottom: 15px; }
 .data-page .stat-label { font-size: 1rem; color: #666; margin-bottom: 5px; font-weight: 600; }
 .data-page .stat-number { font-size: 1.8rem; font-weight: 800; color: var(--dark-color); }
-
-/* Warna Ikon Data */
-.stat-icon.islam { color: #27ae60; }
-.stat-icon.kristen { color: #2980b9; }
-.stat-icon.katolik { color: #f1c40f; }
-.stat-icon.hindu { color: #e67e22; }
-.stat-icon.budha { color: #e74c3c; }
-.stat-icon.khonghucu { color: #8e44ad; }
 
 .data-source {
     margin-top: 40px;
@@ -468,7 +524,7 @@ ul { list-style: none; }
     
     /* PENGECUALIAN KHUSUS: Data Keagamaan Mobile tetap Kotak & 2 Kolom */
     .data-page .stats-grid {
-        grid-template-columns: repeat(2, 1fr) !important; /* Paksa 2 kolom */
+        grid-template-columns: repeat(2, 1fr) !important;
         gap: 15px !important;
         padding: 0 20px;
     }
@@ -892,7 +948,6 @@ footer {
 .tupoksi-page ol li strong {
     color: var(--primary-color);
 }
-
 
 /* Links and Notes */
 .tupoksi-page .official-link {
