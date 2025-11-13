@@ -16,7 +16,73 @@
 </head>
 <body class="structure-page">
 
-    <div id="header-placeholder"></div>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Kementerian_Agama_new_logo.png/100px-Kementerian_Agama_new_logo.png" alt="Logo Kemenag">
+                    
+                    <div class="logo-text-container">
+                        <div class="logo-desktop">
+                            <span class="logo-title">Kantor Kementerian Agama</span>
+                            <span class="logo-subtitle">Kota Depok</span>
+                        </div>
+                        
+                        <div class="logo-mobile">
+                            <span>KEMENAG</span>
+                            <span>KOTA DEPOK</span>
+                        </div>
+                    </div>
+                </a>
+
+                <ul class="nav-links desktop-menu">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Profil <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="profil.html">Tentang Kami</a>
+                            <a href="lambang.html">Makna Lambang</a>
+                            <a href="sejarah.html">Sejarah & Dasar Hukum</a>
+                            <a href="visi-misi.html">Visi & Misi</a>
+                            <a href="struktur.html">Struktur Organisasi</a>
+                            <a href="tupoksi.html">Tugas & Fungsi</a>
+                            <a href="data-keagamaan.html">Data Keagamaan</a>
+                        </div>
+                    </li>
+                    <li><a href="layanan.html">Layanan</a></li>
+                    <li><a href="berita.html">Berita</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                    <li><a href="#" class="btn-login">PTSP Online</a></li>
+                </ul>
+
+                <div class="mobile-controls">
+                    <a href="#" class="btn-login-mobile">PTSP Online</a>
+                    <div class="hamburger" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-menu-dropdown" id="mobileMenu">
+                <a href="index.html" class="mobile-main-link"><i class="fas fa-home"></i> Beranda</a>
+                
+                <div class="mobile-submenu-group">
+                    <span class="mobile-menu-label">PROFIL</span>
+                    <a href="profil.html">Tentang Kami</a>
+                    <a href="lambang.html">Makna Lambang</a>
+                    <a href="sejarah.html">Sejarah & Dasar Hukum</a>
+                    <a href="visi-misi.html">Visi & Misi</a>
+                    <a href="struktur.html">Struktur Organisasi</a>
+                    <a href="tupoksi.html">Tugas & Fungsi</a>
+                    <a href="data-keagamaan.html">Data Keagamaan</a>
+                </div>
+
+                <a href="layanan.html" class="mobile-main-link">Layanan</a>
+                <a href="berita.html" class="mobile-main-link">Berita</a>
+                <a href="kontak.html" class="mobile-main-link">Kontak</a>
+            </div>
+        </nav>
+    </header>
 
     <section class="content-page-padding">
         
@@ -86,7 +152,47 @@
 
     </section>
 
-    <div id="footer-placeholder"></div>
+    <footer id="kontak">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Kemenag Kota Depok</h3>
+                <p>Melayani dengan Ikhlas, Bekerja dengan Tuntas.</p>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h3>Hubungi Kami</h3>
+                
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Jl. Boulevard Grand Depok City, Jatimulya, Kec. Cilodong, Kota Depok, Jawa Barat 16413</span>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>(021) 7718877</span>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>kotadepok@kemenag.go.id</span>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3>Media Sosial</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Kementerian Agama Kota Depok. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <script src="main.js"></script>
 
