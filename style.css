@@ -60,15 +60,28 @@ ul { list-style: none; }
 .logo-text-container {
     display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
 }
-.logo-desktop { display: flex; flex-direction: column; }
-.logo-title {
-    font-size: 1.1rem; font-weight: 700; color: var(--primary-color);
-    line-height: 1.1; display: block;
-}
+/* =========================================
+   OVERRIDE LOGO DESKTOP
+   ========================================= */
+.logo-title, 
 .logo-subtitle {
-    font-size: 0.85rem; font-weight: 500; color: #666;
-    display: block; margin-top: 2px;
+    /* Menerapkan Huruf Kapital dan Ukuran Font yang Sama */
+    text-transform: uppercase !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important; /* Membuat tebal (untuk Kota Depok) */
+    color: var(--dark-color) !important; /* Mengubah warna menjadi hitam */
+    line-height: 1.2 !important;
 }
+
+.logo-subtitle {
+    margin-top: 0 !important; /* Menghilangkan margin vertikal */
+}
+
+/* Mengembalikan jarak baris pada kontainer utama */
+.logo-text-container {
+    line-height: 1.2;
+}
+
 .logo-mobile { display: none; }
 
 /* --- Desktop Menu --- */
