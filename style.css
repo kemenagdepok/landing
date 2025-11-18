@@ -371,6 +371,52 @@ ul { list-style: none; }
 .service-list li { margin-bottom: 8px; font-size: 0.9rem; color: #444; list-style-type: lower-alpha; }
 .divider { height: 1px; background: #eee; width: 100%; margin: 15px 0 20px 0; }
 
+/* --- Struktur Organisasi & Data --- */
+.chart-image-box {
+    background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;
+    text-align: center; margin-bottom: 50px;
+}
+.chart-image-box img { max-width: 100%; height: auto; }
+
+.officials-grid { display: flex; flex-direction: column; gap: 25px; max-width: 600px; margin: 0 auto; }
+.official-card {
+    background: white; padding: 30px; border-radius: 10px; border: 1px solid #eee;
+    border-left: 5px solid var(--primary-color); text-align: center;
+}
+.head-office { background: #f9f9f9; border-left-color: var(--secondary-color); }
+
+/* Timeline Sejarah */
+.timeline-list li {
+    position: relative; padding-left: 35px; margin-bottom: 20px; border-left: 3px solid #eee;
+}
+.timeline-list li::before {
+    content: ''; position: absolute; left: -6.5px; top: 6px; width: 10px; height: 10px;
+    background: var(--primary-color); border-radius: 50%;
+}
+
+/* Data Stats */
+.data-section { margin-bottom: 60px; }
+.data-title {
+    font-size: 1.5rem; color: var(--primary-color); margin-bottom: 25px;
+    border-left: 5px solid var(--secondary-color); padding-left: 20px; font-weight: 700;
+}
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
+.stat-card {
+    background: white; padding: 30px; border-radius: 12px; border: 1px solid #eee;
+    text-align: center; transition: 0.3s;
+}
+.stat-card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+.stat-number { font-size: 2rem; font-weight: 800; color: var(--dark-color); }
+.stat-icon { font-size: 2.5rem; margin-bottom: 20px; }
+
+/* Warna Ikon Data */
+.stat-icon.islam { color: #27ae60; }
+.stat-icon.kristen { color: #2980b9; }
+.stat-icon.katolik { color: #f1c40f; }
+.stat-icon.hindu { color: #e67e22; }
+.stat-icon.budha { color: #e74c3c; }
+.stat-icon.khonghucu { color: #8e44ad; }
+
 /* --- Berita Redirect --- */
 .news-redirect-card {
     background: white; padding: 60px; border-radius: 20px; border: 1px solid #eee;
@@ -382,103 +428,6 @@ ul { list-style: none; }
 }
 
 /* =========================================
-   6. DATA KEAGAMAAN PAGE STYLES (SPECIFIC)
-   ========================================= */
-/* Override Khusus Halaman Data */
-.data-page .content-page-padding {
-    padding-top: 140px;
-    padding-bottom: 80px;
-    background-color: #fff;
-    min-height: 80vh;
-    display: block;
-}
-
-.data-layout {
-    width: 100%;
-    max-width: var(--site-width);
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.inner-data-content {
-    max-width: 900px;
-    margin: 0 auto;
-    padding-bottom: 20px;
-}
-.inner-data-content p {
-    text-align: justify;
-    font-size: 1.05rem;
-    color: #444;
-    line-height: 1.8;
-}
-
-.data-section {
-    margin-bottom: 60px;
-}
-
-.data-title {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 25px;
-    border-left: 5px solid var(--secondary-color);
-    padding-left: 15px;
-    font-weight: 700;
-}
-.rumah-ibadah-margin {
-    margin-top: 60px;
-}
-
-/* PERBAIKAN: Grid 3 Kolom di Desktop/Tablet */
-.data-page .stats-grid {
-    display: grid;
-    /* Tampilkan 3 kolom, ratakan tengah jika tidak penuh */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 25px;
-    max-width: 900px; /* Batasi lebar grid agar tidak terlalu renggang */
-    margin: 0 auto;
-}
-
-.data-page .stat-card {
-    background: white;
-    padding: 30px 20px;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.data-page .stat-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.data-page .stat-icon { font-size: 2.5rem; margin-bottom: 15px; }
-.data-page .stat-label { font-size: 1rem; color: #666; margin-bottom: 5px; font-weight: 600; }
-.data-page .stat-number { font-size: 1.8rem; font-weight: 800; color: var(--dark-color); }
-
-/* Warna Ikon Data */
-.stat-icon.islam { color: #27ae60; }
-.stat-icon.kristen { color: #2980b9; }
-.stat-icon.katolik { color: #f1c40f; }
-.stat-icon.hindu { color: #e67e22; }
-.stat-icon.budha { color: #e74c3c; }
-.stat-icon.khonghucu { color: #8e44ad; }
-
-.data-source {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #777;
-    font-style: italic;
-    background: #f9f9f9;
-    padding: 10px 20px;
-    border-radius: 50px;
-    display: inline-block;
-}
-
-/* =========================================
    7. MOBILE FLAT DESIGN & ADJUSTMENTS
    ========================================= */
 @media (max-width: 968px) {
@@ -487,8 +436,8 @@ ul { list-style: none; }
         padding-left: 20px; padding-right: 20px; padding-top: 100px;
     }
     
-    /* 2. PADDING CONTAINER DATA KHUSUS (Reset) */
-    .data-layout { padding: 0 !important; }
+    /* 2. PADDING CONTAINER DATA KHUSUS */
+    .data-layout { padding: 0 !important; } /* Padding dihandle oleh .content-page-padding */
 
     /* 3. Flat Design di Mobile (Hapus Kotak) */
     .content-container,
@@ -511,10 +460,10 @@ ul { list-style: none; }
     
     /* PENGECUALIAN KHUSUS: Data Keagamaan Mobile tetap Kotak & 2 Kolom */
     .data-page .stats-grid {
-        grid-template-columns: repeat(2, 1fr) !important; /* Paksa 2 kolom */
+        grid-template-columns: repeat(2, 1fr) !important;
         gap: 15px !important;
-        padding: 0; /* Padding dihandle oleh .data-layout */
-        max-width: 100%;
+        /* Hapus padding agar sejajar dengan padding .content-page-padding */
+        padding: 0; 
     }
 
     .data-page .stat-card {
@@ -588,7 +537,6 @@ footer {
    9. LAMBANG PAGE STYLES
    ========================================= */
 
-/* Override Khusus Halaman Lambang */
 .lambang-page .content-page-padding {
     padding-top: 140px;
     padding-bottom: 80px;
@@ -597,7 +545,6 @@ footer {
     display: block; 
 }
 
-/* Wrapper Layout Konsisten */
 .lambang-layout {
     width: 100%;
     max-width: var(--site-width);
@@ -605,13 +552,11 @@ footer {
     padding: 0 20px;
 }
 
-/* Kontainer tengah untuk keterbacaan teks */
 .inner-content {
     max-width: 900px;
     margin: 0 auto;
 }
 
-/* Gambar Lambang */
 .logo-display {
     text-align: center;
     margin-bottom: 50px;
@@ -621,7 +566,6 @@ footer {
     height: auto;
 }
 
-/* Teks Makna */
 .meaning-list {
     margin-left: 20px;
     margin-bottom: 30px;
@@ -634,7 +578,6 @@ footer {
     margin-bottom: 15px;
 }
 
-/* Tombol Download yang Rapi */
 .download-section {
     margin-top: 40px;
     padding-top: 30px;
@@ -676,7 +619,6 @@ footer {
    10. SEJARAH PAGE STYLES
    ========================================= */
 
-/* Override Khusus Halaman Sejarah */
 .history-page .content-page-padding {
     padding-top: 140px;
     padding-bottom: 80px;
@@ -685,7 +627,6 @@ footer {
     display: block; 
 }
 
-/* Wrapper Layout Konsisten */
 .history-layout {
     width: 100%;
     max-width: var(--site-width);
@@ -693,7 +634,6 @@ footer {
     padding: 0 20px;
 }
 
-/* Kontainer Teks */
 .history-content {
     max-width: 900px;
     margin: 0 auto;
@@ -721,7 +661,6 @@ footer {
     font-weight: 700;
 }
 
-/* Style umum paragraf konten */
 .history-content p {
     text-align: justify;
     margin-bottom: 15px;
@@ -777,7 +716,6 @@ footer {
    11. STRUKTUR ORGANISASI PAGE STYLES
    ========================================= */
 
-/* Override Khusus Halaman Struktur */
 .structure-page .content-page-padding {
     padding-top: 140px;
     padding-bottom: 80px;
@@ -786,7 +724,6 @@ footer {
     display: block;
 }
 
-/* Wrapper Layout Konsisten */
 .structure-layout {
     width: 100%;
     max-width: var(--site-width);
@@ -794,7 +731,6 @@ footer {
     padding: 0 20px;
 }
 
-/* Area Gambar Bagan */
 .chart-image-box {
     text-align: center;
     margin-bottom: 60px;
@@ -808,7 +744,6 @@ footer {
     height: auto;
 }
 
-/* Grid Pejabat (1 Kolom Tengah) */
 .officials-grid {
     display: flex;
     flex-direction: column;
@@ -817,7 +752,6 @@ footer {
     margin: 0 auto;
 }
 
-/* Kartu Pejabat */
 .official-card {
     background: white;
     padding: 30px;
@@ -868,7 +802,6 @@ footer {
    12. TUPOKSI PAGE STYLES
    ========================================= */
 
-/* Override Layout Khusus Halaman Tupoksi */
 .tupoksi-page .content-page-padding {
     padding-top: 140px; 
     padding-bottom: 80px;
@@ -877,14 +810,12 @@ footer {
     display: block;
 }
 
-/* Kontainer Utama & Content Container */
 .tupoksi-page .content-container {
     max-width: var(--site-width); 
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Inner Text Wrapper for Readability */
 .tupoksi-page .inner-tupoksi-content {
     max-width: 900px;
     margin: 0 auto;
@@ -976,7 +907,6 @@ footer {
    13. VISI MISI PAGE STYLES
    ========================================= */
 
-/* Override Layout Khusus Halaman Visi Misi */
 .visi-misi-page .content-page-padding {
     padding-top: 140px;
     padding-bottom: 80px;
@@ -985,7 +915,6 @@ footer {
     display: block;
 }
 
-/* Wrapper Layout 1100px */
 .visi-misi-layout {
     width: 100%;
     max-width: var(--site-width);
@@ -993,7 +922,6 @@ footer {
     padding: 0 20px;
 }
 
-/* Konten Teks (Agar nyaman dibaca tidak terlalu lebar) */
 .visi-misi-content {
     max-width: 900px;
     margin: 0 auto;
