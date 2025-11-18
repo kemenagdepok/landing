@@ -286,7 +286,7 @@ ul { list-style: none; }
 }
 .section-title p { color: #777; margin-top: 15px; font-size: 1.1rem; }
 
-/* --- Profil Page Specific (Readability) --- */
+/* --- Profil Page Specific --- */
 .profile-content { max-width: 900px; margin: 0 auto; padding: 0 20px; }
 .profile-content p {
     margin-bottom: 25px; text-align: justify; font-size: 1.1rem;
@@ -460,7 +460,7 @@ ul { list-style: none; }
     
     /* PENGECUALIAN KHUSUS: Data Keagamaan Mobile tetap Kotak & 2 Kolom */
     .data-page .stats-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* Paksa 2 kolom */
         gap: 15px !important;
         padding: 0 20px;
     }
@@ -788,8 +788,8 @@ footer {
     letter-spacing: 1px; margin-bottom: 10px; font-weight: 700;
 }
 .official-card .name {
-    font-size: 1.3rem; font-weight: 700; color: var(--dark-color);
-    margin-bottom: 5px;
+    font-size: 1.3rem; color: var(--dark-color);
+    margin-bottom: 5px; font-weight: 700;
 }
 .official-card .nip { font-size: 0.9rem; color: #666; font-style: italic; }
 
@@ -885,6 +885,7 @@ footer {
     color: var(--primary-color);
 }
 
+
 /* Links and Notes */
 .tupoksi-page .official-link {
     margin-top: 25px;
@@ -932,7 +933,7 @@ footer {
     display: block;
 }
 
-/* Wrapper Layout 1200px */
+/* Wrapper Layout 1100px */
 .visi-misi-layout {
     width: 100%;
     max-width: var(--site-width);
