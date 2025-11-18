@@ -428,6 +428,111 @@ ul { list-style: none; }
 }
 
 /* =========================================
+   7. MOBILE FLAT DESIGN & ADJUSTMENTS
+   ========================================= */
+@media (max-width: 968px) {
+    /* 1. PADDING HALAMAN MOBILE (KONSISTEN 20px) */
+    .content-page-padding {
+        padding-left: 20px; padding-right: 20px; padding-top: 100px;
+    }
+    
+    /* 2. PADDING CONTAINER DATA KHUSUS */
+    .data-layout { padding: 0 20px !important; }
+
+    /* 3. Flat Design di Mobile (Hapus Kotak) */
+    .content-container,
+    .contact-info-box,
+    .contact-form-box,
+    .news-redirect-card,
+    .structure-container,
+    .chart-image-box, 
+    .service-card,
+    .official-card {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important; 
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border: none !important;
+        background: transparent !important;
+    }
+    
+    /* PENGECUALIAN KHUSUS: Data Keagamaan Mobile tetap Kotak & 2 Kolom */
+    .data-page .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+        padding: 0 20px;
+    }
+
+    .data-page .stat-card {
+        background: white !important;
+        border: 1px solid #eee !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05) !important;
+        border-radius: 10px !important;
+        padding: 20px 10px !important;
+        margin: 0 !important;
+        width: auto !important;
+    }
+
+    .data-page .stat-icon { font-size: 2rem; margin-bottom: 10px; }
+    .data-page .stat-label { font-size: 0.9rem; }
+    .data-page .stat-number { font-size: 1.4rem; }
+
+    /* Layout Contact Mobile */
+    .contact-wrapper { grid-template-columns: 1fr; gap: 40px; padding: 0; }
+    .contact-info-box, .service-card, .official-card {
+        margin-bottom: 40px !important;
+        border-bottom: 1px solid #eee !important;
+        padding-bottom: 30px !important;
+    }
+
+    .form-group input, .form-group textarea {
+        background-color: #f9f9f9; border: 1px solid #eee;
+    }
+
+    .map-container { height: 250px; margin-top: 20px; box-shadow: none; border-radius: 8px; }
+    .section-title h2 { font-size: 2rem; }
+    .box-title { font-size: 1.3rem; border-bottom: 1px solid #eee; }
+    .service-icon { background: transparent; padding: 0; margin-bottom: 10px; }
+    .service-card:hover { transform: none; border-bottom: 1px solid #eee; }
+}
+
+/* =========================================
+   8. FOOTER
+   ========================================= */
+footer {
+    background: #1a1a1a; color: white; padding: 70px 0 30px 0; font-size: 0.95rem;
+}
+.footer-container {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px; margin-bottom: 50px;
+    max-width: var(--site-width); margin-left: auto; margin-right: auto; 
+    padding: 0 20px;
+}
+.footer-col h3 {
+    margin-bottom: 25px; color: var(--secondary-color); font-size: 1.3rem; font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.footer-col p { line-height: 1.6; color: #aaa; margin-bottom: 15px; }
+
+.contact-item { display: flex; align-items: flex-start; margin-bottom: 18px; color: #ccc; }
+.contact-item i { min-width: 25px; color: var(--secondary-color); margin-top: 5px; margin-right: 12px; }
+.contact-item span { line-height: 1.6; }
+
+.social-links a {
+    display: inline-flex; width: 40px; height: 40px; background: #333;
+    align-items: center; justify-content: center; border-radius: 50%; margin-right: 10px;
+    transition: 0.3s; color: white; font-size: 1rem;
+}
+.social-links a:hover { background: var(--primary-color); transform: translateY(-3px); }
+
+.copyright {
+    text-align: center; padding-top: 30px; border-top: 1px solid #333;
+    font-size: 0.9rem; color: #777;
+}
+
+/* =========================================
    9. LAMBANG PAGE STYLES
    ========================================= */
 
