@@ -131,59 +131,131 @@ ul { list-style: none; }
     .nav-container { padding: 0 20px; }
     
     .desktop-menu { display: none; }
-    .mobile-controls { display: flex; align-items: center; gap: 15px; }
-
-    .btn-login-mobile {
-        background-color: var(--primary-color); color: white;
-        font-size: 0.8rem; font-weight: bold; padding: 8px 15px;
-        border-radius: 5px; text-decoration: none; white-space: nowrap;
+    
+    /* Controls: Tombol PTSP & Hamburger */
+    .mobile-controls { 
+        display: flex; 
+        align-items: center; 
+        gap: 15px; 
     }
 
+    .btn-login-mobile {
+        background-color: var(--primary-color); 
+        color: white;
+        font-size: 0.8rem; 
+        font-weight: bold; 
+        padding: 8px 15px;
+        border-radius: 5px; 
+        text-decoration: none; 
+        white-space: nowrap;
+    }
+
+    /* Logo Mobile */
     .logo img { height: 35px; margin-right: 10px; }
     .logo-desktop { display: none; } 
     
     .logo-mobile {
-        display: flex; flex-direction: column; justify-content: center;
-        font-size: 0.85rem; font-weight: 800; color: #333;
-        letter-spacing: 0.5px; line-height: 1.1; margin-top: 2px;
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center;
+        font-size: 0.85rem; 
+        font-weight: 800; 
+        color: #333;
+        letter-spacing: 0.5px; 
+        line-height: 1.1; 
+        margin-top: 2px;
     }
 
     .hamburger {
-        font-size: 1.8rem; color: var(--primary-color); cursor: pointer;
-        border: none; padding: 0; background: transparent;
+        font-size: 1.8rem; 
+        color: var(--primary-color); 
+        cursor: pointer;
+        border: none; 
+        padding: 0; 
+        background: transparent;
+        display: flex;
+        align-items: center;
     }
 
+    /* --- Mobile Menu Dropdown (Container Utama) --- */
     .mobile-menu-dropdown {
-        display: none; flex-direction: column; position: absolute;
-        top: 70px; left: 0; width: 100%; background-color: white;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-top: 1px solid #eee;
-        max-height: calc(100vh - 70px); overflow-y: auto; z-index: 999;
+        display: none; 
+        flex-direction: column; 
+        position: absolute;
+        top: 70px; /* Pas di bawah navbar */
+        left: 0; 
+        width: 100%; 
+        background-color: white;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
+        border-top: 1px solid #eee;
+        max-height: calc(100vh - 70px); 
+        overflow-y: auto; /* Scroll jika menu panjang */
+        z-index: 999;
+        padding-bottom: 20px; /* Ruang ekstra di bawah agar scroll enak */
     }
+    
     .mobile-menu-dropdown.active { display: flex; }
 
+    /* Link Utama (Beranda, Layanan, dll) */
     .mobile-main-link {
-        padding: 15px 20px; color: var(--dark-color); border-bottom: 1px solid #f5f5f5;
-        font-weight: 700; font-size: 1rem;
+        padding: 15px 20px; 
+        color: var(--dark-color); 
+        text-decoration: none;
+        border-bottom: 1px solid #f5f5f5; 
+        font-weight: 700; 
+        font-size: 1rem;
+        display: block; /* Pastikan block agar area klik luas */
+        background-color: #fff;
     }
-    .mobile-submenu-group { background-color: #fafafa; border-bottom: 1px solid #eee; }
     
-    /* --- PERBAIKAN DI SINI: Style PROFIL disamakan dengan Menu Utama --- */
-    .mobile-menu-label {
-        padding: 15px 20px; /* Padding sama */
-        font-size: 1rem;    /* Ukuran font sama */
-        font-weight: 700;   /* Ketebalan sama */
-        color: var(--dark-color); /* Warna sama */
-        text-transform: uppercase; 
-        display: block;
-        border-bottom: 1px solid #f5f5f5;
+    .mobile-main-link:hover {
+        background-color: #f9f9f9;
+        color: var(--primary-color);
+        padding-left: 25px; /* Efek geser sedikit */
+        transition: 0.3s;
     }
 
-    .mobile-submenu-group a {
-        padding: 12px 20px 12px 40px; color: #666; font-size: 0.9rem;
-        border-bottom: 1px solid #f0f0f0;
+    /* --- Submenu Group (Profil) --- */
+    .mobile-submenu-group {
+        display: flex; 
+        flex-direction: column; 
+        background-color: #fafafa; /* Warna latar sedikit abu agar beda */
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px; /* Jarak bawah sebelum menu berikutnya */
     }
-    .mobile-submenu-group a:hover, .mobile-main-link:hover {
-        background-color: #e8f5e9; color: var(--primary-color); padding-left: 30px;
+
+    /* Label Judul Submenu (PROFIL) */
+    .mobile-menu-label {
+        padding: 15px 20px 10px; 
+        font-size: 0.8rem; 
+        font-weight: 800;
+        color: #999; 
+        text-transform: uppercase; 
+        letter-spacing: 1px;
+        display: block;
+    }
+
+    /* Link di dalam Submenu */
+    .mobile-submenu-group a {
+        padding: 10px 20px 10px 35px; /* Indentasi ke dalam (kiri 35px) */
+        color: #555; 
+        text-decoration: none;
+        font-size: 0.95rem; 
+        display: block;
+        border-bottom: 1px solid #f0f0f0;
+        transition: 0.2s;
+        font-weight: 500; /* Agak tebal dikit tapi lebih tipis dari menu utama */
+    }
+
+    /* Hapus border bawah untuk item terakhir di submenu */
+    .mobile-submenu-group a:last-child {
+        border-bottom: none;
+    }
+    
+    .mobile-submenu-group a:hover {
+        background-color: #e8f5e9; 
+        color: var(--primary-color); 
+        padding-left: 40px; /* Efek geser lebih dalam */
     }
 }
 
@@ -483,6 +555,7 @@ ul { list-style: none; }
 /* Remove top margin for the first title */
 .data-stats .data-title:first-child {
     margin-top: 30px;
+    max-width: 900px;
 }
 
 .rumah-ibadah-margin {
