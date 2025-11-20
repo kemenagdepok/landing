@@ -406,6 +406,23 @@ ul { list-style: none; }
     font-weight: 700;
 }
 
+.data-source {
+    margin-top: 60px; /* SEBELUMNYA 40px, DIGANTI JADI 60px ATAU LEBIH */
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+    font-style: italic;
+    background: #f9f9f9;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.data-source-wrapper {
+    margin-top: 60px; /* Tambahkan jarak di sini */
+    text-align: center;
+}
+
 /* Menghapus margin-top untuk elemen pertama agar tidak terlalu jauh dari intro */
 .data-stats .data-title:first-child {
     margin-top: 30px; 
