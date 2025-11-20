@@ -397,8 +397,18 @@ ul { list-style: none; }
 /* Data Stats */
 .data-section { margin-bottom: 60px; }
 .data-title {
-    font-size: 1.5rem; color: var(--primary-color); margin-bottom: 25px;
-    border-left: 5px solid var(--secondary-color); padding-left: 20px; font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    margin-top: 50px; /* TAMBAHAN: Memberi jarak di atas judul */
+    border-left: 5px solid var(--secondary-color);
+    padding-left: 15px;
+    font-weight: 700;
+}
+
+/* Menghapus margin-top untuk elemen pertama agar tidak terlalu jauh dari intro */
+.data-stats .data-title:first-child {
+    margin-top: 30px; 
 }
 .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
 .stat-card {
